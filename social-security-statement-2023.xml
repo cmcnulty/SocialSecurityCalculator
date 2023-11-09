@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <osss:OnlineSocialSecurityStatementData xmlns:osss="http://ssa.gov/osss/schemas/2.0">
-    <osss:FileCreationDate>2022-09-21T10:35:06.176-04:00</osss:FileCreationDate>
+    <osss:FileCreationDate>2023-11-07T21:41:45.667-05:00</osss:FileCreationDate>
     <osss:UserInformation>
         <osss:Name>CHARLES E. MCNULTY</osss:Name>
         <osss:DateOfBirth>1977-03-31</osss:DateOfBirth>
@@ -10,80 +10,80 @@
             <osss:RetirementAge>
                 <osss:Years>62</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>2035</osss:Estimate>
+            <osss:Estimate>2195</osss:Estimate>
         </osss:EarlyRetirementEstimate>
         <osss:FullRetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>67</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>2941</osss:Estimate>
+            <osss:Estimate>3164</osss:Estimate>
         </osss:FullRetirementEstimate>
         <osss:DelayedRetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>70</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>3675</osss:Estimate>
+            <osss:Estimate>3947</osss:Estimate>
         </osss:DelayedRetirementEstimate>
         <osss:Age62RetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>62</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>2035</osss:Estimate>
+            <osss:Estimate>2195</osss:Estimate>
         </osss:Age62RetirementEstimate>
         <osss:Age63RetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>63</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>2176</osss:Estimate>
+            <osss:Estimate>2345</osss:Estimate>
         </osss:Age63RetirementEstimate>
         <osss:Age64RetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>64</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>2329</osss:Estimate>
+            <osss:Estimate>2509</osss:Estimate>
         </osss:Age64RetirementEstimate>
         <osss:Age65RetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>65</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>2532</osss:Estimate>
+            <osss:Estimate>2726</osss:Estimate>
         </osss:Age65RetirementEstimate>
         <osss:Age66RetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>66</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>2736</osss:Estimate>
+            <osss:Estimate>2945</osss:Estimate>
         </osss:Age66RetirementEstimate>
         <osss:Age67RetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>67</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>2941</osss:Estimate>
+            <osss:Estimate>3164</osss:Estimate>
         </osss:Age67RetirementEstimate>
         <osss:Age68RetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>68</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>3147</osss:Estimate>
+            <osss:Estimate>3383</osss:Estimate>
         </osss:Age68RetirementEstimate>
         <osss:Age69RetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>69</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>3390</osss:Estimate>
+            <osss:Estimate>3643</osss:Estimate>
         </osss:Age69RetirementEstimate>
         <osss:Age70RetirementEstimate>
             <osss:RetirementAge>
                 <osss:Years>70</osss:Years>
             </osss:RetirementAge>
-            <osss:Estimate>3675</osss:Estimate>
+            <osss:Estimate>3947</osss:Estimate>
         </osss:Age70RetirementEstimate>
-        <osss:DisabilityEstimate>2780</osss:DisabilityEstimate>
+        <osss:DisabilityEstimate>3031</osss:DisabilityEstimate>
         <osss:OneTimeDeathBenefit>255</osss:OneTimeDeathBenefit>
-        <osss:SurvivorsEstimateChild>2107</osss:SurvivorsEstimateChild>
-        <osss:SurvivorsEstimateFamily>4917</osss:SurvivorsEstimateFamily>
-        <osss:SurvivorsEstimateRetired>2809</osss:SurvivorsEstimateRetired>
-        <osss:SurvivorsEstimateSpouseChild>2107</osss:SurvivorsEstimateSpouseChild>
+        <osss:SurvivorsEstimateChild>2293</osss:SurvivorsEstimateChild>
+        <osss:SurvivorsEstimateFamily>5350</osss:SurvivorsEstimateFamily>
+        <osss:SurvivorsEstimateRetired>3057</osss:SurvivorsEstimateRetired>
+        <osss:SurvivorsEstimateSpouseChild>2293</osss:SurvivorsEstimateSpouseChild>
     </osss:EstimatedBenefits>
     <osss:EarningsRecord>
         <osss:Earnings startYear="1992" endYear="1992">
@@ -206,9 +206,13 @@
             <osss:FicaEarnings>108494</osss:FicaEarnings>
             <osss:MedicareEarnings>108494</osss:MedicareEarnings>
         </osss:Earnings>
-        <osss:FicaTaxTotalEmployer>96632</osss:FicaTaxTotalEmployer>
-        <osss:FicaTaxTotalIndividual>93758</osss:FicaTaxTotalIndividual>
-        <osss:MedicareTaxTotalEmployer>22590</osss:MedicareTaxTotalEmployer>
-        <osss:MedicareTaxTotalIndividual>22590</osss:MedicareTaxTotalIndividual>
+        <osss:Earnings startYear="2022" endYear="2022">
+            <osss:FicaEarnings>113614</osss:FicaEarnings>
+            <osss:MedicareEarnings>113614</osss:MedicareEarnings>
+        </osss:Earnings>
+        <osss:FicaTaxTotalEmployer>103676</osss:FicaTaxTotalEmployer>
+        <osss:FicaTaxTotalIndividual>100802</osss:FicaTaxTotalIndividual>
+        <osss:MedicareTaxTotalEmployer>24237</osss:MedicareTaxTotalEmployer>
+        <osss:MedicareTaxTotalIndividual>24237</osss:MedicareTaxTotalIndividual>
     </osss:EarningsRecord>
 </osss:OnlineSocialSecurityStatementData>
