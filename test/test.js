@@ -1,5 +1,5 @@
-import {calc} from './lib/index.js';
-import parse from './lib/parseStatement/index.js';
+import {calc} from '../lib/index.js';
+import parse from '../lib/parseStatement/index.js';
 import { earnings } from './test-data.js';
 import { compound } from 'compound-calc';
 
