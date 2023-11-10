@@ -1,4 +1,5 @@
-import {wageIndex, Wages} from '../wage-index.js';
+import { Wages } from '../model';
+import {wageIndex} from '../wage-index.js';
 
 const YOUTH_FACTOR = 8;
 const YOUTH_FACTOR_AGE = 21;
@@ -17,20 +18,25 @@ export function getEstimatedEarnings(age: number, lastWage: number, lastYearWork
     const yearTurned22 = CURRENT_YEAR - age + YOUTH_FACTOR_AGE;
 
     const wageResults: Wages = {};
-    for(let i = lastYearWorked; i >= workStartYear; i--){
+    let i = lastYearWorked as keyof Wages;
+    for(; i >= workStartYear; i--){
         const reductionFactor = getReductionFactor(i) / (1 + earningGrowthRate);
         const youthFactor = i === yearTurned22 ? YOUTH_FACTOR : 1;
+        const year = i as keyof Wages;
+        const nextYear = (i + 1) as keyof Wages;
         if(i === lastYearWorked){
-            wageResults[i] = lastWage;
+            wageResults[year] = lastWage;
         } else {
-            wageResults[i] = (wageResults[i + 1] * reductionFactor)/youthFactor;
+            wageResults[year] = ((wageResults[nextYear] as number) * reductionFactor)/youthFactor;
         }
     }
     return wageResults;
 }
 
-function getReductionFactor(year: number) {
-    if (year === CURRENT_YEAR && !wageIndex[year - 1]) {
+function getReductionFactor(year: keyof Wages) {
+    const lastYear = year - 1 as keyof Wages;
+    const nextYear = year + 1 as keyof Wages;
+    if (year === CURRENT_YEAR && !wageIndex[lastYear]) {
         throw new Error('Wage index for previous year is required');
     }
     if (year === CURRENT_YEAR) {
@@ -38,7 +44,7 @@ function getReductionFactor(year: number) {
     } else if (year === CURRENT_YEAR - 1) {
         return CURRENT_YEAR_INCREASE
     } else {
-        return (wageIndex[year] / wageIndex[year+1]);
+        return ((wageIndex[year] as number) / (wageIndex[nextYear] as number));
     }
 }
 

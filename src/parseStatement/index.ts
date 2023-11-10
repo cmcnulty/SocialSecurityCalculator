@@ -1,12 +1,12 @@
 import xml2js from 'xml2js';
 import fs from 'fs/promises';
-import { Wages } from '../wage-index';
+import { Wages } from '../model';
 
 const NS = 'osss';
 const parser = new xml2js.Parser();
 const supportedVersion = "http://ssa.gov/osss/schemas/2.0";
 
-async function getWages(fileName: string){
+async function getWages(fileName: string): Promise<Wages> {
     const data = await fs.readFile(fileName);
     const result = await parser.parseStringPromise( data );
     const schema = result[`${NS}:OnlineSocialSecurityStatementData`]['$'][`xmlns:${NS}`];

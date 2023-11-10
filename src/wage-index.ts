@@ -1,5 +1,5 @@
 import { compound } from 'compound-calc';
-export type Wages = { [key: string]: number; };
+import { Wages } from './model';
 
 // https://www.ssa.gov/OACT/COLA/awiseries.html
 export const wageIndex: Wages = {
@@ -108,12 +108,13 @@ const longRangeIntermediate = {
 }
 const fillBlanks = (vals: Wages) => Object.entries(vals).reduce((acc, [year, P], index, arr) => {
     let thing;
+    const iYear = parseInt(year) as keyof Wages;
     if(arr[index+1]) {
         const [nextYear, A] = arr[index+1];
         const t = parseInt(nextYear) - parseInt(year);
         const r = Math.pow((A/P),(1/t))-1
         const vals: number[] = compound(P,0,t,r).result.slice(0, -1);
-        const ret: Wages = vals.reduce((accx, cur, i): Wages => ((accx[(parseInt(year) + i).toString()] = cur) && accx) as Wages,{} as Wages);
+        const ret = vals.reduce((accx, cur, i): Wages => ((accx[iYear + i as keyof Wages] = cur) && accx) as Wages,{} as Wages);
         thing = {...acc, ...ret};
     } else {
         thing = {...acc, ...{[year]: P}};

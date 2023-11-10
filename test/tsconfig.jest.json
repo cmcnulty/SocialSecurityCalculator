@@ -1,0 +1,10 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+      "rootDir": "..",
+      "esModuleInterop": true,
+      "isolatedModules": true,
+      "noEmit": true,
+      "types": ["jest"]
+    }
+  }
