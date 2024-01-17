@@ -1,5 +1,5 @@
 
-import {calc} from '../src/index';
+import { calc } from '../src/index';
 import parse from '../src/parseStatement/index';
 import { compound } from 'compound-calc';
 import { earnings_1, earnings_2, earnings_3 } from './test-data';
