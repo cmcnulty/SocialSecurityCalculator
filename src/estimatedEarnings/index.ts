@@ -1,10 +1,9 @@
 import { Wages } from '../model';
-import {wageIndex} from '../wage-index.js';
+import { wageIndex, quickCalcProjections, taxableMaximum } from '../wage-index';
 
 const YOUTH_FACTOR = 8;
 const YOUTH_FACTOR_AGE = 21;
 const WORK_START_AGE = 18;
-const CURRENT_YEAR_INCREASE = .96;
 const CURRENT_YEAR = new Date().getFullYear();
 
 export function getEstimatedEarnings(age: number, lastWage: number, lastYearWorked: number = CURRENT_YEAR, earningGrowthRate: number = 0){
@@ -18,34 +17,36 @@ export function getEstimatedEarnings(age: number, lastWage: number, lastYearWork
     const yearTurned22 = CURRENT_YEAR - age + YOUTH_FACTOR_AGE;
 
     const wageResults: Wages = {};
-    let i = lastYearWorked as keyof Wages;
-    for(; i >= workStartYear; i--){
-        const reductionFactor = getReductionFactor(i) / (1 + earningGrowthRate);
-        const youthFactor = i === yearTurned22 ? YOUTH_FACTOR : 1;
+    for (let i = lastYearWorked as keyof Wages; i >= workStartYear; i--) {
         const year = i as keyof Wages;
         const nextYear = (i + 1) as keyof Wages;
-        if(i === lastYearWorked){
-            wageResults[year] = lastWage;
-        } else {
-            wageResults[year] = ((wageResults[nextYear] as number) * reductionFactor)/youthFactor;
-        }
+        const youthAdjustment = (i === yearTurned22 ? YOUTH_FACTOR : 1);
+
+        wageResults[year] = (i === lastYearWorked)
+            ? lastWage
+            : (wageResults[nextYear] as number) * getReductionFactor(i) / (1 + earningGrowthRate) / youthAdjustment;
     }
+
+    // Cap wages at taxable maximum
+    Object.keys(wageResults).forEach(strYear => {
+        const year = parseInt(strYear) as keyof Wages;
+        const maxTaxable = taxableMaximum[year] as number;
+        wageResults[year] = Math.min(wageResults[year] as number, maxTaxable);
+    });
+
     return wageResults;
 }
 
 function getReductionFactor(year: keyof Wages) {
+    const allIndexes = {...wageIndex, ...quickCalcProjections};
     const lastYear = year - 1 as keyof Wages;
     const nextYear = year + 1 as keyof Wages;
-    if (year === CURRENT_YEAR && !wageIndex[lastYear]) {
-        throw new Error('Wage index for previous year is required');
+    if (year === CURRENT_YEAR && !allIndexes[lastYear]) {
+        throw new Error(`Wage index for previous year (${lastYear}) is required`);
     }
     if (year === CURRENT_YEAR) {
         return 1;
-    } else if (year === CURRENT_YEAR - 1) {
-        return CURRENT_YEAR_INCREASE
     } else {
-        return ((wageIndex[year] as number) / (wageIndex[nextYear] as number));
+        return ((allIndexes[year] as number) / (allIndexes[nextYear] as number));
     }
 }
-
-// console.log(getEstimatedEarnings(70, 100000, 2020, .02));
