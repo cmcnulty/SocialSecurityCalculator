@@ -1,21 +1,21 @@
 {
   "name": "social-security-calculator",
-  "version": "0.0.9",
+  "version": "0.0.12",
   "description": "Calculate estimated Social Security Benefits",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "type": "module",
+
   "exports": {
     ".": "./lib/index.js",
-    "./parseStatement": {
-      "exports": "./lib/parseStatement/index.js",
-      "types": "./lib/parseStatement/index.d.ts"
-    },
-    "./estimatedEarnings": {
-      "exports": "./lib/estimatedEarnings/index.js",
-      "types": "./lib/estimatedEarnings/index.d.ts"
+    "./estimatedEarnings": "./lib/estimatedEarnings/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      "estimatedEarnings": ["./lib/estimatedEarnings"]
     }
   },
+
   "scripts": {
     "test": "NODE_OPTIONS='--experimental-vm-modules' jest",
     "build": "tsc"
@@ -47,8 +47,5 @@
   },
   "dependencies": {
     "xml2js": "^0.6.2"
-  },
-  "files": [
-    "lib"
-  ]
+  }
 }

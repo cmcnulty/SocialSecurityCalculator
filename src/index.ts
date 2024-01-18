@@ -9,17 +9,22 @@ export function calc(birthday: Date, retirementDate: Date, earnings: Wages) {
 
 export function calcRetirementBenefit (birthday: Date, retirementDate: Date, AIME: number) {
     const eclBirthDate = getEnglishCommonLawDate(birthday);
-    const fullRetirementMonths = getFullRetirementMonths(eclBirthDate);
+    const fraMonths = getFullRetirementMonths(eclBirthDate);
+    const fullRetirementDate = new Date(eclBirthDate.getFullYear(), eclBirthDate.getMonth() + fraMonths, eclBirthDate.getDate());
     const PIA = calculatePIA(AIME);
 
-    const benefitAt62 = calculateSocialSecurityReduction(PIA, 60);
-    const normalMonthlyBenefit = Math.floor(PIA);
+    const earlyRetireMonths = monthsDifference(retirementDate, fullRetirementDate);
+    let adjustedBenefits = PIA;
+    if (earlyRetireMonths < 0) {
+        adjustedBenefits = calculateSocialSecurityReduction(PIA, earlyRetireMonths * -1);
+    } else if (earlyRetireMonths > 0) {
+        adjustedBenefits = calculateSocialSecurityIncrease(eclBirthDate, PIA, earlyRetireMonths);
+    }
+
+    const monthlyBenefit = Math.floor(adjustedBenefits);
     const results = {
         "AIME": AIME,
-        "NormalMonthlyBenefit": normalMonthlyBenefit,
-        "NormalAnnualBenefit": PIA * 12,
-        "ReducedMonthlyBenefit": benefitAt62,
-        "ReducedAnnualBenefit": benefitAt62 * 12,
+        "NormalMonthlyBenefit": monthlyBenefit,
     }
 
     return results;
@@ -100,6 +105,35 @@ function calculateSocialSecurityReduction(amount: number, months: number): numbe
     return amount - amount * reduction;
 }
 
+function calculateSocialSecurityIncrease(birthday: Date, initialAmount: number, numberOfMonths: number): number {
+    const birthYear = birthday.getFullYear();
+    let monthlyRate: number;
+
+    // Determine the monthly rate based on the year of birth
+    if (birthYear < 1933) {
+        throw new Error(`Invalid birth year for delayed retirement: ${birthYear}`);
+    } else if (birthYear <= 1934) {
+        monthlyRate = 11 / 24 / 100; // 11/24 of 1%
+    } else if (birthYear <= 1936) {
+        monthlyRate = 0.005; // 1/2 of 1%
+    } else if (birthYear <= 1938) {
+        monthlyRate = 13 / 24 / 100; // 13/24 of 1%
+    } else if (birthYear <= 1940) {
+        monthlyRate = 7 / 12 / 100; // 7/12 of 1%
+    } else if (birthYear <= 1942) {
+        monthlyRate = 5 / 8 / 100; // 5/8 of 1%
+    } else {
+        monthlyRate = 2 / 3 / 100; // 2/3 of 1%
+    }
+
+    // Calculate the new amount
+    let totalAdjustment = 0;
+    for (let i = 0; i < numberOfMonths; i++) {
+        totalAdjustment += monthlyRate;
+    }
+    return initialAmount * (1+totalAdjustment);
+}
+
 function roundToFloorTenCents(amount: number): number {
     // Convert the amount to fractional dimes
     let dimes = amount * 10;
@@ -135,13 +169,11 @@ export function getFullRetirementMonths(commonLawBirthDate: Date): number {
     }
 }
 
-/*
-1943-1954 	66 	                48 	$750 	25.00% 	$350 	30.00%
-1955 	    66 and 2 months 	50 	$741 	25.83% 	$345 	30.83%
-1956 	    66 and 4 months 	52 	$733 	26.67% 	$341 	31.67%
-1957 	    66 and 6 months 	54 	$725 	27.50% 	$337 	32.50%
-1958 	    66 and 8 months 	56 	$716 	28.33% 	$333 	33.33%
-1959 	    66 and 10 months 	58 	$708 	29.17% 	$329 	34.17%
-1960+ 	    67 	                60 	$700 	30.00% 	$325 	35.00%
-*/
+function monthsDifference(date1: Date, date2: Date): number {
+    // Calculate the total number of months for each date
+    const months1 = date1.getFullYear() * 12 + date1.getMonth();
+    const months2 = date2.getFullYear() * 12 + date2.getMonth();
 
+    // Return the difference in months
+    return months1 - months2;
+}

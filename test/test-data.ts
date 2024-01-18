@@ -31,6 +31,7 @@ export const earnings_1 = {
     2024: 60000,
 };
 
+// no increase
 export const earnings_2 = {
     1997: 3000,
     1998: 3100,
@@ -62,6 +63,7 @@ export const earnings_2 = {
     2024: 60000,
 };
 
+// above max earnings
 export const earnings_3 = {
     1997: 5200,
     1998: 5600,
