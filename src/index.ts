@@ -11,7 +11,8 @@ export function calcRetirementBenefit (birthday: Date, retirementDate: Date, AIM
     const eclBirthDate = getEnglishCommonLawDate(birthday);
     const fraMonths = getFullRetirementMonths(eclBirthDate);
     const fullRetirementDate = new Date(eclBirthDate.getFullYear(), eclBirthDate.getMonth() + fraMonths, eclBirthDate.getDate());
-    const PIA = calculatePIA(AIME);
+    const age60Year = eclBirthDate.getFullYear()+60;
+    const PIA = calculatePIA(AIME, age60Year);
 
     const earlyRetireMonths = monthsDifference(retirementDate, fullRetirementDate);
     let adjustedBenefits = PIA;
@@ -30,9 +31,14 @@ export function calcRetirementBenefit (birthday: Date, retirementDate: Date, AIM
     return results;
 }
 
-function calculatePIA(AIME: number) {
-    const averageWageLastYear = Math.max(...Object.keys(wageIndex).map( val => parseInt(val))) as keyof Wages;
-    const wageIndexLastYear = wageIndex[averageWageLastYear] as number;
+export function calculatePIA(AIME: number, baseYear?: number) {
+
+    const mostRecentWageIndex = Math.max(...Object.keys(wageIndex).map( val => parseInt(val)));
+    if (baseYear) {
+        baseYear = Math.min(baseYear, mostRecentWageIndex);
+    }
+    const averageWageLastYear = baseYear || mostRecentWageIndex;
+    const wageIndexLastYear = wageIndex[averageWageLastYear as keyof Wages] as number;
 
     const bendPointDivisor = 9779.44;
     const firstBendPointMultiplier = 180;
@@ -61,15 +67,20 @@ function calculatePIA(AIME: number) {
     return PIA;
 }
 
-function calculateAIME(earnings: Wages) {
+export function calculateAIME(earnings: Wages, baseYear?: number) {
     const lookbackYears = 35;
-    const averageWageLastYear = Math.max(...Object.keys(wageIndex).map( val => parseInt(val))) as keyof Wages;
-    const wageIndexLastYear = wageIndex[averageWageLastYear] as number;
+
+    const mostRecentWageIndex = Math.max(...Object.keys(wageIndex).map( val => parseInt(val)));
+    if (baseYear) {
+        baseYear = Math.min(baseYear, mostRecentWageIndex);
+    }
+    const averageWageLastYear = baseYear || mostRecentWageIndex;
+    const wageIndexLastYear = wageIndex[averageWageLastYear as keyof Wages] as number;
 
     const futureYearsFactor = 1;
     // calculate the wage index factors
     const wageIndexFactors: Wages = Object.entries(wageIndex).reduce(( acc, [i, val], ) => (
-    (acc[parseInt(i) as keyof Wages] = 1 + (wageIndexLastYear - val) / val), acc) as Wages
+    (acc[parseInt(i) as keyof Wages] = 1 + (Math.max(0,wageIndexLastYear - val)) / val), acc) as Wages
     , {} as Wages);
 
     // adjust the earnings according to the wage index factor,
