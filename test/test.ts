@@ -71,6 +71,14 @@ describe('Test calc', function () {
         expect(calcResults.NormalMonthlyBenefit).toEqual(2095);
     });
 
+    it('Too Early retirement', async () => {
+        const futureEarnings = compound(60000,0,21,0).result
+            .reduce((acc, cur, i) => (acc[(2024+i as keyof Wages)] = Math.round(cur), acc),{} as Wages);
+        const allEarnings = {...earnings_1, ...futureEarnings};
+        const calcResults = calc(new Date(1980,0,1), new Date(2040, 5, 15), allEarnings);
+        expect(calcResults.NormalMonthlyBenefit).toEqual(0);
+    });
+
     it('Delayed retirement', async () => {
         const futureEarnings = compound(60000,0,22,0).result
             .reduce((acc, cur, i) => (acc[(2024+i as keyof Wages)] = Math.round(cur), acc),{} as Wages);

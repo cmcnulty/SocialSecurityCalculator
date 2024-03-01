@@ -21,7 +21,7 @@ export function calcRetirementBenefit (birthday: Date, retirementDate: Date, AIM
     let adjustedBenefits = PIA;
     if( retirementDate < earliestRetirementDate) {
         adjustedBenefits = 0;
-    } if (earlyRetireMonths < 0) {
+    } else if (earlyRetireMonths < 0) {
         adjustedBenefits = calculateSocialSecurityReduction(PIA, earlyRetireMonths * -1);
     } else if (earlyRetireMonths > 0) {
         adjustedBenefits = calculateSocialSecurityIncrease(eclBirthDate, PIA, earlyRetireMonths);
