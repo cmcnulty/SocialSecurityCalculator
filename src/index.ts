@@ -1,6 +1,8 @@
 import { Wages } from './model';
 import { wageIndex } from './wage-index';
 
+const EARLY_RETIREMENT_AGE = 62;
+
 export function calc(birthday: Date, retirementDate: Date, earnings: Wages) {
     const AIME = calculateAIME(earnings);
     const results = calcRetirementBenefit(birthday, retirementDate, AIME);
@@ -11,12 +13,15 @@ export function calcRetirementBenefit (birthday: Date, retirementDate: Date, AIM
     const eclBirthDate = getEnglishCommonLawDate(birthday);
     const fraMonths = getFullRetirementMonths(eclBirthDate);
     const fullRetirementDate = new Date(eclBirthDate.getFullYear(), eclBirthDate.getMonth() + fraMonths, eclBirthDate.getDate());
+    const earliestRetirementDate = new Date(eclBirthDate.getFullYear() + EARLY_RETIREMENT_AGE, eclBirthDate.getMonth(), eclBirthDate.getDate());
     const age60Year = eclBirthDate.getFullYear()+60;
     const PIA = calculatePIA(AIME, age60Year);
 
     const earlyRetireMonths = monthsDifference(retirementDate, fullRetirementDate);
     let adjustedBenefits = PIA;
-    if (earlyRetireMonths < 0) {
+    if( retirementDate < earliestRetirementDate) {
+        adjustedBenefits = 0;
+    } if (earlyRetireMonths < 0) {
         adjustedBenefits = calculateSocialSecurityReduction(PIA, earlyRetireMonths * -1);
     } else if (earlyRetireMonths > 0) {
         adjustedBenefits = calculateSocialSecurityIncrease(eclBirthDate, PIA, earlyRetireMonths);

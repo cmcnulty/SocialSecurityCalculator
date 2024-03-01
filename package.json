@@ -1,6 +1,6 @@
 {
   "name": "social-security-calculator",
-  "version": "0.0.13",
+  "version": "0.0.15",
   "description": "Calculate estimated Social Security Benefits",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
