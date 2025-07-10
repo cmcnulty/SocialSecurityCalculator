@@ -8,7 +8,7 @@ const CURRENT_YEAR = new Date().getFullYear();
 
 export function getEstimatedEarnings(age: number, lastWage: number, lastYearWorked: number = CURRENT_YEAR, earningGrowthRate: number = 0){
     if (age <= 22) {
-        throw new Error('Age must be greater than 22');
+        // return zero
     }
     if (lastYearWorked > CURRENT_YEAR) {
         throw new Error('Last year worked cannot be in the future');
@@ -20,6 +20,7 @@ export function getEstimatedEarnings(age: number, lastWage: number, lastYearWork
     for (let i = lastYearWorked as keyof Wages; i >= workStartYear; i--) {
         const year = i as keyof Wages;
         const nextYear = (i + 1) as keyof Wages;
+        // one-time age adjustment for youth
         const youthAdjustment = (i === yearTurned22 ? YOUTH_FACTOR : 1);
 
         wageResults[year] = (i === lastYearWorked)
