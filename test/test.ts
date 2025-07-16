@@ -5,7 +5,7 @@ import { compound } from 'compound-calc';
 import { default as testData } from './data/inputData.results.json';
 import { projectSSAEarnings } from '../src/estimatedEarnings/index';
 
-describe.skip('Parse SSN Output', function () {
+describe('Parse SSN Output', function () {
     it('Load Full Retirement', async () => {
         const earningsFromXml = await parse('./test/Full_Retirement.xml');
         const baseYear = 2015;

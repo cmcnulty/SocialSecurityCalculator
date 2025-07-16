@@ -77,7 +77,7 @@ export const wageIndex: Wages = [
   { year: 2023, earnings: 66621.80 },
 ];
 
-const wageIndexFuture: Wages = [
+export const wageIndexFuture: Wages = [
   { year: 2024, earnings: 69472.44 },
   { year: 2025, earnings: 72255.52 },
   { year: 2026, earnings: 75264.81 },

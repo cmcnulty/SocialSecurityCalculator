@@ -1,6 +1,6 @@
 import csvtojson from 'csvtojson';
 import fs from 'fs/promises';
-import { scrapeSSACalculator } from './getTestResults.js';
+import { scrapeSSACalculator } from './scrapeTestResults.js';
 /**
  * Converts date string to component parts for SSA calculator
  * @param {string} dateString - Date in format "1/1/1980" or "M/D/YYYY"
