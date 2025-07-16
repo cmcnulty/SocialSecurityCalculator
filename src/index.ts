@@ -161,7 +161,7 @@ function roundToFloorTenCents(amount: number): number {
     return (dimes / 10);
 }
 
-function getEnglishCommonLawDate(date: Date): Date {
+export function getEnglishCommonLawDate(date: Date): Date {
     const year = date.getFullYear();
     const month = date.getMonth();
     const day = date.getDate();

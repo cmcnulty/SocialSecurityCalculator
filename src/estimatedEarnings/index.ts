@@ -1,13 +1,13 @@
 import { Wages } from '../model';
 import { wageIndex, wageIndexFuture, taxableMaximum,  } from '../wage-index';
-
+import { getEnglishCommonLawDate } from '../index';
 const YOUTH_FACTOR = 8;
 const YOUTH_FACTOR_AGE = 21;
 const WORK_START_AGE = 18;
 const CURRENT_YEAR = new Date().getFullYear();
 
 export function getEstimatedEarnings(birthDate: Date, lastWage: number, lastYearWorked: number = CURRENT_YEAR, earningGrowthRate: number = 0) {
-    const birthDateMinusOneDay = new Date(birthDate.getFullYear(), birthDate.getMonth(), birthDate.getDate() - 1);
+    const birthDateMinusOneDay = getEnglishCommonLawDate(birthDate);
     const age = CURRENT_YEAR - birthDateMinusOneDay.getFullYear();
     if (age <= 22) {
         // return zero
