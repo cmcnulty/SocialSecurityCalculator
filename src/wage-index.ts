@@ -159,5 +159,6 @@ export const taxableMaximum: Wages = [
     { year: 2021, earnings: 142800 },
     { year: 2022, earnings: 147000 },
     { year: 2023, earnings: 160200 },
-    { year: 2024, earnings: 168600 }
+    { year: 2024, earnings: 168600 },
+    { year: 2025, earnings: 176100 },
 ];

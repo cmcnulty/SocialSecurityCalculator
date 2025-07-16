@@ -6,10 +6,11 @@ const YOUTH_FACTOR_AGE = 21;
 const WORK_START_AGE = 18;
 const CURRENT_YEAR = new Date().getFullYear();
 
-export function getEstimatedEarnings(age: number, lastWage: number, lastYearWorked: number = CURRENT_YEAR, earningGrowthRate: number = 0){
+export function getEstimatedEarnings(birthDate: Date, lastWage: number, lastYearWorked: number = CURRENT_YEAR, earningGrowthRate: number = 0) {
+    const birthDateMinusOneDay = new Date(birthDate.getFullYear(), birthDate.getMonth(), birthDate.getDate() - 1);
+    const age = CURRENT_YEAR - birthDateMinusOneDay.getFullYear();
     if (age <= 22) {
         // return zero
-
     }
     if (lastYearWorked > CURRENT_YEAR) {
         throw new Error('Last year worked cannot be in the future');
@@ -38,7 +39,6 @@ export function getEstimatedEarnings(age: number, lastWage: number, lastYearWork
         const currentEarnings = wageResults.find((entry) => entry.year === year)!.earnings;
         const maxEarnings = Math.min(currentEarnings, maxTaxable);
         wageResults.find((entry) => entry.year === year)!.earnings = maxEarnings;
-
     });
 
     return wageResults;

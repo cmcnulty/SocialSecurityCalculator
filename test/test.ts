@@ -3,13 +3,12 @@ import { calc, calcRetirementBenefit, calculateAIME, calculatePIA } from '../src
 import parse from '../src/parseStatement/index';
 import { compound } from 'compound-calc';
 import { default as testData } from './data/inputData.results.json';
-import { projectSSAEarnings } from '../src/estimatedEarnings/index';
+import { getEstimatedEarnings } from '../src/estimatedEarnings/index';
 
 describe('Parse SSN Output', function () {
     it('Load Full Retirement', async () => {
         const earningsFromXml = await parse('./test/Full_Retirement.xml');
         const baseYear = 2015;
-        console.log(earningsFromXml);
         const AIME = calculateAIME(earningsFromXml, baseYear);
         const PIA = calculatePIA(AIME, baseYear);
         const calcResults = calcRetirementBenefit(new Date(1955,2,31), new Date(2025, 2, 31), AIME);
@@ -77,6 +76,28 @@ describe('Test calc', function () {
             expect(result.NormalMonthlyBenefit).toEqual(expectedResult);
         });
     }
+});
 
 
+describe('Test estimated previous earnings', function () {
+    for (const {testInput, testResults} of testData) {
+        it(`Test ${testInput.testName}`, async () => {
+            const birthDate = new Date(testInput.birthDate);
+            const expected = getEstimatedEarnings(birthDate, testInput.earnings, testInput.lastYear || undefined, .02);
+            const actual = testResults.commentData.map((row) => ({
+                year: row.year,
+                earnings: row.earnings
+            })).filter((row) => row.year <= (testInput.lastYear || 2025)); // filter to only include years up to 2025
+
+            const sortedActual = actual.sort((a, b) => b.year - a.year);
+
+            // round expected to nearest hundred, i.e 105371.63 => 105400
+            const roundedExpected = expected.map((row) => ({
+                year: row.year,
+                earnings: Math.round(row.earnings / 100) * 100
+            }));
+
+            expect(roundedExpected).toEqual(sortedActual);
+        });
+    }
 });
