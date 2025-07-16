@@ -38,12 +38,12 @@ export function calcRetirementBenefit (birthday: Date, retirementDate: Date, AIM
 
 export function calculatePIA(AIME: number, baseYear?: number) {
 
-    const mostRecentWageIndex = Math.max(...Object.keys(wageIndex).map( val => parseInt(val)));
+    const mostRecentWageIndex = Math.max(...wageIndex.map(val => val.year));
     if (baseYear) {
         baseYear = Math.min(baseYear, mostRecentWageIndex);
     }
     const averageWageLastYear = baseYear || mostRecentWageIndex;
-    const wageIndexLastYear = wageIndex[averageWageLastYear as keyof Wages] as number;
+    const wageIndexLastYear = wageIndex.find(val => val.year === averageWageLastYear)?.earnings || 0;
 
     const bendPointDivisor = 9779.44;
     const firstBendPointMultiplier = 180;
@@ -75,24 +75,24 @@ export function calculatePIA(AIME: number, baseYear?: number) {
 export function calculateAIME(earnings: Wages, baseYear?: number) {
     const lookbackYears = 35;
 
-    const mostRecentWageIndex = Math.max(...Object.keys(wageIndex).map( val => parseInt(val)));
+    const mostRecentWageIndex = Math.max(...wageIndex.map( wag => wag.year));
     if (baseYear) {
         baseYear = Math.min(baseYear, mostRecentWageIndex);
     }
     const averageWageLastYear = baseYear || mostRecentWageIndex;
-    const wageIndexLastYear = wageIndex[averageWageLastYear as keyof Wages] as number;
+    const wageIndexLastYear = wageIndex.find(val => val.year === averageWageLastYear)?.earnings || 0;
 
     const futureYearsFactor = 1;
     // calculate the wage index factors
-    const wageIndexFactors: Wages = Object.entries(wageIndex).reduce(( acc, [i, val], ) => (
-    (acc[parseInt(i) as keyof Wages] = 1 + (Math.max(0,wageIndexLastYear - val)) / val), acc) as Wages
-    , {} as Wages);
+    const wageIndexFactors = wageIndex.reduce((acc, { year, earnings }) => (
+        acc[year] = 1 + (Math.max(0, wageIndexLastYear - earnings)) / earnings, acc
+    ), {} as Record<number, number>);
 
-    // adjust the earnings according to the wage index factor,
-    // factor is 1 for any earnings record without a wage-factor
-    const adjustedEarnings: Wages = Object.entries(earnings).reduce(( acc, [i, val], ) => (
-        (acc[parseInt(i) as keyof Wages] = val * (wageIndexFactors[parseInt(i) as keyof Wages] || futureYearsFactor)) , acc ) as Wages
-    , {} as Wages);
+    // adjust the earnings according to the wage index factor
+    const adjustedEarnings = earnings.reduce((acc, { year, earnings }) => {
+    acc[year] = earnings * (wageIndexFactors[year] || futureYearsFactor);
+    return acc;
+    }, {} as Record<number, number>);
 
     const top35YearsEarningsArr = Object.values(adjustedEarnings)
         .sort((a,b) => b - a) // sort the earnings from highest to lowest amount
