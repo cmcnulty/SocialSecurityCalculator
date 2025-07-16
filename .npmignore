@@ -1,0 +1,8 @@
+.*
+src
+test
+tools
+node_modules
+jest.config.js
+package-lock.json
+tsconfig.json
