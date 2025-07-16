@@ -16,10 +16,10 @@ async function getWages(fileName: string): Promise<Wages> {
         throw `${schema} is not supported (${supportedVersion})`;
     }
     const results: any[]  = result[`${NS}:ONLINESOCIALSECURITYSTATEMENTDATA`][`${NS}:EARNINGSRECORD`][0][`${NS}:EARNINGS`];
-    const earnings: Wages = results.reduce((acc, earn: any) => (
-        earn[`${NS}:FICAEARNINGS`][0] === '-1' ? acc : acc[earn['$'].STARTYEAR] = parseInt(earn[`${NS}:FICAEARNINGS`][0]), acc) as Wages
-    , {} as Wages);
 
+    const earnings: Wages = results.reduce((acc, earn: any) => (
+        earn[`${NS}:FICAEARNINGS`][0] === '-1' ? acc : acc.push({year: [earn['$'].STARTYEAR], earnings: parseInt(earn[`${NS}:FICAEARNINGS`][0])}), acc
+    ), [] as Wages);
     return earnings;
 }
 
