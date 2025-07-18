@@ -15,7 +15,8 @@ export const PIA_PERCENTAGES = {
   THIRD_BRACKET: 0.15
 } as const;
 
-export const EARLY_RETIREMENT_REDUCTION_RATES = {
-  FIRST_36_MONTHS: 5 / 9 * 0.01, // 5/9 of 1%
-  ADDITIONAL_MONTHS: 5 / 12 * 0.01 // 5/12 of 1%
+export const EARLY_RETIREMENT_REDUCTION = {
+  FIRST_MONTHS: 36,
+  FIRST_MONTHS_RATE: 5 / 9 * 0.01, // 5/9 of 1%
+  ADDITIONAL_MONTHS_RATE: 5 / 12 * 0.01 // 5/12 of 1%
 } as const;

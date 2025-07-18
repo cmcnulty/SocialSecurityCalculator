@@ -11,7 +11,7 @@ describe('Parse SSN Output', function () {
         const AIME = calculateAIME(earningsFromXml, baseYear);
         const PIA = calculatePIA(AIME, baseYear);
         const lastYearWorked = earningsFromXml[earningsFromXml.length - 1].year;
-        const calcResults = calcRetirementBenefit(new Date(1955,2,31), lastYearWorked, new Date(2025, 2, 31), AIME);
+        const calcResults = calcRetirementBenefit(new Date(1955,2,31), new Date(2025, 2, 31), AIME);
 
         expect(AIME).toEqual(1153);
         expect(PIA).toEqual(882.2);
@@ -28,8 +28,8 @@ describe('Parse SSN Output', function () {
         const AIME = calculateAIME(earningsFromXml, baseYear);
         const PIA = calculatePIA(AIME, baseYear);
         const lastYearWorked = earningsFromXml[earningsFromXml.length - 1].year;
-        const calcResultsFull = calcRetirementBenefit(birthDate, lastYearWorked, fullRetirement, AIME);
-        const calcResultsEarly = calcRetirementBenefit(birthDate, lastYearWorked, earlyRetirement, AIME);
+        const calcResultsFull = calcRetirementBenefit(birthDate, fullRetirement, AIME);
+        const calcResultsEarly = calcRetirementBenefit(birthDate, earlyRetirement, AIME);
 
         expect(AIME).toEqual(1280);
         expect(PIA).toEqual(987.2);
@@ -45,7 +45,7 @@ describe('Parse SSN Output', function () {
         const AIME = calculateAIME(earningsFromXml, baseYear);
         const PIA = calculatePIA(AIME, baseYear);
         const lastYearWorked = earningsFromXml[earningsFromXml.length - 1].year;
-        const calcResultsFull = calcRetirementBenefit(birthDate, lastYearWorked, delayedRetirement, AIME);
+        const calcResultsFull = calcRetirementBenefit(birthDate, delayedRetirement, AIME);
 
         expect(AIME).toEqual(1082);
         expect(PIA).toEqual(791.1);

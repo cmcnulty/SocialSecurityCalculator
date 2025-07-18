@@ -9,7 +9,7 @@ import {
   FIRST_BEND_POINT_MULTIPLIER,
   SECOND_BEND_POINT_MULTIPLIER,
   PIA_PERCENTAGES,
-  EARLY_RETIREMENT_REDUCTION_RATES
+  EARLY_RETIREMENT_REDUCTION
 } from './constants';
 
 // Main calculation function
@@ -27,20 +27,15 @@ export function calc(birthday: Date, retirementDate: Date, earnings: Earnings): 
     throw new Error('Retirement date cannot be before birthday');
   }
 
-  const lastYearEarnings = earnings
-    .filter(wage => wage.earnings > 0)
-    .reduce((max, wage) => Math.max(max, wage.year), 0);
-
   const yearAge60 = birthday.getFullYear() + 60;
   const averageIndexedMonthlyEarnings = calculateAIME(earnings, yearAge60);
-  const results = calcRetirementBenefit(birthday, lastYearEarnings, retirementDate, averageIndexedMonthlyEarnings);
+  const results = calcRetirementBenefit(birthday, retirementDate, averageIndexedMonthlyEarnings);
 
   return results;
 }
 
 export function calcRetirementBenefit(
   birthday: Date,
-  lastYearEarnings: number,
   retirementDate: Date,
   AIME: number
 ): BenefitCalculationResult {
@@ -192,12 +187,12 @@ function calculateEarlyRetirementReduction(amount: number, months: number): numb
 
   let reduction: number;
 
-  if (months <= 36) {
-    reduction = months * EARLY_RETIREMENT_REDUCTION_RATES.FIRST_36_MONTHS;
+  if (months <= EARLY_RETIREMENT_REDUCTION.FIRST_MONTHS) {
+    reduction = months * EARLY_RETIREMENT_REDUCTION.FIRST_MONTHS_RATE;
   } else {
     reduction =
-      36 * EARLY_RETIREMENT_REDUCTION_RATES.FIRST_36_MONTHS +
-      (months - 36) * EARLY_RETIREMENT_REDUCTION_RATES.ADDITIONAL_MONTHS;
+      EARLY_RETIREMENT_REDUCTION.FIRST_MONTHS * EARLY_RETIREMENT_REDUCTION.FIRST_MONTHS_RATE +
+      (months - EARLY_RETIREMENT_REDUCTION.FIRST_MONTHS) * EARLY_RETIREMENT_REDUCTION.ADDITIONAL_MONTHS_RATE;
   }
 
   return amount * (1 - reduction);
