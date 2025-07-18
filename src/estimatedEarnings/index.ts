@@ -1,5 +1,5 @@
-import { Wage, Wages } from '../model';
-import { wageIndex, wageIndexFuture, taxableMaximum,  } from '../wage-index';
+import { Earnings } from '../model';
+import { wageIndex } from '../wage-index';
 import { getEnglishCommonLawDate } from '../index';
 const YOUTH_FACTOR = 8;
 const YOUTH_FACTOR_AGE = 21;
@@ -18,7 +18,7 @@ export function getEstimatedEarnings(birthDate: Date, lastWage: number, lastYear
     const workStartYear = CURRENT_YEAR - age + WORK_START_AGE;
     const yearTurned22 = CURRENT_YEAR - age + YOUTH_FACTOR_AGE;
 
-    const wageResults: Wages = [];
+    const wageResults: Earnings = [];
     for (let i = lastYearWorked; i >= workStartYear; i--) {
         const year = i;
         const nextYear = (i + 1);
@@ -30,12 +30,12 @@ export function getEstimatedEarnings(birthDate: Date, lastWage: number, lastYear
           earnings: (i === lastYearWorked)
               ? lastWage
               : (wageResults.find((entry) => entry.year === nextYear)?.earnings as number) * getReductionFactor(i) / (1 + earningGrowthRate) / youthAdjustment
-        } as Wage)
+        })
     }
 
     // Cap wages at taxable maximum
     wageResults.forEach(({year, earnings}) => {
-        const maxTaxable = taxableMaximum.find((entry) => entry.year === year)!.earnings;
+        const maxTaxable = wageIndex.find((entry) => entry.year === year)!.taxMax;
         const currentEarnings = wageResults.find((entry) => entry.year === year)!.earnings;
         const maxEarnings = Math.min(currentEarnings, maxTaxable);
         wageResults.find((entry) => entry.year === year)!.earnings = maxEarnings;
@@ -45,7 +45,7 @@ export function getEstimatedEarnings(birthDate: Date, lastWage: number, lastYear
 }
 
 function getReductionFactor(year: number): number {
-    const allIndexes = wageIndex;// .concat(wageIndexFuture);
+    const allIndexes = wageIndex;
     const lastYear = year - 1;
     const nextYear = year + 1;
     if (year === CURRENT_YEAR && !allIndexes.find((entry) => entry.year === lastYear)) {

@@ -1,225 +1,266 @@
-import { Wages } from './model';
+import { BenefitCalculationResult, RetirementDates, Wages, Earnings } from './model';
 import { wageIndex } from './wage-index';
+import {
+  EARLY_RETIREMENT_AGE,
+  WAGE_INDEX_CUTOFF,
+  MAX_RETIREMENT_AGE,
+  LOOKBACK_YEARS,
+  BEND_POINT_DIVISOR,
+  FIRST_BEND_POINT_MULTIPLIER,
+  SECOND_BEND_POINT_MULTIPLIER,
+  PIA_PERCENTAGES,
+  EARLY_RETIREMENT_REDUCTION_RATES
+} from './constants';
 
-const EARLY_RETIREMENT_AGE = 62;
-const WAGE_INDEX_CUTOFF = 2023;
+// Main calculation function
+export function calc(birthday: Date, retirementDate: Date, earnings: Earnings): BenefitCalculationResult {
+  // Validation
+  if (!birthday || !retirementDate) {
+    throw new Error('Birthday and retirement date are required');
+  }
 
-export function calc(birthday: Date, retirementDate: Date, earnings: Wages) {
-    const lastYearEarnings = earnings.filter(wage => wage.earnings > 0).reduce((max, wage) => Math.max(max, wage.year), 0);
-    const yearAge60 = birthday.getFullYear() + 60;
-    const AIME = calculateAIME(earnings, yearAge60);
-    const results = calcRetirementBenefit(birthday, lastYearEarnings, retirementDate, AIME);
-    return results;
+  if (!earnings || earnings.length === 0) {
+    throw new Error('Earnings history cannot be empty');
+  }
+
+  if (retirementDate < birthday) {
+    throw new Error('Retirement date cannot be before birthday');
+  }
+
+  const lastYearEarnings = earnings
+    .filter(wage => wage.earnings > 0)
+    .reduce((max, wage) => Math.max(max, wage.year), 0);
+
+  const yearAge60 = birthday.getFullYear() + 60;
+  const averageIndexedMonthlyEarnings = calculateAIME(earnings, yearAge60);
+  const results = calcRetirementBenefit(birthday, lastYearEarnings, retirementDate, averageIndexedMonthlyEarnings);
+
+  return results;
 }
 
-export function calcRetirementBenefit (birthday: Date, lastYearEarnings: number, retirementDate: Date, AIME: number) {
-    const eclBirthDate = getEnglishCommonLawDate(birthday);
-    const fraMonths = getFullRetirementMonths(eclBirthDate);
-    const fullRetirementDate = new Date(eclBirthDate.getFullYear(), eclBirthDate.getMonth() + fraMonths, eclBirthDate.getDate());
-    const earliestRetirementDate = new Date(eclBirthDate.getFullYear() + EARLY_RETIREMENT_AGE, eclBirthDate.getMonth(), eclBirthDate.getDate());
-    const age60Year = eclBirthDate.getFullYear()+60;
-    const PIA = calculatePIA(AIME, age60Year);
-    const maxRetirementDate = new Date(eclBirthDate.getFullYear() + 70, eclBirthDate.getMonth(), eclBirthDate.getDate());
-    const adjustedRetirementDate = retirementDate > maxRetirementDate ? maxRetirementDate : retirementDate;
-    // const adjustedRetirementDate = retirementDate;
-    console.log(`PIA: ${PIA}, AIME: ${AIME}, age60Year: ${age60Year}, eclBirthDate: ${eclBirthDate.toISOString()}, fullRetirementDate: ${fullRetirementDate.toISOString()}, earliestRetirementDate: ${earliestRetirementDate.toISOString()}`);
+export function calcRetirementBenefit(
+  birthday: Date,
+  lastYearEarnings: number,
+  retirementDate: Date,
+  AIME: number
+): BenefitCalculationResult {
+  const dates = calculateRetirementDates(birthday, retirementDate);
+  const age60Year = dates.eclBirthDate.getFullYear() + 60;
+  const primaryInsuranceAmount = calculatePIA(AIME, age60Year);
 
-    const colaRates = wageIndex.filter((wage) => wage.year >= (age60Year + 2) && wage.year < (new Date().getFullYear()))
-       .map((wage) => wage.cola)
+  // Calculate COLA adjustments
+  const colaAdjustedPIA = calculateCOLAAdjustments(primaryInsuranceAmount, age60Year + 2);
 
-    // const colaAdjustmentRate = colaRates.reduce((total, rate) => total * (1 + rate / 100), 1);
-    // const colaAdjustments = PIA * colaAdjustmentRate;
-    // we need to round as we're calculating the PIA in 10 cents, so we can't accumulate the COLA adjustments as a percentage
-    const colaAdjustments = colaRates.reduce((total, rate) => (
-        roundToFloorTenCents( total * (1+(rate / 100)))
-    ), PIA);
+  // Calculate early/delayed retirement adjustments
+  const earlyRetireMonths = monthsDifference(dates.adjusted, dates.fullRetirement);
+  let adjustedBenefits = colaAdjustedPIA;
 
-    console.log(`COLA rates: ${colaRates}, colaAdjustments: ${colaAdjustments}`);
+  if (retirementDate < dates.earliestRetirement) {
+    adjustedBenefits = 0;
+  } else if (earlyRetireMonths < 0) {
+    adjustedBenefits = calculateEarlyRetirementReduction(colaAdjustedPIA, Math.abs(earlyRetireMonths));
+  } else if (earlyRetireMonths > 0) {
+    adjustedBenefits = calculateDelayedRetirementIncrease(dates.eclBirthDate, colaAdjustedPIA, earlyRetireMonths);
+  }
 
-    // My PIA is correct, I just need to apply COLA before applying early/late retirement adjustments
+  const monthlyBenefit = Math.floor(adjustedBenefits);
 
-    const earlyRetireMonths = monthsDifference(adjustedRetirementDate, fullRetirementDate);
-    console.log(earlyRetireMonths);
-    let adjustedBenefits = colaAdjustments;// Math.floor(colaAdjustments);
-    if( retirementDate < earliestRetirementDate) {
-        adjustedBenefits = 0;
-    } else if (earlyRetireMonths < 0) {
-        adjustedBenefits = calculateSocialSecurityReduction(colaAdjustments, earlyRetireMonths * -1);
-    } else if (earlyRetireMonths > 0) {
-        adjustedBenefits = calculateSocialSecurityIncrease(eclBirthDate, adjustedBenefits, earlyRetireMonths);
-    }
-
-    const monthlyBenefit = Math.floor(adjustedBenefits);
-    const results = {
-        "AIME": AIME,
-        "NormalMonthlyBenefit": monthlyBenefit,
-    }
-
-    return results;
+  return {
+    AIME: AIME,
+    NormalMonthlyBenefit: monthlyBenefit,
+  };
 }
 
-export function calculatePIA(AIME: number, baseYear?: number) {
+function calculateRetirementDates(birthday: Date, retirementDate: Date): RetirementDates & { eclBirthDate: Date } {
+  const eclBirthDate = getEnglishCommonLawDate(birthday);
+  const fraMonths = getFullRetirementMonths(eclBirthDate);
 
-    // const mostRecentWageIndex = Math.max(...wageIndex.map(val => val.year));
-    if (baseYear) {
-        baseYear = Math.min(baseYear, WAGE_INDEX_CUTOFF);
-    }
-    const averageWageLastYear = baseYear || WAGE_INDEX_CUTOFF;
-    const wageIndexLastYear = wageIndex.find(val => val.year === averageWageLastYear)?.awi || 0;
+  const earliestRetirement = new Date(
+    eclBirthDate.getFullYear() + EARLY_RETIREMENT_AGE,
+    eclBirthDate.getMonth(),
+    eclBirthDate.getDate()
+  );
 
-    const bendPointDivisor = 9779.44;
-    const firstBendPointMultiplier = 180;
-    const secondBendPointMultiplier = 1085;
+  const fullRetirement = new Date(
+    eclBirthDate.getFullYear(),
+    eclBirthDate.getMonth() + fraMonths,
+    eclBirthDate.getDate()
+  );
 
-    // https://www.ssa.gov/oact/COLA/piaformula.html
-    // Per examples, bend points are rounded to the nearest dollar
-    const firstBendPoint = Math.round(firstBendPointMultiplier * wageIndexLastYear / bendPointDivisor);
-    const secondBendPoint = Math.round(secondBendPointMultiplier * wageIndexLastYear / bendPointDivisor);
+  const maxRetirement = new Date(
+    eclBirthDate.getFullYear() + MAX_RETIREMENT_AGE,
+    eclBirthDate.getMonth(),
+    eclBirthDate.getDate()
+  );
 
-    // https://www.ssa.gov/OP_Home/handbook/handbook.07/handbook-0738.html
-    // Calculations that are not a multiple of 10 cents are rounded to the next lower multiple of 10 cents. For example, $100.18 is rounded down to $100.10.
-    const PIA = (()=>{
-        let monthlyBenefit = 0;
-        if (AIME <= firstBendPoint) {
-            monthlyBenefit = 0.9 * AIME;
-        } else {
-            if (AIME > firstBendPoint && AIME <= secondBendPoint) {
-                monthlyBenefit = (0.9 * firstBendPoint) + (0.32 * (AIME - firstBendPoint));
-            } else {
-                monthlyBenefit = (0.9 * firstBendPoint) + (0.32 * (secondBendPoint - firstBendPoint)) + (0.15 * (AIME - secondBendPoint));
-            }
-        }
-        return roundToFloorTenCents(monthlyBenefit);
-    })();
-    return PIA;
+  const adjusted = retirementDate > maxRetirement ? maxRetirement : retirementDate;
+
+  return {
+    earliestRetirement,
+    fullRetirement,
+    maxRetirement,
+    adjusted,
+    eclBirthDate
+  };
 }
 
-export function calculateAIME(earnings: Wages, baseYear?: number) {
-    const lookbackYears = 35;
-    // const mostRecentWageIndex = Math.max(...wageIndex.map( wag => wag.year));
-    console.log(`Most recent wage index year: ${WAGE_INDEX_CUTOFF} baseYear: ${baseYear}`);
-    if (baseYear) {
-        baseYear = Math.min(baseYear, WAGE_INDEX_CUTOFF);
-    }
-    const averageWageLastYear = baseYear || WAGE_INDEX_CUTOFF;
-    const wageIndexLastYear = wageIndex.find(val => val.year === averageWageLastYear)?.awi || 0;
-    console.log(`Wage index last year: ${wageIndexLastYear}, for base year: ${averageWageLastYear}`);
-    const futureYearsFactor = 1;
-    // calculate the wage index factors
-    const wageIndexFactors = wageIndex.reduce((acc, { year, awi }) => (
-        acc[year] = 1 + (Math.max(0, wageIndexLastYear - awi)) / awi, acc
-    ), {} as Record<number, number>);
-    console.log(`Wage index factors: ${JSON.stringify(wageIndexFactors)}`);
-    // adjust the earnings according to the wage index factor
-    const adjustedEarnings = earnings.reduce((acc, { year, earnings }) => {
+function calculateCOLAAdjustments(PIA: number, startYear: number): number {
+  const currentYear = new Date().getFullYear();
+  const colaRates = wageIndex
+    .filter(wage => wage.year >= startYear && wage.year < currentYear)
+    .map(wage => wage.cola);
+
+  return colaRates.reduce((adjustedAmount, rate) => {
+    const multiplier = 1 + (rate / 100);
+    return roundToFloorTenCents(adjustedAmount * multiplier);
+  }, PIA);
+}
+
+export function calculatePIA(AIME: number, baseYear?: number): number {
+  const effectiveYear = baseYear ? Math.min(baseYear, WAGE_INDEX_CUTOFF) : WAGE_INDEX_CUTOFF;
+
+  const wageIndexEntry = wageIndex.find(val => val.year === effectiveYear);
+  if (!wageIndexEntry) {
+    throw new Error(`No wage index data found for year ${effectiveYear}`);
+  }
+
+  const wageIndexLastYear = wageIndexEntry.awi;
+
+  // Calculate bend points (rounded to nearest dollar per SSA rules)
+  const firstBendPoint = Math.round(FIRST_BEND_POINT_MULTIPLIER * wageIndexLastYear / BEND_POINT_DIVISOR);
+  const secondBendPoint = Math.round(SECOND_BEND_POINT_MULTIPLIER * wageIndexLastYear / BEND_POINT_DIVISOR);
+
+  let monthlyBenefit: number;
+
+  if (AIME <= firstBendPoint) {
+    monthlyBenefit = PIA_PERCENTAGES.FIRST_BRACKET * AIME;
+  } else if (AIME <= secondBendPoint) {
+    monthlyBenefit =
+      PIA_PERCENTAGES.FIRST_BRACKET * firstBendPoint +
+      PIA_PERCENTAGES.SECOND_BRACKET * (AIME - firstBendPoint);
+  } else {
+    monthlyBenefit =
+      PIA_PERCENTAGES.FIRST_BRACKET * firstBendPoint +
+      PIA_PERCENTAGES.SECOND_BRACKET * (secondBendPoint - firstBendPoint) +
+      PIA_PERCENTAGES.THIRD_BRACKET * (AIME - secondBendPoint);
+  }
+
+  return roundToFloorTenCents(monthlyBenefit);
+}
+
+export function calculateAIME(earnings: Earnings, baseYear?: number): number {
+  if (!earnings || earnings.length === 0) {
+    return 0;
+  }
+
+  const effectiveYear = baseYear ? Math.min(baseYear, WAGE_INDEX_CUTOFF) : WAGE_INDEX_CUTOFF;
+
+  const wageIndexEntry = wageIndex.find(val => val.year === effectiveYear);
+  if (!wageIndexEntry) {
+    throw new Error(`No wage index data found for year ${effectiveYear}`);
+  }
+
+  const wageIndexLastYear = wageIndexEntry.awi;
+  const futureYearsFactor = 1;
+
+  // Calculate wage index factors
+  const wageIndexFactors = wageIndex.reduce((acc, { year, awi }) => {
+    acc[year] = 1 + (Math.max(0, wageIndexLastYear - awi)) / awi;
+    return acc;
+  }, {} as Record<number, number>);
+
+  // Adjust earnings according to wage index factor
+  const adjustedEarnings = earnings.reduce((acc, { year, earnings }) => {
     acc[year] = earnings * (wageIndexFactors[year] || futureYearsFactor);
     return acc;
-    }, {} as Record<number, number>);
+  }, {} as Record<number, number>);
 
+  // Get top 35 years of earnings
+  const top35YearsEarningsArr = Object.values(adjustedEarnings)
+    .sort((a, b) => b - a)
+    .slice(0, LOOKBACK_YEARS);
 
-    const top35YearsEarningsArr = Object.values(adjustedEarnings)
-        .sort((a,b) => b - a) // sort the earnings from highest to lowest amount
-        .slice(0,lookbackYears) // grab the highest 35 earnings years
+  const totalEarnings = top35YearsEarningsArr.reduce((sum, earnings) => sum + earnings, 0);
 
-    const top35YearsEarnings = top35YearsEarningsArr.reduce((partialSum, a) => partialSum + a, 0); // and finally sum them
-
-    console.log(`Adjusted earnings: ${JSON.stringify(top35YearsEarningsArr)}`);
-
-
-    // https://www.ssa.gov/oact/cola/Benefits.html
-    // "We then round the resulting average amount down to the next lower dollar amount"
-    const AIME = Math.floor(top35YearsEarnings / (12 * lookbackYears));
-    return AIME;
+  // Calculate AIME (rounded down to next lower dollar)
+  const averageIndexedMonthlyEarnings = Math.floor(totalEarnings / (12 * LOOKBACK_YEARS));
+  return averageIndexedMonthlyEarnings;
 }
 
-function calculateSocialSecurityReduction(amount: number, months: number): number {
-    const first36Rate = 5 / 9 * 0.01; // 5/9 of 1%
-    const additionalRate = 5 / 12 * 0.01; // 5/12 of 1%
-    let reduction = 0;
+function calculateEarlyRetirementReduction(amount: number, months: number): number {
+  if (months <= 0) return amount;
 
-    if (months <= 36) {
-        reduction = months * first36Rate;
-    } else {
-        // 36 months times 5/9 of 1 percent plus 24 months times 5/12 of 1 percent.
-        reduction = 36 * first36Rate + (months - 36) * additionalRate;
-    }
+  let reduction: number;
 
-    return amount - amount * reduction;
+  if (months <= 36) {
+    reduction = months * EARLY_RETIREMENT_REDUCTION_RATES.FIRST_36_MONTHS;
+  } else {
+    reduction =
+      36 * EARLY_RETIREMENT_REDUCTION_RATES.FIRST_36_MONTHS +
+      (months - 36) * EARLY_RETIREMENT_REDUCTION_RATES.ADDITIONAL_MONTHS;
+  }
+
+  return amount * (1 - reduction);
 }
 
-function calculateSocialSecurityIncrease(birthday: Date, initialAmount: number, numberOfMonths: number): number {
-    const birthYear = birthday.getFullYear();
-    let monthlyRate: number;
+function calculateDelayedRetirementIncrease(birthday: Date, initialAmount: number, numberOfMonths: number): number {
+  if (numberOfMonths <= 0) return initialAmount;
 
-    // Determine the monthly rate based on the year of birth
-    if (birthYear < 1933) {
-        throw new Error(`Invalid birth year for delayed retirement: ${birthYear}`);
-    } else if (birthYear <= 1934) {
-        monthlyRate = 11 / 24 / 100; // 11/24 of 1%
-    } else if (birthYear <= 1936) {
-        monthlyRate = 0.005; // 1/2 of 1%
-    } else if (birthYear <= 1938) {
-        monthlyRate = 13 / 24 / 100; // 13/24 of 1%
-    } else if (birthYear <= 1940) {
-        monthlyRate = 7 / 12 / 100; // 7/12 of 1%
-    } else if (birthYear <= 1942) {
-        monthlyRate = 5 / 8 / 100; // 5/8 of 1%
-    } else {
-        monthlyRate = 2 / 3 / 100; // 2/3 of 1%
-    }
+  const birthYear = birthday.getFullYear();
+  const monthlyRate = getDelayedRetirementRate(birthYear);
 
-    // Calculate the new amount
-    let totalAdjustment = 0;
-    for (let i = 0; i < numberOfMonths; i++) {
-        totalAdjustment += monthlyRate;
-    }
-    console.log(`Total adjustment for ${numberOfMonths} months: ${totalAdjustment}`);
-    console.log(`Initial amount: ${initialAmount}, Final amount: ${initialAmount * (1 + totalAdjustment)}`);
-    return initialAmount * (1+totalAdjustment);
+  const totalIncrease = monthlyRate * numberOfMonths;
+  return initialAmount * (1 + totalIncrease);
+}
+
+function getDelayedRetirementRate(birthYear: number): number {
+  if (birthYear < 1933) {
+    throw new Error(`Invalid birth year for delayed retirement: ${birthYear}`);
+  }
+
+  // Rates based on SSA rules
+  if (birthYear <= 1934) return 11 / 24 / 100;  // 11/24 of 1%
+  if (birthYear <= 1936) return 0.005;           // 1/2 of 1%
+  if (birthYear <= 1938) return 13 / 24 / 100;  // 13/24 of 1%
+  if (birthYear <= 1940) return 7 / 12 / 100;   // 7/12 of 1%
+  if (birthYear <= 1942) return 5 / 8 / 100;    // 5/8 of 1%
+  return 2 / 3 / 100;                            // 2/3 of 1%
 }
 
 function roundToFloorTenCents(amount: number): number {
-    // Convert the amount to fractional dimes
-    let dimes = amount * 10;
-
-    // floor to only whole dimes
-    dimes = Math.floor(dimes)
-
-    // Convert back to dollars and return
-    return (dimes / 10);
+  // Convert to dimes, floor, then convert back to dollars
+  return Math.floor(amount * 10) / 10;
 }
 
 export function getEnglishCommonLawDate(date: Date): Date {
-    const year = date.getFullYear();
-    const month = date.getMonth();
-    const day = date.getDate();
-    const englishCommonLawDate = new Date(year, month, day-1);
-    return englishCommonLawDate;
+  // Create a new date to avoid mutating the original
+  const eclDate = new Date(date);
+  eclDate.setDate(eclDate.getDate() - 1);
+  return eclDate;
 }
 
 export function getFullRetirementMonths(commonLawBirthDate: Date): number {
-    const year = commonLawBirthDate.getFullYear();
-    switch (true) {
-        case (year <= 1937):
-            return 65 * 12;
-        case (year >=1938 && year <= 1942):
-            return ((year - 1937) * 2) + (65 * 12);
-        case (year >= 1943 && year <= 1954):
-            return 66 * 12;
-        case (year >= 1955 && year <= 1959):
-            return ((year - 1954) * 2) + (66 * 12);
-        case (year >= 1960):
-            return  67 * 12
-        default:
-            throw new Error('Invalid birth year');
-    }
+  const year = commonLawBirthDate.getFullYear();
+
+  if (year <= 1937) {
+    return 65 * 12;
+  } else if (year <= 1942) {
+    // Gradual increase from 65 years to 65 years 10 months
+    return ((year - 1937) * 2) + (65 * 12);
+  } else if (year <= 1954) {
+    return 66 * 12;
+  } else if (year <= 1959) {
+    // Gradual increase from 66 years to 66 years 10 months
+    return ((year - 1954) * 2) + (66 * 12);
+  } else if (year >= 1960) {
+    return 67 * 12;
+  } else {
+    throw new Error(`Invalid birth year: ${year}`);
+  }
 }
 
 function monthsDifference(date1: Date, date2: Date): number {
-    // Calculate the total number of months for each date
-    const months1 = date1.getFullYear() * 12 + date1.getMonth();
-    const months2 = date2.getFullYear() * 12 + date2.getMonth();
-
-    // Return the difference in months
-    return months1 - months2;
+  const months1 = date1.getFullYear() * 12 + date1.getMonth();
+  const months2 = date2.getFullYear() * 12 + date2.getMonth();
+  return months1 - months2;
 }

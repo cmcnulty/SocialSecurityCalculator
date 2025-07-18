@@ -1,10 +1,8 @@
 
 import { calc, calcRetirementBenefit, calculateAIME, calculatePIA } from '../src/index';
 import parse from '../src/parseStatement/index';
-import { compound } from 'compound-calc';
 import { default as testData } from './data/inputData.results.json';
 import { getEstimatedEarnings } from '../src/estimatedEarnings/index';
-import { Wage, Wages } from '../src/model';
 
 describe('Parse SSN Output', function () {
     it('Load Full Retirement', async () => {
@@ -65,9 +63,8 @@ describe('Test calc', function () {
             const earnings = testResults.commentData.map((row) => ({
                 year: row.year,
                 earnings: row.earnings
-            }) as Wage);
+            }));
             const earningsString = earnings.map((row) => `${row.year} ${row.earnings}`).join('\n');
-            console.log(`Earnings: ${earningsString}`);
             const result = await calc(
                 birthDate,
                 retirementDate,

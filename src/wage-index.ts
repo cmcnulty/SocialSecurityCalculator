@@ -4,7 +4,6 @@ import { Wage, Wages } from './model';
 export const wageIndex: Wages = [
         {
           "year": 1951,
-          "earnings": 300,
           "retirement": 1802.95,
           "disability": 1802.95,
           "survivors": 1802.95,
@@ -14,7 +13,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1952,
-          "earnings": 300,
           "retirement": 1697.35,
           "disability": 1697.35,
           "survivors": 1697.35,
@@ -24,7 +22,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1953,
-          "earnings": 300,
           "retirement": 1607.53,
           "disability": 1607.53,
           "survivors": 1607.53,
@@ -34,7 +31,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1954,
-          "earnings": 300,
           "retirement": 1599.28,
           "disability": 1599.28,
           "survivors": 1599.28,
@@ -44,7 +40,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1955,
-          "earnings": 2700,
           "retirement": 13757.87,
           "disability": 13757.87,
           "survivors": 13757.87,
@@ -54,7 +49,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1956,
-          "earnings": 2900,
           "retirement": 13810.96,
           "disability": 13810.96,
           "survivors": 13810.96,
@@ -64,7 +58,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1957,
-          "earnings": 3100,
           "retirement": 14320.1,
           "disability": 14320.1,
           "survivors": 14320.1,
@@ -74,7 +67,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1958,
-          "earnings": 3100,
           "retirement": 14195.05,
           "disability": 14195.05,
           "survivors": 14195.05,
@@ -84,7 +76,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1959,
-          "earnings": 3400,
           "retirement": 14833.9,
           "disability": 14833.9,
           "survivors": 14833.9,
@@ -94,7 +85,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1960,
-          "earnings": 3600,
           "retirement": 15113.36,
           "disability": 15113.36,
           "survivors": 15113.36,
@@ -104,7 +94,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1961,
-          "earnings": 3700,
           "retirement": 15230.47,
           "disability": 15230.47,
           "survivors": 15230.47,
@@ -114,7 +103,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1962,
-          "earnings": 4000,
           "retirement": 15680.21,
           "disability": 15680.21,
           "survivors": 15680.21,
@@ -124,7 +112,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1963,
-          "earnings": 4200,
           "retirement": 16070.12,
           "disability": 16070.12,
           "survivors": 16070.12,
@@ -134,7 +121,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1964,
-          "earnings": 4400,
           "retirement": 16174.36,
           "disability": 16174.36,
           "survivors": 16174.36,
@@ -144,7 +130,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1965,
-          "earnings": 4600,
           "retirement": 16610.47,
           "disability": 16610.47,
           "survivors": 16610.47,
@@ -154,7 +139,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1966,
-          "earnings": 5000,
           "retirement": 17032.49,
           "disability": 17032.49,
           "survivors": 17032.49,
@@ -164,7 +148,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1967,
-          "earnings": 5300,
           "retirement": 17101.82,
           "disability": 17101.82,
           "survivors": 17101.82,
@@ -174,7 +157,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1968,
-          "earnings": 5800,
           "retirement": 17511.62,
           "disability": 17511.62,
           "survivors": 17511.62,
@@ -184,7 +166,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1969,
-          "earnings": 6300,
           "retirement": 17982.04,
           "disability": 17982.04,
           "survivors": 17982.04,
@@ -194,7 +175,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1970,
-          "earnings": 6700,
           "retirement": 18219.6,
           "disability": 18219.6,
           "survivors": 18219.6,
@@ -204,7 +184,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1971,
-          "earnings": 7200,
           "retirement": 18642.54,
           "disability": 18642.54,
           "survivors": 18642.54,
@@ -214,7 +193,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1972,
-          "earnings": 8100,
           "retirement": 19100.95,
           "disability": 19100.95,
           "survivors": 19100.95,
@@ -224,7 +202,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1973,
-          "earnings": 8700,
           "retirement": 19307.75,
           "disability": 19307.75,
           "survivors": 19307.75,
@@ -234,7 +211,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1974,
-          "earnings": 9400,
           "retirement": 19690.74,
           "disability": 19690.74,
           "survivors": 19690.74,
@@ -244,7 +220,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1975,
-          "earnings": 10400,
           "retirement": 20270.62,
           "disability": 20270.62,
           "survivors": 20270.62,
@@ -254,7 +229,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1976,
-          "earnings": 11300,
           "retirement": 20603.13,
           "disability": 20603.13,
           "survivors": 20603.13,
@@ -264,7 +238,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1977,
-          "earnings": 12200,
           "retirement": 20986.34,
           "disability": 20986.34,
           "survivors": 20986.34,
@@ -274,7 +247,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1978,
-          "earnings": 13400,
           "retirement": 21354.77,
           "disability": 21354.77,
           "survivors": 21354.77,
@@ -284,7 +256,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1979,
-          "earnings": 14900,
           "retirement": 21835.12,
           "disability": 21835.12,
           "survivors": 21835.12,
@@ -294,7 +265,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1980,
-          "earnings": 16600,
           "retirement": 22316.26,
           "disability": 22316.26,
           "survivors": 22316.26,
@@ -304,7 +274,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1981,
-          "earnings": 18600,
           "retirement": 22718.1,
           "disability": 22718.1,
           "survivors": 22718.1,
@@ -314,7 +283,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1982,
-          "earnings": 20000,
           "retirement": 23153.42,
           "disability": 23153.42,
           "survivors": 23153.42,
@@ -324,7 +292,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1983,
-          "earnings": 21400,
           "retirement": 23623.34,
           "disability": 23623.34,
           "survivors": 23623.34,
@@ -334,7 +301,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1984,
-          "earnings": 23100,
           "retirement": 24084.18,
           "disability": 24084.18,
           "survivors": 24084.18,
@@ -344,7 +310,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1985,
-          "earnings": 24600,
           "retirement": 24600,
           "disability": 24600,
           "survivors": 24600,
@@ -354,7 +319,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1986,
-          "earnings": 25800,
           "retirement": 25800,
           "disability": 25800,
           "survivors": 25800,
@@ -364,7 +328,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1987,
-          "earnings": 28000,
           "retirement": 28000,
           "disability": 28000,
           "survivors": 28000,
@@ -374,7 +337,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1988,
-          "earnings": 30000,
           "retirement": 30000,
           "disability": 30000,
           "survivors": 30000,
@@ -384,7 +346,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1989,
-          "earnings": 31800,
           "retirement": 31800,
           "disability": 31800,
           "survivors": 31800,
@@ -394,7 +355,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1990,
-          "earnings": 34000,
           "retirement": 34000,
           "disability": 34000,
           "survivors": 34000,
@@ -404,7 +364,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1991,
-          "earnings": 35900,
           "retirement": 35900,
           "disability": 35900,
           "survivors": 35900,
@@ -414,7 +373,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1992,
-          "earnings": 38500,
           "retirement": 38500,
           "disability": 38500,
           "survivors": 38500,
@@ -424,7 +382,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1993,
-          "earnings": 39600,
           "retirement": 39600,
           "disability": 39600,
           "survivors": 39600,
@@ -434,7 +391,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1994,
-          "earnings": 41500,
           "retirement": 41500,
           "disability": 41500,
           "survivors": 41500,
@@ -444,7 +400,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1995,
-          "earnings": 44000,
           "retirement": 44000,
           "disability": 44000,
           "survivors": 44000,
@@ -454,7 +409,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1996,
-          "earnings": 47100,
           "retirement": 47100,
           "disability": 47100,
           "survivors": 47100,
@@ -464,7 +418,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1997,
-          "earnings": 50900,
           "retirement": 50900,
           "disability": 50900,
           "survivors": 50900,
@@ -474,7 +427,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1998,
-          "earnings": 54600,
           "retirement": 54600,
           "disability": 54600,
           "survivors": 54600,
@@ -484,7 +436,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 1999,
-          "earnings": 58800,
           "retirement": 58800,
           "disability": 58800,
           "survivors": 58800,
@@ -494,7 +445,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2000,
-          "earnings": 63300,
           "retirement": 63300,
           "disability": 63300,
           "survivors": 63300,
@@ -504,7 +454,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2001,
-          "earnings": 66100,
           "retirement": 66100,
           "disability": 66100,
           "survivors": 66100,
@@ -514,7 +463,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2002,
-          "earnings": 68100,
           "retirement": 68100,
           "disability": 68100,
           "survivors": 68100,
@@ -524,7 +472,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2003,
-          "earnings": 71200,
           "retirement": 71200,
           "disability": 71200,
           "survivors": 71200,
@@ -534,7 +481,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2004,
-          "earnings": 76000,
           "retirement": 76000,
           "disability": 76000,
           "survivors": 76000,
@@ -544,7 +490,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2005,
-          "earnings": 80300,
           "retirement": 80300,
           "disability": 80300,
           "survivors": 80300,
@@ -554,7 +499,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2006,
-          "earnings": 85700,
           "retirement": 85700,
           "disability": 85700,
           "survivors": 85700,
@@ -564,7 +508,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2007,
-          "earnings": 91400,
           "retirement": 91400,
           "disability": 91400,
           "survivors": 91400,
@@ -574,7 +517,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2008,
-          "earnings": 95300,
           "retirement": 95300,
           "disability": 95300,
           "survivors": 95300,
@@ -584,7 +526,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2009,
-          "earnings": 95800,
           "retirement": 95800,
           "disability": 95800,
           "survivors": 95800,
@@ -594,7 +535,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2010,
-          "earnings": 100000,
           "retirement": 100000,
           "disability": 100000,
           "survivors": 100000,
@@ -604,7 +544,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2011,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -614,7 +553,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2012,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -624,7 +562,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2013,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -634,7 +571,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2014,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -644,7 +580,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2015,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -654,7 +589,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2016,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -664,7 +598,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2017,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -674,7 +607,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2018,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -684,7 +616,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2019,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -694,7 +625,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2020,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -704,7 +634,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2021,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -714,7 +643,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2022,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -724,7 +652,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2023,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -734,7 +661,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2024,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -744,7 +670,6 @@ export const wageIndex: Wages = [
         },
         {
           "year": 2025,
-          "earnings": 0,
           "retirement": 0,
           "disability": 0,
           "survivors": 0,
@@ -755,35 +680,30 @@ export const wageIndex: Wages = [
       ];
 
 export const wageIndexFuture: Partial<Wage>[] = [
-  { year: 2024, earnings: 69472.44 },
-  { year: 2025, earnings: 72255.52 },
-  { year: 2026, earnings: 75264.81 },
-  { year: 2027, earnings: 78304.32 },
-  { year: 2028, earnings: 81522.64 },
-  { year: 2029, earnings: 84736.18 },
-  { year: 2030, earnings: 88030.45 },
-  { year: 2031, earnings: 91479.46 },
-  { year: 2032, earnings: 95090.94 },
-  { year: 2033, earnings: 98856.61 },
-  { year: 2034, earnings: 102670.10 },
-  { year: 2035, earnings: 106494.41 },
-  { year: 2036, earnings: 110382.54 },
-  { year: 2037, earnings: 114421.90 },
-  { year: 2038, earnings: 118616.20 },
-  { year: 2039, earnings: 122981.73 },
-  { year: 2040, earnings: 127479.70 },
-  { year: 2041, earnings: 132110.84 },
-  { year: 2042, earnings: 136899.00 },
-  { year: 2043, earnings: 141834.11 },
-  { year: 2044, earnings: 146908.25 },
-  { year: 2045, earnings: 152129.95 },
-  { year: 2046, earnings: 157512.41 },
-  { year: 2047, earnings: 163082.20 },
-  { year: 2048, earnings: 168837.13 },
-  { year: 2049, earnings: 174786.94 }
+  { year: 2024, awi: 69472.44 },
+  { year: 2025, awi: 72255.52 },
+  { year: 2026, awi: 75264.81 },
+  { year: 2027, awi: 78304.32 },
+  { year: 2028, awi: 81522.64 },
+  { year: 2029, awi: 84736.18 },
+  { year: 2030, awi: 88030.45 },
+  { year: 2031, awi: 91479.46 },
+  { year: 2032, awi: 95090.94 },
+  { year: 2033, awi: 98856.61 },
+  { year: 2034, awi: 102670.10 },
+  { year: 2035, awi: 106494.41 },
+  { year: 2036, awi: 110382.54 },
+  { year: 2037, awi: 114421.90 },
+  { year: 2038, awi: 118616.20 },
+  { year: 2039, awi: 122981.73 },
+  { year: 2040, awi: 127479.70 },
+  { year: 2041, awi: 132110.84 },
+  { year: 2042, awi: 136899.00 },
+  { year: 2043, awi: 141834.11 },
+  { year: 2044, awi: 146908.25 },
+  { year: 2045, awi: 152129.95 },
+  { year: 2046, awi: 157512.41 },
+  { year: 2047, awi: 163082.20 },
+  { year: 2048, awi: 168837.13 },
+  { year: 2049, awi: 174786.94 }
 ];
-
-export const taxableMaximum = wageIndex.map((entry) => ({
-  year: entry.year,
-  earnings: entry.taxMax
-}));

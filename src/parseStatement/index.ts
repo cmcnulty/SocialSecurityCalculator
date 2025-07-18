@@ -1,6 +1,6 @@
 import xml2js from 'xml2js';
 import fs from 'fs/promises';
-import { Wages } from '../model';
+import { Earnings, Wages } from '../model';
 
 const NS = 'OSSS';
 // strict false because attribute is unquoted: <osss:OnlineSocialSecurityStatementData xmlns:osss=http://ssa.gov/osss/schemas/2.0>
@@ -8,7 +8,7 @@ const NS = 'OSSS';
 const parser = new xml2js.Parser({strict: false});
 const supportedVersion = "http://ssa.gov/osss/schemas/2.0";
 
-async function getWages(fileName: string): Promise<Wages> {
+async function getWages(fileName: string): Promise<Earnings> {
     const data = await fs.readFile(fileName);
     const result = await parser.parseStringPromise( data );
     const schema = result[`${NS}:ONLINESOCIALSECURITYSTATEMENTDATA`]['$'][`XMLNS:${NS}`];
@@ -17,9 +17,9 @@ async function getWages(fileName: string): Promise<Wages> {
     }
     const results: any[]  = result[`${NS}:ONLINESOCIALSECURITYSTATEMENTDATA`][`${NS}:EARNINGSRECORD`][0][`${NS}:EARNINGS`];
 
-    const earnings: Wages = results.reduce((acc, earn: any) => (
+    const earnings: Earnings = results.reduce((acc, earn: any) => (
         earn[`${NS}:FICAEARNINGS`][0] === '-1' ? acc : acc.push({year: [earn['$'].STARTYEAR], earnings: parseInt(earn[`${NS}:FICAEARNINGS`][0])}), acc
-    ), [] as Wages);
+    ), [] as Earnings);
     return earnings;
 }
 
