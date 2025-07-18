@@ -1,6 +1,2 @@
 testName,birthDate,retirementDate,earnings,lastYear,currentlyRetired
-"60,000 income",1/1/1980,1/1/2045,60000,2025,false
-"70,000 income",1/1/1980,1/1/2045,70000,2025,false
-"80,000 income",1/1/1980,1/1/2045,80000,2025,false
-"200,000 income",1/1/1980,1/1/2045,200000,2025,false
-"150,000 retired",1/1/1965,1/1/2030,150000,2020,true
+1941 birth,6/15/1941,12/15/2025,100000,2005,true

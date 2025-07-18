@@ -1,4 +1,4 @@
-import { Wages } from '../model';
+import { Wage, Wages } from '../model';
 import { wageIndex, wageIndexFuture, taxableMaximum,  } from '../wage-index';
 import { getEnglishCommonLawDate } from '../index';
 const YOUTH_FACTOR = 8;
@@ -30,7 +30,7 @@ export function getEstimatedEarnings(birthDate: Date, lastWage: number, lastYear
           earnings: (i === lastYearWorked)
               ? lastWage
               : (wageResults.find((entry) => entry.year === nextYear)?.earnings as number) * getReductionFactor(i) / (1 + earningGrowthRate) / youthAdjustment
-        })
+        } as Wage)
     }
 
     // Cap wages at taxable maximum
@@ -45,7 +45,7 @@ export function getEstimatedEarnings(birthDate: Date, lastWage: number, lastYear
 }
 
 function getReductionFactor(year: number): number {
-    const allIndexes = wageIndex.concat(wageIndexFuture);
+    const allIndexes = wageIndex;// .concat(wageIndexFuture);
     const lastYear = year - 1;
     const nextYear = year + 1;
     if (year === CURRENT_YEAR && !allIndexes.find((entry) => entry.year === lastYear)) {
@@ -54,6 +54,6 @@ function getReductionFactor(year: number): number {
     if (year === CURRENT_YEAR) {
         return 1;
     } else {
-        return ((allIndexes.find((entry) => entry.year === year)!.earnings) / (allIndexes.find((entry) => entry.year === nextYear)!.earnings));
+        return ((allIndexes.find((entry) => entry.year === year)!.awi) / (allIndexes.find((entry) => entry.year === nextYear)!.awi));
     }
 }

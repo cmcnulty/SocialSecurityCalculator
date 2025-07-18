@@ -4,6 +4,7 @@ import parse from '../src/parseStatement/index';
 import { compound } from 'compound-calc';
 import { default as testData } from './data/inputData.results.json';
 import { getEstimatedEarnings } from '../src/estimatedEarnings/index';
+import { Wage, Wages } from '../src/model';
 
 describe('Parse SSN Output', function () {
     it('Load Full Retirement', async () => {
@@ -11,7 +12,8 @@ describe('Parse SSN Output', function () {
         const baseYear = 2015;
         const AIME = calculateAIME(earningsFromXml, baseYear);
         const PIA = calculatePIA(AIME, baseYear);
-        const calcResults = calcRetirementBenefit(new Date(1955,2,31), new Date(2025, 2, 31), AIME);
+        const lastYearWorked = earningsFromXml[earningsFromXml.length - 1].year;
+        const calcResults = calcRetirementBenefit(new Date(1955,2,31), lastYearWorked, new Date(2025, 2, 31), AIME);
 
         expect(AIME).toEqual(1153);
         expect(PIA).toEqual(882.2);
@@ -27,13 +29,14 @@ describe('Parse SSN Output', function () {
         const fullRetirement = new Date(birthDate.getFullYear() + 66, birthDate.getMonth() + 10, birthDate.getDate());
         const AIME = calculateAIME(earningsFromXml, baseYear);
         const PIA = calculatePIA(AIME, baseYear);
-        const calcResultsFull = calcRetirementBenefit(birthDate, fullRetirement, AIME)
-        const calcResultsEarly = calcRetirementBenefit(birthDate, earlyRetirement, AIME)
+        const lastYearWorked = earningsFromXml[earningsFromXml.length - 1].year;
+        const calcResultsFull = calcRetirementBenefit(birthDate, lastYearWorked, fullRetirement, AIME);
+        const calcResultsEarly = calcRetirementBenefit(birthDate, lastYearWorked, earlyRetirement, AIME);
 
         expect(AIME).toEqual(1280);
         expect(PIA).toEqual(987.2);
-        expect(calcResultsFull.NormalMonthlyBenefit).toEqual(987);
-        expect(calcResultsEarly.NormalMonthlyBenefit).toEqual(715);
+        expect(calcResultsFull.NormalMonthlyBenefit).toEqual(1201);
+        expect(calcResultsEarly.NormalMonthlyBenefit).toEqual(871);
     });
 
     it('Load Delayed Retirement', async () => {
@@ -43,7 +46,8 @@ describe('Parse SSN Output', function () {
         const baseYear = birthDate.getFullYear() + 60;
         const AIME = calculateAIME(earningsFromXml, baseYear);
         const PIA = calculatePIA(AIME, baseYear);
-        const calcResultsFull = calcRetirementBenefit(birthDate, delayedRetirement, AIME);
+        const lastYearWorked = earningsFromXml[earningsFromXml.length - 1].year;
+        const calcResultsFull = calcRetirementBenefit(birthDate, lastYearWorked, delayedRetirement, AIME);
 
         expect(AIME).toEqual(1082);
         expect(PIA).toEqual(791.1);
@@ -61,8 +65,9 @@ describe('Test calc', function () {
             const earnings = testResults.commentData.map((row) => ({
                 year: row.year,
                 earnings: row.earnings
-            }));
-
+            }) as Wage);
+            const earningsString = earnings.map((row) => `${row.year} ${row.earnings}`).join('\n');
+            console.log(`Earnings: ${earningsString}`);
             const result = await calc(
                 birthDate,
                 retirementDate,

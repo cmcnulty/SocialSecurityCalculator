@@ -47,18 +47,18 @@ export async function scrapeSSACalculator(input) {
 
     // Extract the result value using the specified CSS selector
     const totalResult = await page.textContent('span#ret_amount').catch(() => null);
-
+    const elementTimeoutOptions = { timeout: 1_000 };
     // Extract survivor benefits from the same page
     const survivorBenefits = {
-      disability: await page.textContent('body > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)').catch(() => null),
-      survivingChild: await page.textContent('body > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > small:nth-child(2) > small:nth-child(1) > p:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(2) > td:nth-child(2)').catch(() => null),
-      careGivingSpouse: await page.textContent('body > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > small:nth-child(2) > small:nth-child(1) > p:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(3) > td:nth-child(2)').catch(() => null),
-      normalRetirementSpouse: await page.textContent('body > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > small:nth-child(2) > small:nth-child(1) > p:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(4) > td:nth-child(2)').catch(() => null),
-      familyMaximum: await page.textContent('body > table:nth-child(5) > tbody:nth-child(1) > tr:nth-child(1) > td:nth-child(2) > small:nth-child(2) > small:nth-child(1) > p:nth-child(1) > table:nth-child(1) > tbody:nth-child(1) > tr:nth-child(5) > td:nth-child(2)').catch(() => null)
+      disability: await page.locator('//td[normalize-space(.)="You"]/following-sibling::td[1]').textContent(elementTimeoutOptions).catch(() => null),
+      survivingChild: await page.locator('//td[normalize-space(.)="Your child"]/following-sibling::td[1]').textContent(elementTimeoutOptions).catch(() => null),
+      careGivingSpouse: await page.locator('//td[normalize-space(.)="Your spouse caring for your child"]/following-sibling::td[1]').textContent(elementTimeoutOptions).catch(() => null),
+      normalRetirementSpouse: await page.locator('//td[normalize-space(.)="Your spouse at normal retirement age"]/following-sibling::td[1]').textContent(elementTimeoutOptions).catch(() => null),
+      familyMaximum: await page.locator('//td[normalize-space(.)="Family maximum"]/following-sibling::td[1]').textContent(elementTimeoutOptions).catch(() => null)
     };
 
     // Click the "See the earnings we used" button
-    await page.click('input[type="submit"][value="  See the earnings we used  "]');
+    await page.click('input[type="submit"][value*="See the earnings we used"]');
 
     // Wait for the earnings table to appear
     await page.waitForSelector('table[summary="past earnings"]');
