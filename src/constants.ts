@@ -5,7 +5,7 @@ export const WAGE_INDEX_CUTOFF = 2023;
 export const MAX_RETIREMENT_AGE = 70;
 export const LOOKBACK_YEARS = 35;
 
-export const BEND_POINT_DIVISOR = 9779.44;
+export const BEND_POINT_DIVISOR = 9779.44; // 1977's AWI - used by dividing against current AWI
 export const FIRST_BEND_POINT_MULTIPLIER = 180;
 export const SECOND_BEND_POINT_MULTIPLIER = 1085;
 

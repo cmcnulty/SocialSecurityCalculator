@@ -3,20 +3,18 @@ export type Earnings = {
     earnings: number,
 }[];
 
-export type Wage = {
+export type WageIndex = {
     year: number,
-    retirement: number,
-    disability: number,
-    survivors: number,
     taxMax: number,
     cola: number,
     awi: number
 }
 
-export type Wages = Wage[];
+// export type Wages = WageIndex[];
 
 export interface BenefitCalculationResult {
   AIME: number;
+  PIA: number;
   NormalMonthlyBenefit: number;
 }
 
@@ -25,4 +23,6 @@ export interface RetirementDates {
   fullRetirement: Date;
   maxRetirement: Date;
   adjusted: Date;
+  eclBirthDate: Date;
+  retirementDate: Date;
 }
