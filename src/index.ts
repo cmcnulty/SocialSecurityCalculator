@@ -1,4 +1,4 @@
-import { BenefitCalculationResult, RetirementDates, Wages, Earnings } from './model';
+import { BenefitCalculationResult, RetirementDates, WageIndex, Earnings } from './model';
 import { wageIndex } from './wage-index';
 import {
   EARLY_RETIREMENT_AGE,
@@ -12,8 +12,16 @@ import {
   EARLY_RETIREMENT_REDUCTION
 } from './constants';
 
+export enum CalculationType {
+  RETIREMENT = 'retirement',
+  DISABILITY = 'disability',
+  CHILD = 'child',
+  GUARDIAN = 'guardian',
+  SPOUSE = 'spouse'
+}
+
 // Main calculation function
-export function calc(birthday: Date, retirementDate: Date, earnings: Earnings): BenefitCalculationResult {
+export function calc(birthday: Date, retirementDate: Date, earnings: Earnings, calcType: CalculationType = CalculationType.RETIREMENT): BenefitCalculationResult {
   // Validation
   if (!birthday || !retirementDate) {
     throw new Error('Birthday and retirement date are required');
@@ -27,30 +35,39 @@ export function calc(birthday: Date, retirementDate: Date, earnings: Earnings): 
     throw new Error('Retirement date cannot be before birthday');
   }
 
+/**
+ * An individual's earnings are always indexed to the average wage level two years prior to the year of first eligibility.
+ * Thus, for a person retiring at age 62 in 2025, the person's earnings would be indexed to the average wage index for 2023.
+ */
+
   const yearAge60 = birthday.getFullYear() + 60;
   const averageIndexedMonthlyEarnings = calculateAIME(earnings, yearAge60);
-  const results = calcRetirementBenefit(birthday, retirementDate, averageIndexedMonthlyEarnings);
-
-  return results;
-}
-
-export function calcRetirementBenefit(
-  birthday: Date,
-  retirementDate: Date,
-  AIME: number
-): BenefitCalculationResult {
   const dates = calculateRetirementDates(birthday, retirementDate);
   const age60Year = dates.eclBirthDate.getFullYear() + 60;
-  const primaryInsuranceAmount = calculatePIA(AIME, age60Year);
-
-  // Calculate COLA adjustments
+  const primaryInsuranceAmount = calculatePIA(averageIndexedMonthlyEarnings, age60Year);
   const colaAdjustedPIA = calculateCOLAAdjustments(primaryInsuranceAmount, age60Year + 2);
+  // console.log(`COLA Adjusted PIA: ${colaAdjustedPIA}`);
+  const results = calcType === CalculationType.DISABILITY
+    ? Math.floor(colaAdjustedPIA)
+    : retirementDateAdjustedPayment(dates, colaAdjustedPIA);
+  // retirementDateAdjustedPayment(dates, colaAdjustedPIA);
 
+  return {
+    AIME: averageIndexedMonthlyEarnings,
+    PIA: primaryInsuranceAmount,
+    NormalMonthlyBenefit: results
+  };
+}
+
+export function retirementDateAdjustedPayment(
+  dates: RetirementDates,
+  colaAdjustedPIA: number
+): number {
   // Calculate early/delayed retirement adjustments
   const earlyRetireMonths = monthsDifference(dates.adjusted, dates.fullRetirement);
   let adjustedBenefits = colaAdjustedPIA;
 
-  if (retirementDate < dates.earliestRetirement) {
+  if (dates.retirementDate < dates.earliestRetirement) {
     adjustedBenefits = 0;
   } else if (earlyRetireMonths < 0) {
     adjustedBenefits = calculateEarlyRetirementReduction(colaAdjustedPIA, Math.abs(earlyRetireMonths));
@@ -60,13 +77,11 @@ export function calcRetirementBenefit(
 
   const monthlyBenefit = Math.floor(adjustedBenefits);
 
-  return {
-    AIME: AIME,
-    NormalMonthlyBenefit: monthlyBenefit,
-  };
+  return monthlyBenefit;
+
 }
 
-function calculateRetirementDates(birthday: Date, retirementDate: Date): RetirementDates & { eclBirthDate: Date } {
+export function calculateRetirementDates(birthday: Date, retirementDate: Date): RetirementDates {
   const eclBirthDate = getEnglishCommonLawDate(birthday);
   const fraMonths = getFullRetirementMonths(eclBirthDate);
 
@@ -95,7 +110,8 @@ function calculateRetirementDates(birthday: Date, retirementDate: Date): Retirem
     fullRetirement,
     maxRetirement,
     adjusted,
-    eclBirthDate
+    eclBirthDate,
+    retirementDate
   };
 }
 
