@@ -16,6 +16,8 @@ export const BEND_POINT_DIVISOR = 9779.44; // 1977's AWI - used by dividing agai
 export const FIRST_BEND_POINT_MULTIPLIER = 180;
 export const SECOND_BEND_POINT_MULTIPLIER = 1085;
 
+export const CHILD_SURVIVOR_BENEFIT_PERCENTAGE = 0.75; // 75% of PIA for child survivor benefits
+
 export const PIA_PERCENTAGES = {
   FIRST_BRACKET: 0.9,
   SECOND_BRACKET: 0.32,

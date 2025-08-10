@@ -1,5 +1,5 @@
 
-import { calc, calculateAIME, calculatePIA, calculateRetirementDates, CalculationType } from '../src/index';
+import { calc, calculateAIME, calculatePIA, calculateRetirementDates } from '../src/index';
 import parse from '../src/parseStatement/index';
 import { default as testData } from './data/inputData.results.json';
 import { getEstimatedEarnings } from '../src/estimatedEarnings/index';
@@ -44,8 +44,8 @@ describe('Test calc', function () {
             const disabilityDate = new Date(birthDate); // birthdate for this test is 6/15/1960
             disabilityDate.setFullYear(2025); // new disability date is 6/15/2024
             const disabilityEarnings = earnings.filter((row) => row.year < 2025);
-            const disabilityCalc = calc(birthDate, disabilityDate, disabilityEarnings, CalculationType.DISABILITY);
-            expect(disabilityCalc.NormalMonthlyBenefit).toEqual(parseInt((testResults.survivorBenefits.disability || '0').toString().replace(/[^0-9.-]/g, ''), 10));
+            const disabilityCalc = calc(birthDate, disabilityDate, disabilityEarnings);
+            expect(disabilityCalc.DisabilityEarnings).toEqual(parseInt((testResults.survivorBenefits.disability || '0').toString().replace(/[^0-9.-]/g, ''), 10));
             expect(result).toBeDefined();
             expect(result).toHaveProperty('NormalMonthlyBenefit');
 

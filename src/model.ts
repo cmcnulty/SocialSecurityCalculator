@@ -16,6 +16,7 @@ export interface BenefitCalculationResult {
   AIME: number;
   PIA: number;
   NormalMonthlyBenefit: number;
+  DisabilityEarnings: number;
 }
 
 export interface RetirementDates {

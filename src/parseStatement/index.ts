@@ -1,6 +1,6 @@
 import xml2js from 'xml2js';
 import fs from 'fs/promises';
-import { Earnings, Wages } from '../model';
+import { Earnings } from '../model';
 
 const NS = 'OSSS';
 // strict false because attribute is unquoted: <osss:OnlineSocialSecurityStatementData xmlns:osss=http://ssa.gov/osss/schemas/2.0>

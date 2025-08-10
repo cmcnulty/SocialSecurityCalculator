@@ -13,18 +13,11 @@ import {
   EARLY_RETIREMENT_REDUCTION,
   ELAPSED_YEARS_START_AGE,
   LOOKBACK_YEARS,
+  CHILD_SURVIVOR_BENEFIT_PERCENTAGE,
 } from './constants';
 
-export enum CalculationType {
-  RETIREMENT = 'retirement',
-  DISABILITY = 'disability',
-  CHILD = 'child',
-  GUARDIAN = 'guardian',
-  SPOUSE = 'spouse'
-}
-
 // Main calculation function
-export function calc(birthday: Date, retirementDate: Date, earnings: Earnings, calcType: CalculationType = CalculationType.RETIREMENT): BenefitCalculationResult {
+export function calc(birthday: Date, retirementDate: Date, earnings: Earnings): BenefitCalculationResult {
   // Validation
   if (!birthday || !retirementDate) {
     throw new Error('Birthday and retirement date are required');
@@ -39,14 +32,6 @@ export function calc(birthday: Date, retirementDate: Date, earnings: Earnings, c
     throw new Error('Retirement date cannot be before birthday');
   }
 
-  if ( calcType === CalculationType.DISABILITY && retirementDate > dates.fullRetirement) {
-    return {
-      AIME: 0,
-      PIA: 0,
-      NormalMonthlyBenefit: 0,
-    };
-  }
-
   /**
    * An individual's earnings are always indexed to the average wage level two years prior to the year of first eligibility.
    * Thus, for a person retiring at age 62 in 2025, the person's earnings would be indexed to the average wage index for 2023.
@@ -57,15 +42,20 @@ export function calc(birthday: Date, retirementDate: Date, earnings: Earnings, c
 
   const age60Year = dates.eclBirthDate.getFullYear() + 60;
   const primaryInsuranceAmount = calculatePIA(averageIndexedMonthlyEarnings, age60Year);
+
+  const survivorPIA = primaryInsuranceAmount * CHILD_SURVIVOR_BENEFIT_PERCENTAGE
+  console.log(`Survivor PIA: ${survivorPIA}`);
+  console.log(`Primary Insurance Amount: ${retirementDateAdjustedPayment(dates, survivorPIA)}`);
+
   const colaAdjustedPIA = calculateCOLAAdjustments(primaryInsuranceAmount, age60Year + 2);
-  const results = calcType === CalculationType.DISABILITY
-    ? Math.floor(colaAdjustedPIA)
-    : retirementDateAdjustedPayment(dates, colaAdjustedPIA);
+  const disabilityPIA =   retirementDate > dates.fullRetirement ? 0 : Math.floor(colaAdjustedPIA);
+  const results = retirementDateAdjustedPayment(dates, colaAdjustedPIA);
 
   return {
     AIME: averageIndexedMonthlyEarnings,
     PIA: primaryInsuranceAmount,
     NormalMonthlyBenefit: results,
+    DisabilityEarnings: disabilityPIA,
   };
 }
 
