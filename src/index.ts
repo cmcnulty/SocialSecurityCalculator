@@ -4,12 +4,15 @@ import {
   EARLY_RETIREMENT_AGE,
   WAGE_INDEX_CUTOFF,
   MAX_RETIREMENT_AGE,
-  LOOKBACK_YEARS,
+  MAX_DROP_OUT_YEARS,
+  DROP_OUT_YEARS_DIVISOR,
   BEND_POINT_DIVISOR,
   FIRST_BEND_POINT_MULTIPLIER,
   SECOND_BEND_POINT_MULTIPLIER,
   PIA_PERCENTAGES,
-  EARLY_RETIREMENT_REDUCTION
+  EARLY_RETIREMENT_REDUCTION,
+  ELAPSED_YEARS_START_AGE,
+  LOOKBACK_YEARS,
 } from './constants';
 
 export enum CalculationType {
@@ -26,6 +29,7 @@ export function calc(birthday: Date, retirementDate: Date, earnings: Earnings, c
   if (!birthday || !retirementDate) {
     throw new Error('Birthday and retirement date are required');
   }
+  const dates = calculateRetirementDates(birthday, retirementDate);
 
   if (!earnings || earnings.length === 0) {
     throw new Error('Earnings history cannot be empty');
@@ -35,27 +39,33 @@ export function calc(birthday: Date, retirementDate: Date, earnings: Earnings, c
     throw new Error('Retirement date cannot be before birthday');
   }
 
-/**
- * An individual's earnings are always indexed to the average wage level two years prior to the year of first eligibility.
- * Thus, for a person retiring at age 62 in 2025, the person's earnings would be indexed to the average wage index for 2023.
- */
+  if ( calcType === CalculationType.DISABILITY && retirementDate > dates.fullRetirement) {
+    return {
+      AIME: 0,
+      PIA: 0,
+      NormalMonthlyBenefit: 0,
+    };
+  }
 
+  /**
+   * An individual's earnings are always indexed to the average wage level two years prior to the year of first eligibility.
+   * Thus, for a person retiring at age 62 in 2025, the person's earnings would be indexed to the average wage index for 2023.
+   */
   const yearAge60 = birthday.getFullYear() + 60;
-  const averageIndexedMonthlyEarnings = calculateAIME(earnings, yearAge60);
-  const dates = calculateRetirementDates(birthday, retirementDate);
+  const yearStartCounting = birthday.getFullYear() + ELAPSED_YEARS_START_AGE - 1;
+  const averageIndexedMonthlyEarnings = calculateAIME(earnings, yearStartCounting, retirementDate,  yearAge60);
+
   const age60Year = dates.eclBirthDate.getFullYear() + 60;
   const primaryInsuranceAmount = calculatePIA(averageIndexedMonthlyEarnings, age60Year);
   const colaAdjustedPIA = calculateCOLAAdjustments(primaryInsuranceAmount, age60Year + 2);
-  // console.log(`COLA Adjusted PIA: ${colaAdjustedPIA}`);
   const results = calcType === CalculationType.DISABILITY
     ? Math.floor(colaAdjustedPIA)
     : retirementDateAdjustedPayment(dates, colaAdjustedPIA);
-  // retirementDateAdjustedPayment(dates, colaAdjustedPIA);
 
   return {
     AIME: averageIndexedMonthlyEarnings,
     PIA: primaryInsuranceAmount,
-    NormalMonthlyBenefit: results
+    NormalMonthlyBenefit: results,
   };
 }
 
@@ -159,13 +169,22 @@ export function calculatePIA(AIME: number, baseYear?: number): number {
   return roundToFloorTenCents(monthlyBenefit);
 }
 
-export function calculateAIME(earnings: Earnings, baseYear?: number): number {
+export function getLookbackYears(elapsedYears: number): number {
+  const minComputationYears = 2;
+  const dropOutYears = Math.min(Math.floor(elapsedYears / DROP_OUT_YEARS_DIVISOR), MAX_DROP_OUT_YEARS);
+  const adjustedLookbackYears = elapsedYears - dropOutYears;
+  return Math.max(minComputationYears, adjustedLookbackYears);
+}
+
+export function calculateAIME(earnings: Earnings, yearStartCounter: number, effectiveDay: Date, baseYear?: number): number {
+  const totalYears = Math.min(LOOKBACK_YEARS, effectiveDay.getFullYear() - yearStartCounter);
+  const lookbackYears = getLookbackYears(totalYears);
+
   if (!earnings || earnings.length === 0) {
     return 0;
   }
 
   const effectiveYear = baseYear ? Math.min(baseYear, WAGE_INDEX_CUTOFF) : WAGE_INDEX_CUTOFF;
-
   const wageIndexEntry = wageIndex.find(val => val.year === effectiveYear);
   if (!wageIndexEntry) {
     throw new Error(`No wage index data found for year ${effectiveYear}`);
@@ -189,12 +208,12 @@ export function calculateAIME(earnings: Earnings, baseYear?: number): number {
   // Get top 35 years of earnings
   const top35YearsEarningsArr = Object.values(adjustedEarnings)
     .sort((a, b) => b - a)
-    .slice(0, LOOKBACK_YEARS);
+    .slice(0, lookbackYears);
 
   const totalEarnings = top35YearsEarningsArr.reduce((sum, earnings) => sum + earnings, 0);
 
   // Calculate AIME (rounded down to next lower dollar)
-  const averageIndexedMonthlyEarnings = Math.floor(totalEarnings / (12 * LOOKBACK_YEARS));
+  const averageIndexedMonthlyEarnings = Math.floor(totalEarnings / (12 * lookbackYears));
   return averageIndexedMonthlyEarnings;
 }
 
