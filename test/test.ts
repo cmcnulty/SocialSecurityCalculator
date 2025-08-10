@@ -16,58 +16,6 @@ function getTestParams(): { name: string[] | undefined } {
     return { name: nameArr };
 }
 
-describe.skip('Parse SSN Output', function () {
-    it('Load Full Retirement', async () => {
-        const earningsFromXml = await parse('./test/Full_Retirement.xml');
-
-        const birthDate = new Date(1955, 2, 31); // 1955-03-31
-        const retirementDate = new Date(2025, 2, 31); //
-        const calcResults = calc(birthDate, retirementDate, earningsFromXml);
-        expect(calcResults.AIME).toEqual(1153);
-        expect(calcResults.PIA).toEqual(882.2);
-        // The XML file data appears to be invalid - full retirment age does not match with expected full retirement for birth year
-        // expect(calcResults.NormalMonthlyBenefit).toEqual(1243); // outdated value
-    });
-
-    it('Load Early Retirement', async () => {
-        const earningsFromXml = await parse('./test/Early_Retirement.xml');
-        console.log(earningsFromXml);
-
-        const earningsString = earningsFromXml.map((row) => `${row.year} ${row.earnings}`).join('\n');
-        console.log(earningsString);
-
-        // 1971-2008 has data
-
-        const birthDate = new Date(1959,4,29); // 1959-05-29
-        const earlyRetirement = new Date(birthDate.getFullYear() + 62, birthDate.getMonth() + 4, birthDate.getDate());
-        const fullRetirement = new Date(birthDate.getFullYear() + 66, birthDate.getMonth() + 10, birthDate.getDate());
-
-        const calcResultsFull = calc(birthDate, fullRetirement, earningsFromXml);
-        console.log(calcResultsFull);
-        const calcResultsEarly = calc(birthDate, earlyRetirement, earningsFromXml);
-
-        expect(calcResultsFull.AIME).toEqual(2801);
-        expect(calcResultsFull.PIA).toEqual(1474);
-        expect(calcResultsEarly.AIME).toEqual(2801);
-        expect(calcResultsEarly.PIA).toEqual(1474);
-        expect(calcResultsFull.NormalMonthlyBenefit).toEqual(932);
-        expect(calcResultsEarly.NormalMonthlyBenefit).toEqual(715);
-    });
-
-    it('Load Delayed Retirement', async () => {
-        const earningsFromXml = await parse('./test/Delayed_Retirement.xml');
-        const birthDate = new Date(1950,4,29) // 1950-05-29
-        const delayedRetirement = new Date(birthDate.getFullYear() + 70, birthDate.getMonth() + 0, birthDate.getDate());
-
-        const calcResultsFull = calc(birthDate, delayedRetirement, earningsFromXml);
-        expect(calcResultsFull.AIME).toEqual(1082);
-        expect(calcResultsFull.PIA).toEqual(791.1);
-        // XMl appears to be invalid, shows retirement age of over age 70
-        // expect(calcResultsFull.NormalMonthlyBenefit).toEqual(1185);
-    });
-
-});
-
 describe('Test calc', function () {
 
     // filter based on test name if provided as cli argument
