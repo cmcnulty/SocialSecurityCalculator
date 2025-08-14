@@ -38,14 +38,14 @@ export function calc(birthday: Date, retirementDate: Date, earnings: Earnings): 
    */
   const yearAge60 = birthday.getFullYear() + 60;
   const yearStartCounting = birthday.getFullYear() + ELAPSED_YEARS_START_AGE - 1;
-  const averageIndexedMonthlyEarnings = calculateAIME(earnings, yearStartCounting, retirementDate,  yearAge60);
+  const dateStartCounting = new Date(birthday)
+  dateStartCounting.setFullYear(yearStartCounting);
+  const averageIndexedMonthlyEarnings = calculateAIME(earnings, dateStartCounting, retirementDate,  yearAge60);
 
   const age60Year = dates.eclBirthDate.getFullYear() + 60;
   const primaryInsuranceAmount = calculatePIA(averageIndexedMonthlyEarnings, age60Year);
 
   const survivorPIA = primaryInsuranceAmount * CHILD_SURVIVOR_BENEFIT_PERCENTAGE
-  console.log(`Survivor PIA: ${survivorPIA}`);
-  console.log(`Primary Insurance Amount: ${retirementDateAdjustedPayment(dates, survivorPIA)}`);
 
   const colaAdjustedPIA = calculateCOLAAdjustments(primaryInsuranceAmount, age60Year + 2);
   const disabilityPIA =   retirementDate > dates.fullRetirement ? 0 : Math.floor(colaAdjustedPIA);
@@ -166,10 +166,10 @@ export function getLookbackYears(elapsedYears: number): number {
   return Math.max(minComputationYears, adjustedLookbackYears);
 }
 
-export function calculateAIME(earnings: Earnings, yearStartCounter: number, effectiveDay: Date, baseYear?: number): number {
-  const totalYears = Math.min(LOOKBACK_YEARS, effectiveDay.getFullYear() - yearStartCounter);
+export function calculateAIME(earnings: Earnings, startDate: Date, effectiveDay: Date, baseYear?: number): number {
+  const monthsDiff = monthsDifference(effectiveDay, startDate) / 12;
+  const totalYears = Math.min(LOOKBACK_YEARS, monthsDiff);
   const lookbackYears = getLookbackYears(totalYears);
-
   if (!earnings || earnings.length === 0) {
     return 0;
   }
