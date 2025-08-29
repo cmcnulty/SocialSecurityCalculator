@@ -17,6 +17,7 @@ export interface BenefitCalculationResult {
   PIA: number;
   NormalMonthlyBenefit: number;
   DisabilityEarnings: number;
+  SurvivorBenefits: any; // Adjust this type based on your actual structure
 }
 
 export interface RetirementDates {

@@ -26,32 +26,59 @@ describe('Test calc', function () {
         if (name && name.find((n) => testInput.testName.includes(n)) === undefined) {
             continue; // skip this test if name filter is applied and does not match
         }
-        it(`Test ${testInput.testName}`, async () => {
-            const birthDate = new Date(testInput.birthDate);
-            const retirementDate = new Date(testInput.retirementDate);
-            const earnings = testResults.commentData.map((row) => ({
-                year: row.year,
-                earnings: row.earnings
-            }));
-            const earningsString = earnings.map((row) => `${row.year} ${row.earnings}`).join('\n');
 
+        const earnings = testResults.commentData.map((row) => ({
+            year: row.year,
+            earnings: row.earnings
+        }));
+        const birthDate = new Date(testInput.birthDate);
+        const retirementDate = new Date(testInput.retirementDate);
+
+        it(`Test retirement: ${testInput.testName}`, async () => {
             const result = await calc(
                 birthDate,
                 retirementDate,
                 earnings
             );
-
-            const disabilityDate = new Date(birthDate); // birthdate for this test is 6/15/1960
-            disabilityDate.setFullYear(2025); // new disability date is 6/15/2024
-            const disabilityEarnings = earnings.filter((row) => row.year < 2025);
-            const disabilityCalc = calc(birthDate, disabilityDate, disabilityEarnings);
-            expect(disabilityCalc.DisabilityEarnings).toEqual(parseInt((testResults.survivorBenefits.disability || '0').toString().replace(/[^0-9.-]/g, ''), 10));
             expect(result).toBeDefined();
             expect(result).toHaveProperty('NormalMonthlyBenefit');
 
             // strip dollar signs, commas, etc from expected result
             const expectedResult = parseInt(testResults.totalResult.toString().replace(/[^0-9.-]/g, ''), 10);
             expect(result.NormalMonthlyBenefit).toEqual(expectedResult);
+        });
+
+        it(`Test Disability: ${testInput.testName}`, async () => {
+            const disabilityDate = new Date(birthDate); // birthdate for this test is 6/15/1960
+            disabilityDate.setFullYear(2025); // new disability date is 6/15/2024
+            const disabilityEarnings = earnings.filter((row) => row.year < 2025);
+            const disabilityCalc = calc(birthDate, disabilityDate, disabilityEarnings);
+            expect(disabilityCalc.DisabilityEarnings).toEqual(parseInt((testResults.survivorBenefits.disability || '0').toString().replace(/[^0-9.-]/g, ''), 10));
+        });
+
+        it(`Test survivor earnings for ${testInput.testName}`, async () => {
+
+            const survivorDate = new Date(2025, 6, 15);
+            const survivorEarnings = earnings.flatMap((earn) => {
+                if (earn.year < 2025) {
+                    return [earn];
+                } else if (earn.year === survivorDate.getFullYear()) {
+                    const prorate = (survivorDate.getMonth()+1) / 12;
+                    return [{ year: earn.year, earnings: earn.earnings * prorate }];
+                } else {
+                    return [];
+                }
+            });
+            /*
+<!--survivor: Base year for indexing is 2023.  Bend points are 1226 & 7391-->
+<!--  AIME = 3814 & PIA in 2041 is 1931.5. -->
+<!--  PIA in 2041 after COLAs is $1,931.50. -->
+<!-- Family max before cola(s), 3341.9, is based on PIA 1931.5 -->
+*/
+            const survivorCalc = calc(birthDate, survivorDate, survivorEarnings);
+            console.log(survivorCalc);
+            expect(survivorCalc.SurvivorBenefits.survivingChild).toEqual(parseInt((testResults.survivorBenefits.survivingChild || '0').toString().replace(/[^0-9.-]/g, ''), 10));
+
         });
     }
 });
