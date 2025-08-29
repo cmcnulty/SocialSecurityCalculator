@@ -1,6 +1,5 @@
 
 import { calc, calculateAIME, calculatePIA, calculateRetirementDates } from '../src/index';
-import parse from '../src/parseStatement/index';
 import { default as testData } from './data/inputData.results.json';
 import { getEstimatedEarnings } from '../src/estimatedEarnings/index';
 import minimist from 'minimist';
@@ -33,6 +32,10 @@ describe('Test calc', function () {
         }));
         const birthDate = new Date(testInput.birthDate);
         const retirementDate = new Date(testInput.retirementDate);
+        // if retirementDate is not a valid date, default it to January 1, 2026
+        if (isNaN(retirementDate.getTime())) {
+            retirementDate.setFullYear(2026, 0, 1);
+        }
 
         it(`Test retirement: ${testInput.testName}`, async () => {
             const result = await calc(
@@ -69,16 +72,12 @@ describe('Test calc', function () {
                     return [];
                 }
             });
-            /*
-<!--survivor: Base year for indexing is 2023.  Bend points are 1226 & 7391-->
-<!--  AIME = 3814 & PIA in 2041 is 1931.5. -->
-<!--  PIA in 2041 after COLAs is $1,931.50. -->
-<!-- Family max before cola(s), 3341.9, is based on PIA 1931.5 -->
-*/
-            const survivorCalc = calc(birthDate, survivorDate, survivorEarnings);
-            console.log(survivorCalc);
-            expect(survivorCalc.SurvivorBenefits.survivingChild).toEqual(parseInt((testResults.survivorBenefits.survivingChild || '0').toString().replace(/[^0-9.-]/g, ''), 10));
 
+            const survivorCalc = calc(birthDate, survivorDate, survivorEarnings);
+            expect(survivorCalc.SurvivorBenefits.survivingChild).toEqual(parseInt((testResults.survivorBenefits.survivingChild || '0').toString().replace(/[^0-9.-]/g, ''), 10));
+            expect(survivorCalc.SurvivorBenefits.familyMaximum).toEqual(parseFloat((testResults.survivorBenefits.familyMaximum || '0').toString().replace(/[^0-9.-]/g, '')));
+            expect(survivorCalc.SurvivorBenefits.careGivingSpouse).toEqual(parseInt((testResults.survivorBenefits.careGivingSpouse || '0').toString().replace(/[^0-9.-]/g, ''), 10));
+            expect(survivorCalc.SurvivorBenefits.normalRetirementSpouse).toEqual(parseInt((testResults.survivorBenefits.normalRetirementSpouse || '0').toString().replace(/[^0-9.-]/g, ''), 10));
         });
     }
 });

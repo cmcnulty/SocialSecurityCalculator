@@ -17,9 +17,13 @@ export interface BenefitCalculationResult {
   PIA: number;
   NormalMonthlyBenefit: number;
   DisabilityEarnings: number;
-  SurvivorBenefits: any; // Adjust this type based on your actual structure
+  SurvivorBenefits: {
+    survivingChild: number;
+    careGivingSpouse: number;
+    normalRetirementSpouse: number;
+    familyMaximum: number;
+  };
 }
-
 export interface RetirementDates {
   earliestRetirement: Date;
   fullRetirement: Date;

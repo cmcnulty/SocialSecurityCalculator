@@ -15,6 +15,7 @@ export const ELAPSED_YEARS_START_AGE = 22;
 export const BEND_POINT_DIVISOR = 9779.44; // 1977's AWI - used by dividing against current AWI
 export const FIRST_BEND_POINT_MULTIPLIER = 180;
 export const SECOND_BEND_POINT_MULTIPLIER = 1085;
+export const FAM_MAX_BASES = [230, 332, 433];
 
 export const CHILD_SURVIVOR_BENEFIT_PERCENTAGE = 0.75; // 75% of PIA for child survivor benefits
 

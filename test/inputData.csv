@@ -14,3 +14,4 @@ testName,birthDate,retirementDate,earnings,lastYear,currentlyRetired
 1934 birth,6/15/1934,12/15/2025,100000,2005,true
 1933 birth,6/15/1933,12/15/2025,100000,2005,true
 default,6/15/1960,6/15/2027,60000,2025,false
+alpha,3/1/1955,,100000,2020,true
