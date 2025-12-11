@@ -9,13 +9,13 @@
       "currentlyRetired": false
     },
     "testResults": {
-      "totalResult": "1,891.00",
+      "totalResult": "1,940.00",
       "survivorBenefits": {
-        "disability": "$1,920.00",
-        "survivingChild": "$1,448.00",
-        "careGivingSpouse": "$1,448.00",
-        "normalRetirementSpouse": "$1,931.00",
-        "familyMaximum": "$3,341.90"
+        "disability": "$1,949.00",
+        "survivingChild": "$1,488.00",
+        "careGivingSpouse": "$1,488.00",
+        "normalRetirementSpouse": "$1,984.00",
+        "familyMaximum": "$3,393.60"
       },
       "earningsHistory": [
         {
@@ -24,7 +24,7 @@
         },
         {
           "year": 1998,
-          "earnings": 1800
+          "earnings": 1700
         },
         {
           "year": 1999,
@@ -36,95 +36,95 @@
         },
         {
           "year": 2001,
-          "earnings": 17000
+          "earnings": 16900
         },
         {
           "year": 2002,
-          "earnings": 17500
+          "earnings": 17400
         },
         {
           "year": 2003,
-          "earnings": 18300
+          "earnings": 18200
         },
         {
           "year": 2004,
-          "earnings": 19500
+          "earnings": 19400
         },
         {
           "year": 2005,
-          "earnings": 20700
+          "earnings": 20500
         },
         {
           "year": 2006,
-          "earnings": 22000
+          "earnings": 21900
         },
         {
           "year": 2007,
-          "earnings": 23500
+          "earnings": 23400
         },
         {
           "year": 2008,
-          "earnings": 24500
+          "earnings": 24400
         },
         {
           "year": 2009,
-          "earnings": 24600
+          "earnings": 24500
         },
         {
           "year": 2010,
-          "earnings": 25700
+          "earnings": 25600
         },
         {
           "year": 2011,
-          "earnings": 27000
+          "earnings": 26900
         },
         {
           "year": 2012,
-          "earnings": 28500
+          "earnings": 28300
         },
         {
           "year": 2013,
-          "earnings": 29400
+          "earnings": 29200
         },
         {
           "year": 2014,
-          "earnings": 31000
+          "earnings": 30900
         },
         {
           "year": 2015,
-          "earnings": 32800
+          "earnings": 32600
         },
         {
           "year": 2016,
-          "earnings": 33800
+          "earnings": 33600
         },
         {
           "year": 2017,
-          "earnings": 35700
+          "earnings": 35500
         },
         {
           "year": 2018,
-          "earnings": 37700
+          "earnings": 37500
         },
         {
           "year": 2019,
-          "earnings": 39900
+          "earnings": 39700
         },
         {
           "year": 2020,
-          "earnings": 41800
+          "earnings": 41600
         },
         {
           "year": 2021,
-          "earnings": 46500
+          "earnings": 46200
         },
         {
           "year": 2022,
-          "earnings": 49900
+          "earnings": 49700
         },
         {
           "year": 2023,
-          "earnings": 53200
+          "earnings": 52900
         },
         {
           "year": 2024,
@@ -139,7 +139,7 @@
         {
           "year": 1997,
           "earnings": 1600,
-          "retirement": 3886.64,
+          "retirement": 4074.77,
           "disability": 3886.64,
           "survivors": 3886.64,
           "taxMax": 65400,
@@ -148,10 +148,10 @@
         },
         {
           "year": 1998,
-          "earnings": 1800,
-          "retirement": 4155,
-          "disability": 4155,
-          "survivors": 4155,
+          "earnings": 1700,
+          "retirement": 4114.11,
+          "disability": 3924.17,
+          "survivors": 3924.17,
           "taxMax": 68400,
           "cola": 1.3,
           "awi": 28861.44
@@ -159,7 +159,7 @@
         {
           "year": 1999,
           "earnings": 1900,
-          "retirement": 4154.32,
+          "retirement": 4355.4,
           "disability": 4154.32,
           "survivors": 4154.32,
           "taxMax": 72600,
@@ -169,7 +169,7 @@
         {
           "year": 2000,
           "earnings": 2000,
-          "retirement": 4143.81,
+          "retirement": 4344.39,
           "disability": 4143.81,
           "survivors": 4143.81,
           "taxMax": 76200,
@@ -178,230 +178,230 @@
         },
         {
           "year": 2001,
-          "earnings": 17000,
-          "retirement": 34401.72,
-          "disability": 34401.72,
-          "survivors": 34401.72,
+          "earnings": 16900,
+          "retirement": 35854.74,
+          "disability": 34199.35,
+          "survivors": 34199.35,
           "taxMax": 80400,
           "cola": 2.6,
           "awi": 32921.92
         },
         {
           "year": 2002,
-          "earnings": 17500,
-          "retirement": 35061.9,
-          "disability": 35061.9,
-          "survivors": 35061.9,
+          "earnings": 17400,
+          "retirement": 36548.99,
+          "disability": 34861.55,
+          "survivors": 34861.55,
           "taxMax": 84900,
           "cola": 1.4,
           "awi": 33252.09
         },
         {
           "year": 2003,
-          "earnings": 18300,
-          "retirement": 35789.84,
-          "disability": 35789.84,
-          "survivors": 35789.84,
+          "earnings": 18200,
+          "retirement": 37317.17,
+          "disability": 35594.26,
+          "survivors": 35594.26,
           "taxMax": 87000,
           "cola": 2.1,
           "awi": 34064.95
         },
         {
           "year": 2004,
-          "earnings": 19500,
-          "retirement": 36442.58,
-          "disability": 36442.58,
-          "survivors": 36442.58,
+          "earnings": 19400,
+          "retirement": 38010.62,
+          "disability": 36255.69,
+          "survivors": 36255.69,
           "taxMax": 87900,
           "cola": 2.7,
           "awi": 35648.55
         },
         {
           "year": 2005,
-          "earnings": 20700,
-          "retirement": 37319.66,
-          "disability": 37319.66,
-          "survivors": 37319.66,
+          "earnings": 20500,
+          "retirement": 38748.06,
+          "disability": 36959.09,
+          "survivors": 36959.09,
           "taxMax": 90000,
           "cola": 4.1,
           "awi": 36952.94
         },
         {
           "year": 2006,
-          "earnings": 22000,
-          "retirement": 37920.47,
-          "disability": 37920.47,
-          "survivors": 37920.47,
+          "earnings": 21900,
+          "retirement": 39575.27,
+          "disability": 37748.1,
+          "survivors": 37748.1,
           "taxMax": 94200,
           "cola": 3.3,
           "awi": 38651.41
         },
         {
           "year": 2007,
-          "earnings": 23500,
-          "retirement": 38747.52,
-          "disability": 38747.52,
-          "survivors": 38747.52,
+          "earnings": 23400,
+          "retirement": 40450.2,
+          "disability": 38582.64,
+          "survivors": 38582.64,
           "taxMax": 97500,
           "cola": 2.3,
           "awi": 40405.48
         },
         {
           "year": 2008,
-          "earnings": 24500,
-          "retirement": 39487.97,
-          "disability": 39487.97,
-          "survivors": 39487.97,
+          "earnings": 24400,
+          "retirement": 41230.37,
+          "disability": 39326.8,
+          "survivors": 39326.8,
           "taxMax": 102000,
           "cola": 5.8,
           "awi": 41334.97
         },
         {
           "year": 2009,
-          "earnings": 24600,
-          "retirement": 40256.24,
-          "disability": 40256.24,
-          "survivors": 40256.24,
+          "earnings": 24500,
+          "retirement": 42033.24,
+          "disability": 40092.6,
+          "survivors": 40092.6,
           "taxMax": 106800,
           "cola": 0,
           "awi": 40711.61
         },
         {
           "year": 2010,
-          "earnings": 25700,
-          "retirement": 41085.26,
-          "disability": 41085.26,
-          "survivors": 41085.26,
+          "earnings": 25600,
+          "retirement": 42906.36,
+          "disability": 40925.4,
+          "survivors": 40925.4,
           "taxMax": 106800,
           "cola": 0,
           "awi": 41673.83
         },
         {
           "year": 2011,
-          "earnings": 27000,
-          "retirement": 41852.14,
-          "disability": 41852.14,
-          "survivors": 41852.14,
+          "earnings": 26900,
+          "retirement": 43715.44,
+          "disability": 41697.13,
+          "survivors": 41697.13,
           "taxMax": 106800,
           "cola": 3.6,
           "awi": 42979.61
         },
         {
           "year": 2012,
-          "earnings": 28500,
-          "retirement": 42839.57,
-          "disability": 42839.57,
-          "survivors": 42839.57,
+          "earnings": 28300,
+          "retirement": 44598,
+          "disability": 42538.94,
+          "survivors": 42538.94,
           "taxMax": 110100,
           "cola": 1.7,
           "awi": 44321.67
         },
         {
           "year": 2013,
-          "earnings": 29400,
-          "retirement": 43634.69,
-          "disability": 43634.69,
-          "survivors": 43634.69,
+          "earnings": 29200,
+          "retirement": 45435.59,
+          "disability": 43337.85,
+          "survivors": 43337.85,
           "taxMax": 113700,
           "cola": 1.5,
           "awi": 44888.16
         },
         {
           "year": 2014,
-          "earnings": 31000,
-          "retirement": 44432.19,
-          "disability": 44432.19,
-          "survivors": 44432.19,
+          "earnings": 30900,
+          "retirement": 46432.63,
+          "disability": 44288.86,
+          "survivors": 44288.86,
           "taxMax": 117000,
           "cola": 1.7,
           "awi": 46481.52
         },
         {
           "year": 2015,
-          "earnings": 32800,
-          "retirement": 45431.54,
-          "disability": 45431.54,
-          "survivors": 45431.54,
+          "earnings": 32600,
+          "retirement": 47340.19,
+          "disability": 45154.52,
+          "survivors": 45154.52,
           "taxMax": 118500,
           "cola": 0,
           "awi": 48098.63
         },
         {
           "year": 2016,
-          "earnings": 33800,
-          "retirement": 46293.53,
-          "disability": 46293.53,
-          "survivors": 46293.53,
+          "earnings": 33600,
+          "retirement": 48247.14,
+          "disability": 46019.6,
+          "survivors": 46019.6,
           "taxMax": 118500,
           "cola": 0.3,
           "awi": 48642.15
         },
         {
           "year": 2017,
-          "earnings": 35700,
-          "retirement": 47263.69,
-          "disability": 47263.69,
-          "survivors": 47263.69,
+          "earnings": 35500,
+          "retirement": 49273.85,
+          "disability": 46998.91,
+          "survivors": 46998.91,
           "taxMax": 127200,
           "cola": 2,
           "awi": 50321.89
         },
         {
           "year": 2018,
-          "earnings": 37700,
-          "retirement": 48165.76,
-          "disability": 48165.76,
-          "survivors": 48165.76,
+          "earnings": 37500,
+          "retirement": 50229.29,
+          "disability": 47910.23,
+          "survivors": 47910.23,
           "taxMax": 128400,
           "cola": 2.8,
           "awi": 52145.8
         },
         {
           "year": 2019,
-          "earnings": 39900,
-          "retirement": 49135.13,
-          "disability": 49135.13,
-          "survivors": 49135.13,
+          "earnings": 39700,
+          "retirement": 51255.26,
+          "disability": 48888.83,
+          "survivors": 48888.83,
           "taxMax": 132900,
           "cola": 1.6,
           "awi": 54099.99
         },
         {
           "year": 2020,
-          "earnings": 41800,
-          "retirement": 50060.42,
-          "disability": 50060.42,
-          "survivors": 50060.42,
+          "earnings": 41600,
+          "retirement": 52232.44,
+          "disability": 49820.9,
+          "survivors": 49820.9,
           "taxMax": 137700,
           "cola": 1.3,
           "awi": 55628.6
         },
         {
           "year": 2021,
-          "earnings": 46500,
-          "retirement": 51141.73,
-          "disability": 51141.73,
-          "survivors": 51141.73,
+          "earnings": 46200,
+          "retirement": 53271.28,
+          "disability": 50811.78,
+          "survivors": 50811.78,
           "taxMax": 142800,
           "cola": 5.9,
           "awi": 60575.07
         },
         {
           "year": 2022,
-          "earnings": 49900,
-          "retirement": 52111,
-          "disability": 52111,
-          "survivors": 52111,
+          "earnings": 49700,
+          "retirement": 54414.41,
+          "disability": 51902.14,
+          "survivors": 51902.14,
           "taxMax": 147000,
           "cola": 8.7,
           "awi": 63795.13
         },
         {
           "year": 2023,
-          "earnings": 53200,
-          "retirement": 53200,
-          "disability": 53200,
-          "survivors": 53200,
+          "earnings": 52900,
+          "retirement": 55460.58,
+          "disability": 52900,
+          "survivors": 52900,
           "taxMax": 160200,
           "cola": 3.2,
           "awi": 66621.8
@@ -414,17 +414,17 @@
           "survivors": 56600,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
           "earnings": 60000,
           "retirement": 60000,
           "disability": 0,
-          "survivors": 35000,
+          "survivors": 55000,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         },
         {
           "year": 2026,
@@ -434,7 +434,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.5,
-          "awi": 75264.81
+          "awi": 75670.13
         },
         {
           "year": 2027,
@@ -444,7 +444,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 78304.32
+          "awi": 78726.01
         },
         {
           "year": 2028,
@@ -454,7 +454,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 81522.64
+          "awi": 81961.66
         },
         {
           "year": 2029,
@@ -464,7 +464,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 84736.18
+          "awi": 85192.51
         },
         {
           "year": 2030,
@@ -474,7 +474,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 88030.45
+          "awi": 88504.52
         },
         {
           "year": 2031,
@@ -484,7 +484,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 91479.46
+          "awi": 91972.1
         },
         {
           "year": 2032,
@@ -494,7 +494,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 95090.94
+          "awi": 95603.03
         },
         {
           "year": 2033,
@@ -504,7 +504,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 98856.61
+          "awi": 99388.98
         },
         {
           "year": 2034,
@@ -514,7 +514,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 102670.1
+          "awi": 103223.01
         },
         {
           "year": 2035,
@@ -524,7 +524,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 106494.41
+          "awi": 107067.91
         },
         {
           "year": 2036,
@@ -534,7 +534,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 110382.54
+          "awi": 110976.98
         },
         {
           "year": 2037,
@@ -544,7 +544,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 114421.9
+          "awi": 115038.1
         },
         {
           "year": 2038,
@@ -554,7 +554,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 118616.2
+          "awi": 119254.98
         },
         {
           "year": 2039,
@@ -564,7 +564,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 122981.73
+          "awi": 123644.02
         },
         {
           "year": 2040,
@@ -574,7 +574,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 127479.7
+          "awi": 128166.22
         },
         {
           "year": 2041,
@@ -584,7 +584,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 132110.84
+          "awi": 132822.3
         },
         {
           "year": 2042,
@@ -594,7 +594,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 136899
+          "awi": 137636.24
         },
         {
           "year": 2043,
@@ -604,7 +604,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 141834.11
+          "awi": 142597.93
         },
         {
           "year": 2044,
@@ -614,7 +614,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 146908.25
+          "awi": 147699.4
         }
       ]
     }
@@ -629,13 +629,13 @@
       "currentlyRetired": false
     },
     "testResults": {
-      "totalResult": "2,103.00",
+      "totalResult": "2,155.00",
       "survivorBenefits": {
-        "disability": "$2,121.00",
-        "survivingChild": "$1,601.00",
-        "careGivingSpouse": "$1,601.00",
-        "normalRetirementSpouse": "$2,134.00",
-        "familyMaximum": "$3,894.60"
+        "disability": "$2,149.00",
+        "survivingChild": "$1,642.00",
+        "careGivingSpouse": "$1,642.00",
+        "normalRetirementSpouse": "$2,190.00",
+        "familyMaximum": "$3,953.90"
       },
       "earningsHistory": [
         {
@@ -656,95 +656,95 @@
         },
         {
           "year": 2001,
-          "earnings": 19800
+          "earnings": 19700
         },
         {
           "year": 2002,
-          "earnings": 20400
+          "earnings": 20300
         },
         {
           "year": 2003,
-          "earnings": 21300
+          "earnings": 21200
         },
         {
           "year": 2004,
-          "earnings": 22800
+          "earnings": 22700
         },
         {
           "year": 2005,
-          "earnings": 24100
+          "earnings": 24000
         },
         {
           "year": 2006,
-          "earnings": 25700
+          "earnings": 25600
         },
         {
           "year": 2007,
-          "earnings": 27400
+          "earnings": 27300
         },
         {
           "year": 2008,
-          "earnings": 28600
+          "earnings": 28400
         },
         {
           "year": 2009,
-          "earnings": 28700
+          "earnings": 28600
         },
         {
           "year": 2010,
-          "earnings": 30000
+          "earnings": 29800
         },
         {
           "year": 2011,
-          "earnings": 31600
+          "earnings": 31400
         },
         {
           "year": 2012,
-          "earnings": 33200
+          "earnings": 33000
         },
         {
           "year": 2013,
-          "earnings": 34300
+          "earnings": 34100
         },
         {
           "year": 2014,
-          "earnings": 36200
+          "earnings": 36000
         },
         {
           "year": 2015,
-          "earnings": 38200
+          "earnings": 38000
         },
         {
           "year": 2016,
-          "earnings": 39400
+          "earnings": 39200
         },
         {
           "year": 2017,
-          "earnings": 41600
+          "earnings": 41400
         },
         {
           "year": 2018,
-          "earnings": 44000
+          "earnings": 43700
         },
         {
           "year": 2019,
-          "earnings": 46500
+          "earnings": 46300
         },
         {
           "year": 2020,
-          "earnings": 48800
+          "earnings": 48600
         },
         {
           "year": 2021,
-          "earnings": 54200
+          "earnings": 53900
         },
         {
           "year": 2022,
-          "earnings": 58200
+          "earnings": 57900
         },
         {
           "year": 2023,
-          "earnings": 62000
+          "earnings": 61700
         },
         {
           "year": 2024,
@@ -759,7 +759,7 @@
         {
           "year": 1997,
           "earnings": 1900,
-          "retirement": 4615.38,
+          "retirement": 4838.78,
           "disability": 4615.38,
           "survivors": 4615.38,
           "taxMax": 65400,
@@ -769,7 +769,7 @@
         {
           "year": 1998,
           "earnings": 2000,
-          "retirement": 4616.67,
+          "retirement": 4840.13,
           "disability": 4616.67,
           "survivors": 4616.67,
           "taxMax": 68400,
@@ -779,7 +779,7 @@
         {
           "year": 1999,
           "earnings": 2200,
-          "retirement": 4810.26,
+          "retirement": 5043.1,
           "disability": 4810.26,
           "survivors": 4810.26,
           "taxMax": 72600,
@@ -789,7 +789,7 @@
         {
           "year": 2000,
           "earnings": 2400,
-          "retirement": 4972.58,
+          "retirement": 5213.27,
           "disability": 4972.58,
           "survivors": 4972.58,
           "taxMax": 76200,
@@ -798,230 +798,230 @@
         },
         {
           "year": 2001,
-          "earnings": 19800,
-          "retirement": 40067.88,
-          "disability": 40067.88,
-          "survivors": 40067.88,
+          "earnings": 19700,
+          "retirement": 41795.18,
+          "disability": 39865.52,
+          "survivors": 39865.52,
           "taxMax": 80400,
           "cola": 2.6,
           "awi": 32921.92
         },
         {
           "year": 2002,
-          "earnings": 20400,
-          "retirement": 40872.16,
-          "disability": 40872.16,
-          "survivors": 40872.16,
+          "earnings": 20300,
+          "retirement": 42640.49,
+          "disability": 40671.81,
+          "survivors": 40671.81,
           "taxMax": 84900,
           "cola": 1.4,
           "awi": 33252.09
         },
         {
           "year": 2003,
-          "earnings": 21300,
-          "retirement": 41657.02,
-          "disability": 41657.02,
-          "survivors": 41657.02,
+          "earnings": 21200,
+          "retirement": 43468.35,
+          "disability": 41461.45,
+          "survivors": 41461.45,
           "taxMax": 87000,
           "cola": 2.1,
           "awi": 34064.95
         },
         {
           "year": 2004,
-          "earnings": 22800,
-          "retirement": 42609.78,
-          "disability": 42609.78,
-          "survivors": 42609.78,
+          "earnings": 22700,
+          "retirement": 44476.34,
+          "disability": 42422.9,
+          "survivors": 42422.9,
           "taxMax": 87900,
           "cola": 2.7,
           "awi": 35648.55
         },
         {
           "year": 2005,
-          "earnings": 24100,
-          "retirement": 43449.46,
-          "disability": 43449.46,
-          "survivors": 43449.46,
+          "earnings": 24000,
+          "retirement": 45363.58,
+          "disability": 43269.17,
+          "survivors": 43269.17,
           "taxMax": 90000,
           "cola": 4.1,
           "awi": 36952.94
         },
         {
           "year": 2006,
-          "earnings": 25700,
-          "retirement": 44298,
-          "disability": 44298,
-          "survivors": 44298,
+          "earnings": 25600,
+          "retirement": 46261.5,
+          "disability": 44125.64,
+          "survivors": 44125.64,
           "taxMax": 94200,
           "cola": 3.3,
           "awi": 38651.41
         },
         {
           "year": 2007,
-          "earnings": 27400,
-          "retirement": 45177.96,
-          "disability": 45177.96,
-          "survivors": 45177.96,
+          "earnings": 27300,
+          "retirement": 47191.9,
+          "disability": 45013.08,
+          "survivors": 45013.08,
           "taxMax": 97500,
           "cola": 2.3,
           "awi": 40405.48
         },
         {
           "year": 2008,
-          "earnings": 28600,
-          "retirement": 46096.16,
-          "disability": 46096.16,
-          "survivors": 46096.16,
+          "earnings": 28400,
+          "retirement": 47989.45,
+          "disability": 45773.81,
+          "survivors": 45773.81,
           "taxMax": 102000,
           "cola": 5.8,
           "awi": 41334.97
         },
         {
           "year": 2009,
-          "earnings": 28700,
-          "retirement": 46965.61,
-          "disability": 46965.61,
-          "survivors": 46965.61,
+          "earnings": 28600,
+          "retirement": 49067.38,
+          "disability": 46801.97,
+          "survivors": 46801.97,
           "taxMax": 106800,
           "cola": 0,
           "awi": 40711.61
         },
         {
           "year": 2010,
-          "earnings": 30000,
-          "retirement": 47959.45,
-          "disability": 47959.45,
-          "survivors": 47959.45,
+          "earnings": 29800,
+          "retirement": 49945.68,
+          "disability": 47639.72,
+          "survivors": 47639.72,
           "taxMax": 106800,
           "cola": 0,
           "awi": 41673.83
         },
         {
           "year": 2011,
-          "earnings": 31600,
-          "retirement": 48982.5,
-          "disability": 48982.5,
-          "survivors": 48982.5,
+          "earnings": 31400,
+          "retirement": 51028.44,
+          "disability": 48672.49,
+          "survivors": 48672.49,
           "taxMax": 106800,
           "cola": 3.6,
           "awi": 42979.61
         },
         {
           "year": 2012,
-          "earnings": 33200,
-          "retirement": 49904.34,
-          "disability": 49904.34,
-          "survivors": 49904.34,
+          "earnings": 33000,
+          "retirement": 52004.74,
+          "disability": 49603.71,
+          "survivors": 49603.71,
           "taxMax": 110100,
           "cola": 1.7,
           "awi": 44321.67
         },
         {
           "year": 2013,
-          "earnings": 34300,
-          "retirement": 50907.14,
-          "disability": 50907.14,
-          "survivors": 50907.14,
+          "earnings": 34100,
+          "retirement": 53060.05,
+          "disability": 50610.3,
+          "survivors": 50610.3,
           "taxMax": 113700,
           "cola": 1.5,
           "awi": 44888.16
         },
         {
           "year": 2014,
-          "earnings": 36200,
-          "retirement": 51885.33,
-          "disability": 51885.33,
-          "survivors": 51885.33,
+          "earnings": 36000,
+          "retirement": 54096.26,
+          "disability": 51598.67,
+          "survivors": 51598.67,
           "taxMax": 117000,
           "cola": 1.7,
           "awi": 46481.52
         },
         {
           "year": 2015,
-          "earnings": 38200,
-          "retirement": 52911.13,
-          "disability": 52911.13,
-          "survivors": 52911.13,
+          "earnings": 38000,
+          "retirement": 55181.81,
+          "disability": 52634.11,
+          "survivors": 52634.11,
           "taxMax": 118500,
           "cola": 0,
           "awi": 48098.63
         },
         {
           "year": 2016,
-          "earnings": 39400,
-          "retirement": 53963.46,
-          "disability": 53963.46,
-          "survivors": 53963.46,
+          "earnings": 39200,
+          "retirement": 56288.33,
+          "disability": 53689.54,
+          "survivors": 53689.54,
           "taxMax": 118500,
           "cola": 0.3,
           "awi": 48642.15
         },
         {
           "year": 2017,
-          "earnings": 41600,
-          "retirement": 55074.78,
-          "disability": 55074.78,
-          "survivors": 55074.78,
+          "earnings": 41400,
+          "retirement": 57463.02,
+          "disability": 54809.99,
+          "survivors": 54809.99,
           "taxMax": 127200,
           "cola": 2,
           "awi": 50321.89
         },
         {
           "year": 2018,
-          "earnings": 44000,
-          "retirement": 56214.68,
-          "disability": 56214.68,
-          "survivors": 56214.68,
+          "earnings": 43700,
+          "retirement": 58533.86,
+          "disability": 55831.39,
+          "survivors": 55831.39,
           "taxMax": 128400,
           "cola": 2.8,
           "awi": 52145.8
         },
         {
           "year": 2019,
-          "earnings": 46500,
-          "retirement": 57262.74,
-          "disability": 57262.74,
-          "survivors": 57262.74,
+          "earnings": 46300,
+          "retirement": 59776.28,
+          "disability": 57016.45,
+          "survivors": 57016.45,
           "taxMax": 132900,
           "cola": 1.6,
           "awi": 54099.99
         },
         {
           "year": 2020,
-          "earnings": 48800,
-          "retirement": 58443.75,
-          "disability": 58443.75,
-          "survivors": 58443.75,
+          "earnings": 48600,
+          "retirement": 61021.55,
+          "disability": 58204.22,
+          "survivors": 58204.22,
           "taxMax": 137700,
           "cola": 1.3,
           "awi": 55628.6
         },
         {
           "year": 2021,
-          "earnings": 54200,
-          "retirement": 59610.36,
-          "disability": 59610.36,
-          "survivors": 59610.36,
+          "earnings": 53900,
+          "retirement": 62149.83,
+          "disability": 59280.41,
+          "survivors": 59280.41,
           "taxMax": 142800,
           "cola": 5.9,
           "awi": 60575.07
         },
         {
           "year": 2022,
-          "earnings": 58200,
-          "retirement": 60778.76,
-          "disability": 60778.76,
-          "survivors": 60778.76,
+          "earnings": 57900,
+          "retirement": 63392.24,
+          "disability": 60465.47,
+          "survivors": 60465.47,
           "taxMax": 147000,
           "cola": 8.7,
           "awi": 63795.13
         },
         {
           "year": 2023,
-          "earnings": 62000,
-          "retirement": 62000,
-          "disability": 62000,
-          "survivors": 62000,
+          "earnings": 61700,
+          "retirement": 64686.53,
+          "disability": 61700,
+          "survivors": 61700,
           "taxMax": 160200,
           "cola": 3.2,
           "awi": 66621.8
@@ -1034,17 +1034,17 @@
           "survivors": 66000,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
           "earnings": 70000,
           "retirement": 70000,
           "disability": 0,
-          "survivors": 40833.33,
+          "survivors": 64166.67,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         },
         {
           "year": 2026,
@@ -1054,7 +1054,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.5,
-          "awi": 75264.81
+          "awi": 75670.13
         },
         {
           "year": 2027,
@@ -1064,7 +1064,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 78304.32
+          "awi": 78726.01
         },
         {
           "year": 2028,
@@ -1074,7 +1074,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 81522.64
+          "awi": 81961.66
         },
         {
           "year": 2029,
@@ -1084,7 +1084,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 84736.18
+          "awi": 85192.51
         },
         {
           "year": 2030,
@@ -1094,7 +1094,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 88030.45
+          "awi": 88504.52
         },
         {
           "year": 2031,
@@ -1104,7 +1104,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 91479.46
+          "awi": 91972.1
         },
         {
           "year": 2032,
@@ -1114,7 +1114,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 95090.94
+          "awi": 95603.03
         },
         {
           "year": 2033,
@@ -1124,7 +1124,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 98856.61
+          "awi": 99388.98
         },
         {
           "year": 2034,
@@ -1134,7 +1134,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 102670.1
+          "awi": 103223.01
         },
         {
           "year": 2035,
@@ -1144,7 +1144,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 106494.41
+          "awi": 107067.91
         },
         {
           "year": 2036,
@@ -1154,7 +1154,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 110382.54
+          "awi": 110976.98
         },
         {
           "year": 2037,
@@ -1164,7 +1164,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 114421.9
+          "awi": 115038.1
         },
         {
           "year": 2038,
@@ -1174,7 +1174,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 118616.2
+          "awi": 119254.98
         },
         {
           "year": 2039,
@@ -1184,7 +1184,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 122981.73
+          "awi": 123644.02
         },
         {
           "year": 2040,
@@ -1194,7 +1194,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 127479.7
+          "awi": 128166.22
         },
         {
           "year": 2041,
@@ -1204,7 +1204,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 132110.84
+          "awi": 132822.3
         },
         {
           "year": 2042,
@@ -1214,7 +1214,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 136899
+          "awi": 137636.24
         },
         {
           "year": 2043,
@@ -1224,7 +1224,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 141834.11
+          "awi": 142597.93
         },
         {
           "year": 2044,
@@ -1234,7 +1234,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 146908.25
+          "awi": 147699.4
         }
       ]
     }
@@ -1249,13 +1249,13 @@
       "currentlyRetired": false
     },
     "testResults": {
-      "totalResult": "2,315.00",
+      "totalResult": "2,370.00",
       "survivorBenefits": {
-        "disability": "$2,323.00",
-        "survivingChild": "$1,754.00",
-        "careGivingSpouse": "$1,754.00",
-        "normalRetirementSpouse": "$2,338.00",
-        "familyMaximum": "$4,343.90"
+        "disability": "$2,350.00",
+        "survivingChild": "$1,798.00",
+        "careGivingSpouse": "$1,798.00",
+        "normalRetirementSpouse": "$2,397.00",
+        "familyMaximum": "$4,480.40"
       },
       "earningsHistory": [
         {
@@ -1276,95 +1276,95 @@
         },
         {
           "year": 2001,
-          "earnings": 22700
+          "earnings": 22500
         },
         {
           "year": 2002,
-          "earnings": 23300
+          "earnings": 23200
         },
         {
           "year": 2003,
-          "earnings": 24400
+          "earnings": 24300
         },
         {
           "year": 2004,
-          "earnings": 26000
+          "earnings": 25900
         },
         {
           "year": 2005,
-          "earnings": 27500
+          "earnings": 27400
         },
         {
           "year": 2006,
-          "earnings": 29400
+          "earnings": 29200
         },
         {
           "year": 2007,
-          "earnings": 31300
+          "earnings": 31200
         },
         {
           "year": 2008,
-          "earnings": 32700
+          "earnings": 32500
         },
         {
           "year": 2009,
-          "earnings": 32800
+          "earnings": 32700
         },
         {
           "year": 2010,
-          "earnings": 34300
+          "earnings": 34100
         },
         {
           "year": 2011,
-          "earnings": 36100
+          "earnings": 35900
         },
         {
           "year": 2012,
-          "earnings": 37900
+          "earnings": 37700
         },
         {
           "year": 2013,
-          "earnings": 39200
+          "earnings": 39000
         },
         {
           "year": 2014,
-          "earnings": 41400
+          "earnings": 41200
         },
         {
           "year": 2015,
-          "earnings": 43700
+          "earnings": 43500
         },
         {
           "year": 2016,
-          "earnings": 45100
+          "earnings": 44800
         },
         {
           "year": 2017,
-          "earnings": 47600
+          "earnings": 47300
         },
         {
           "year": 2018,
-          "earnings": 50300
+          "earnings": 50000
         },
         {
           "year": 2019,
-          "earnings": 53200
+          "earnings": 52900
         },
         {
           "year": 2020,
-          "earnings": 55800
+          "earnings": 55500
         },
         {
           "year": 2021,
-          "earnings": 62000
+          "earnings": 61600
         },
         {
           "year": 2022,
-          "earnings": 66600
+          "earnings": 66200
         },
         {
           "year": 2023,
-          "earnings": 70900
+          "earnings": 70500
         },
         {
           "year": 2024,
@@ -1379,7 +1379,7 @@
         {
           "year": 1997,
           "earnings": 2200,
-          "retirement": 5344.12,
+          "retirement": 5602.8,
           "disability": 5344.12,
           "survivors": 5344.12,
           "taxMax": 65400,
@@ -1389,7 +1389,7 @@
         {
           "year": 1998,
           "earnings": 2300,
-          "retirement": 5309.16,
+          "retirement": 5566.15,
           "disability": 5309.16,
           "survivors": 5309.16,
           "taxMax": 68400,
@@ -1399,7 +1399,7 @@
         {
           "year": 1999,
           "earnings": 2500,
-          "retirement": 5466.21,
+          "retirement": 5730.8,
           "disability": 5466.21,
           "survivors": 5466.21,
           "taxMax": 72600,
@@ -1409,7 +1409,7 @@
         {
           "year": 2000,
           "earnings": 2700,
-          "retirement": 5594.15,
+          "retirement": 5864.93,
           "disability": 5594.15,
           "survivors": 5594.15,
           "taxMax": 76200,
@@ -1418,230 +1418,230 @@
         },
         {
           "year": 2001,
-          "earnings": 22700,
-          "retirement": 45936.41,
-          "disability": 45936.41,
-          "survivors": 45936.41,
+          "earnings": 22500,
+          "retirement": 47735.61,
+          "disability": 45531.69,
+          "survivors": 45531.69,
           "taxMax": 80400,
           "cola": 2.6,
           "awi": 32921.92
         },
         {
           "year": 2002,
-          "earnings": 23300,
-          "retirement": 46682.42,
-          "disability": 46682.42,
-          "survivors": 46682.42,
+          "earnings": 23200,
+          "retirement": 48731.99,
+          "disability": 46482.06,
+          "survivors": 46482.06,
           "taxMax": 84900,
           "cola": 1.4,
           "awi": 33252.09
         },
         {
           "year": 2003,
-          "earnings": 24400,
-          "retirement": 47719.78,
-          "disability": 47719.78,
-          "survivors": 47719.78,
+          "earnings": 24300,
+          "retirement": 49824.57,
+          "disability": 47524.21,
+          "survivors": 47524.21,
           "taxMax": 87000,
           "cola": 2.1,
           "awi": 34064.95
         },
         {
           "year": 2004,
-          "earnings": 26000,
-          "retirement": 48590.11,
-          "disability": 48590.11,
-          "survivors": 48590.11,
+          "earnings": 25900,
+          "retirement": 50746.14,
+          "disability": 48403.22,
+          "survivors": 48403.22,
           "taxMax": 87900,
           "cola": 2.7,
           "awi": 35648.55
         },
         {
           "year": 2005,
-          "earnings": 27500,
-          "retirement": 49579.26,
-          "disability": 49579.26,
-          "survivors": 49579.26,
+          "earnings": 27400,
+          "retirement": 51790.09,
+          "disability": 49398.97,
+          "survivors": 49398.97,
           "taxMax": 90000,
           "cola": 4.1,
           "awi": 36952.94
         },
         {
           "year": 2006,
-          "earnings": 29400,
-          "retirement": 50675.54,
-          "disability": 50675.54,
-          "survivors": 50675.54,
+          "earnings": 29200,
+          "retirement": 52767.02,
+          "disability": 50330.8,
+          "survivors": 50330.8,
           "taxMax": 94200,
           "cola": 3.3,
           "awi": 38651.41
         },
         {
           "year": 2007,
-          "earnings": 31300,
-          "retirement": 51608.4,
-          "disability": 51608.4,
-          "survivors": 51608.4,
+          "earnings": 31200,
+          "retirement": 53933.6,
+          "disability": 51443.52,
+          "survivors": 51443.52,
           "taxMax": 97500,
           "cola": 2.3,
           "awi": 40405.48
         },
         {
           "year": 2008,
-          "earnings": 32700,
-          "retirement": 52704.35,
-          "disability": 52704.35,
-          "survivors": 52704.35,
+          "earnings": 32500,
+          "retirement": 54917.51,
+          "disability": 52382,
+          "survivors": 52382,
           "taxMax": 102000,
           "cola": 5.8,
           "awi": 41334.97
         },
         {
           "year": 2009,
-          "earnings": 32800,
-          "retirement": 53674.98,
-          "disability": 53674.98,
-          "survivors": 53674.98,
+          "earnings": 32700,
+          "retirement": 56101.51,
+          "disability": 53511.34,
+          "survivors": 53511.34,
           "taxMax": 106800,
           "cola": 0,
           "awi": 40711.61
         },
         {
           "year": 2010,
-          "earnings": 34300,
-          "retirement": 54833.64,
-          "disability": 54833.64,
-          "survivors": 54833.64,
+          "earnings": 34100,
+          "retirement": 57152.61,
+          "disability": 54513.91,
+          "survivors": 54513.91,
           "taxMax": 106800,
           "cola": 0,
           "awi": 41673.83
         },
         {
           "year": 2011,
-          "earnings": 36100,
-          "retirement": 55957.86,
-          "disability": 55957.86,
-          "survivors": 55957.86,
+          "earnings": 35900,
+          "retirement": 58341.43,
+          "disability": 55647.84,
+          "survivors": 55647.84,
           "taxMax": 106800,
           "cola": 3.6,
           "awi": 42979.61
         },
         {
           "year": 2012,
-          "earnings": 37900,
-          "retirement": 56969.11,
-          "disability": 56969.11,
-          "survivors": 56969.11,
+          "earnings": 37700,
+          "retirement": 59411.47,
+          "disability": 56668.48,
+          "survivors": 56668.48,
           "taxMax": 110100,
           "cola": 1.7,
           "awi": 44321.67
         },
         {
           "year": 2013,
-          "earnings": 39200,
-          "retirement": 58179.59,
-          "disability": 58179.59,
-          "survivors": 58179.59,
+          "earnings": 39000,
+          "retirement": 60684.52,
+          "disability": 57882.75,
+          "survivors": 57882.75,
           "taxMax": 113700,
           "cola": 1.5,
           "awi": 44888.16
         },
         {
           "year": 2014,
-          "earnings": 41400,
-          "retirement": 59338.48,
-          "disability": 59338.48,
-          "survivors": 59338.48,
+          "earnings": 41200,
+          "retirement": 61910.17,
+          "disability": 59051.82,
+          "survivors": 59051.82,
           "taxMax": 117000,
           "cola": 1.7,
           "awi": 46481.52
         },
         {
           "year": 2015,
-          "earnings": 43700,
-          "retirement": 60529.22,
-          "disability": 60529.22,
-          "survivors": 60529.22,
+          "earnings": 43500,
+          "retirement": 63168.66,
+          "disability": 60252.2,
+          "survivors": 60252.2,
           "taxMax": 118500,
           "cola": 0,
           "awi": 48098.63
         },
         {
           "year": 2016,
-          "earnings": 45100,
-          "retirement": 61770.36,
-          "disability": 61770.36,
-          "survivors": 61770.36,
+          "earnings": 44800,
+          "retirement": 64329.52,
+          "disability": 61359.47,
+          "survivors": 61359.47,
           "taxMax": 118500,
           "cola": 0.3,
           "awi": 48642.15
         },
         {
           "year": 2017,
-          "earnings": 47600,
-          "retirement": 63018.25,
-          "disability": 63018.25,
-          "survivors": 63018.25,
+          "earnings": 47300,
+          "retirement": 65652.2,
+          "disability": 62621.08,
+          "survivors": 62621.08,
           "taxMax": 127200,
           "cola": 2,
           "awi": 50321.89
         },
         {
           "year": 2018,
-          "earnings": 50300,
-          "retirement": 64263.59,
-          "disability": 64263.59,
-          "survivors": 64263.59,
+          "earnings": 50000,
+          "retirement": 66972.38,
+          "disability": 63880.31,
+          "survivors": 63880.31,
           "taxMax": 128400,
           "cola": 2.8,
           "awi": 52145.8
         },
         {
           "year": 2019,
-          "earnings": 53200,
-          "retirement": 65513.5,
-          "disability": 65513.5,
-          "survivors": 65513.5,
+          "earnings": 52900,
+          "retirement": 68297.31,
+          "disability": 65144.06,
+          "survivors": 65144.06,
           "taxMax": 132900,
           "cola": 1.6,
           "awi": 54099.99
         },
         {
           "year": 2020,
-          "earnings": 55800,
-          "retirement": 66827.07,
-          "disability": 66827.07,
-          "survivors": 66827.07,
+          "earnings": 55500,
+          "retirement": 69685.1,
+          "disability": 66467.79,
+          "survivors": 66467.79,
           "taxMax": 137700,
           "cola": 1.3,
           "awi": 55628.6
         },
         {
           "year": 2021,
-          "earnings": 62000,
-          "retirement": 68188.97,
-          "disability": 68188.97,
-          "survivors": 68188.97,
+          "earnings": 61600,
+          "retirement": 71028.37,
+          "disability": 67749.04,
+          "survivors": 67749.04,
           "taxMax": 142800,
           "cola": 5.9,
           "awi": 60575.07
         },
         {
           "year": 2022,
-          "earnings": 66600,
-          "retirement": 69550.95,
-          "disability": 69550.95,
-          "survivors": 69550.95,
+          "earnings": 66200,
+          "retirement": 72479.56,
+          "disability": 69133.23,
+          "survivors": 69133.23,
           "taxMax": 147000,
           "cola": 8.7,
           "awi": 63795.13
         },
         {
           "year": 2023,
-          "earnings": 70900,
-          "retirement": 70900,
-          "disability": 70900,
-          "survivors": 70900,
+          "earnings": 70500,
+          "retirement": 73912.49,
+          "disability": 70500,
+          "survivors": 70500,
           "taxMax": 160200,
           "cola": 3.2,
           "awi": 66621.8
@@ -1654,17 +1654,17 @@
           "survivors": 75400,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
           "earnings": 80000,
           "retirement": 80000,
           "disability": 0,
-          "survivors": 46666.67,
+          "survivors": 73333.33,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         },
         {
           "year": 2026,
@@ -1674,7 +1674,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.5,
-          "awi": 75264.81
+          "awi": 75670.13
         },
         {
           "year": 2027,
@@ -1684,7 +1684,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 78304.32
+          "awi": 78726.01
         },
         {
           "year": 2028,
@@ -1694,7 +1694,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 81522.64
+          "awi": 81961.66
         },
         {
           "year": 2029,
@@ -1704,7 +1704,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 84736.18
+          "awi": 85192.51
         },
         {
           "year": 2030,
@@ -1714,7 +1714,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 88030.45
+          "awi": 88504.52
         },
         {
           "year": 2031,
@@ -1724,7 +1724,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 91479.46
+          "awi": 91972.1
         },
         {
           "year": 2032,
@@ -1734,7 +1734,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 95090.94
+          "awi": 95603.03
         },
         {
           "year": 2033,
@@ -1744,7 +1744,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 98856.61
+          "awi": 99388.98
         },
         {
           "year": 2034,
@@ -1754,7 +1754,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 102670.1
+          "awi": 103223.01
         },
         {
           "year": 2035,
@@ -1764,7 +1764,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 106494.41
+          "awi": 107067.91
         },
         {
           "year": 2036,
@@ -1774,7 +1774,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 110382.54
+          "awi": 110976.98
         },
         {
           "year": 2037,
@@ -1784,7 +1784,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 114421.9
+          "awi": 115038.1
         },
         {
           "year": 2038,
@@ -1794,7 +1794,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 118616.2
+          "awi": 119254.98
         },
         {
           "year": 2039,
@@ -1804,7 +1804,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 122981.73
+          "awi": 123644.02
         },
         {
           "year": 2040,
@@ -1814,7 +1814,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 127479.7
+          "awi": 128166.22
         },
         {
           "year": 2041,
@@ -1824,7 +1824,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 132110.84
+          "awi": 132822.3
         },
         {
           "year": 2042,
@@ -1834,7 +1834,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 136899
+          "awi": 137636.24
         },
         {
           "year": 2043,
@@ -1844,7 +1844,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 141834.11
+          "awi": 142597.93
         },
         {
           "year": 2044,
@@ -1854,7 +1854,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 146908.25
+          "awi": 147699.4
         }
       ]
     }
@@ -1869,22 +1869,22 @@
       "currentlyRetired": false
     },
     "testResults": {
-      "totalResult": "3,531.00",
+      "totalResult": "3,644.00",
       "survivorBenefits": {
-        "disability": "$3,811.00",
-        "survivingChild": "$2,870.00",
-        "careGivingSpouse": "$2,870.00",
-        "normalRetirementSpouse": "$3,826.00",
-        "familyMaximum": "$6,697.30"
+        "disability": "$3,899.00",
+        "survivingChild": "$2,961.00",
+        "careGivingSpouse": "$2,961.00",
+        "normalRetirementSpouse": "$3,948.00",
+        "familyMaximum": "$6,908.70"
       },
       "earningsHistory": [
         {
           "year": 1997,
-          "earnings": 5500
+          "earnings": 5400
         },
         {
           "year": 1998,
-          "earnings": 5900
+          "earnings": 5800
         },
         {
           "year": 1999,
@@ -1892,83 +1892,83 @@
         },
         {
           "year": 2000,
-          "earnings": 6800
+          "earnings": 6700
         },
         {
           "year": 2001,
-          "earnings": 56700
+          "earnings": 56400
         },
         {
           "year": 2002,
-          "earnings": 58400
+          "earnings": 58100
         },
         {
           "year": 2003,
-          "earnings": 61000
+          "earnings": 60700
         },
         {
           "year": 2004,
-          "earnings": 65100
+          "earnings": 64800
         },
         {
           "year": 2005,
-          "earnings": 68800
+          "earnings": 68500
         },
         {
           "year": 2006,
-          "earnings": 73400
+          "earnings": 73000
         },
         {
           "year": 2007,
-          "earnings": 78300
+          "earnings": 77900
         },
         {
           "year": 2008,
-          "earnings": 81700
+          "earnings": 81300
         },
         {
           "year": 2009,
-          "earnings": 82100
+          "earnings": 81600
         },
         {
           "year": 2010,
-          "earnings": 85700
+          "earnings": 85200
         },
         {
           "year": 2011,
-          "earnings": 90200
+          "earnings": 89700
         },
         {
           "year": 2012,
-          "earnings": 94800
+          "earnings": 94300
         },
         {
           "year": 2013,
-          "earnings": 98000
+          "earnings": 97400
         },
         {
           "year": 2014,
-          "earnings": 103500
+          "earnings": 102900
         },
         {
           "year": 2015,
-          "earnings": 109200
+          "earnings": 108600
         },
         {
           "year": 2016,
-          "earnings": 112700
+          "earnings": 112100
         },
         {
           "year": 2017,
-          "earnings": 118900
+          "earnings": 118200
         },
         {
           "year": 2018,
-          "earnings": 125700
+          "earnings": 125000
         },
         {
           "year": 2019,
-          "earnings": 132900
+          "earnings": 132300
         },
         {
           "year": 2020,
@@ -1998,20 +1998,20 @@
       "commentData": [
         {
           "year": 1997,
-          "earnings": 5500,
-          "retirement": 13360.31,
-          "disability": 13360.31,
-          "survivors": 13360.31,
+          "earnings": 5400,
+          "retirement": 13752.33,
+          "disability": 13117.4,
+          "survivors": 13117.4,
           "taxMax": 65400,
           "cola": 2.1,
           "awi": 27426
         },
         {
           "year": 1998,
-          "earnings": 5900,
-          "retirement": 13619.16,
-          "disability": 13619.16,
-          "survivors": 13619.16,
+          "earnings": 5800,
+          "retirement": 14036.38,
+          "disability": 13388.33,
+          "survivors": 13388.33,
           "taxMax": 68400,
           "cola": 1.3,
           "awi": 28861.44
@@ -2019,7 +2019,7 @@
         {
           "year": 1999,
           "earnings": 6300,
-          "retirement": 13774.85,
+          "retirement": 14441.6,
           "disability": 13774.85,
           "survivors": 13774.85,
           "taxMax": 72600,
@@ -2028,200 +2028,200 @@
         },
         {
           "year": 2000,
-          "earnings": 6800,
-          "retirement": 14088.97,
-          "disability": 14088.97,
-          "survivors": 14088.97,
+          "earnings": 6700,
+          "retirement": 14553.71,
+          "disability": 13881.78,
+          "survivors": 13881.78,
           "taxMax": 76200,
           "cola": 3.5,
           "awi": 32154.82
         },
         {
           "year": 2001,
-          "earnings": 56700,
-          "retirement": 114739.85,
-          "disability": 114739.85,
-          "survivors": 114739.85,
+          "earnings": 56400,
+          "retirement": 119657.25,
+          "disability": 114132.76,
+          "survivors": 114132.76,
           "taxMax": 80400,
           "cola": 2.6,
           "awi": 32921.92
         },
         {
           "year": 2002,
-          "earnings": 58400,
-          "retirement": 117006.57,
-          "disability": 117006.57,
-          "survivors": 117006.57,
+          "earnings": 58100,
+          "retirement": 122040.02,
+          "disability": 116405.51,
+          "survivors": 116405.51,
           "taxMax": 84900,
           "cola": 1.4,
           "awi": 33252.09
         },
         {
           "year": 2003,
-          "earnings": 61000,
-          "retirement": 119299.45,
-          "disability": 119299.45,
-          "survivors": 119299.45,
+          "earnings": 60700,
+          "retirement": 124458.92,
+          "disability": 118712.73,
+          "survivors": 118712.73,
           "taxMax": 87000,
           "cola": 2.1,
           "awi": 34064.95
         },
         {
           "year": 2004,
-          "earnings": 65100,
-          "retirement": 121662.15,
-          "disability": 121662.15,
-          "survivors": 121662.15,
+          "earnings": 64800,
+          "retirement": 126963.31,
+          "disability": 121101.49,
+          "survivors": 121101.49,
           "taxMax": 87900,
           "cola": 2.7,
           "awi": 35648.55
         },
         {
           "year": 2005,
-          "earnings": 68800,
-          "retirement": 124038.3,
-          "disability": 124038.3,
-          "survivors": 124038.3,
+          "earnings": 68500,
+          "retirement": 129475.22,
+          "disability": 123497.43,
+          "survivors": 123497.43,
           "taxMax": 90000,
           "cola": 4.1,
           "awi": 36952.94
         },
         {
           "year": 2006,
-          "earnings": 73400,
-          "retirement": 126516.47,
-          "disability": 126516.47,
-          "survivors": 126516.47,
+          "earnings": 73000,
+          "retirement": 131917.56,
+          "disability": 125827.01,
+          "survivors": 125827.01,
           "taxMax": 94200,
           "cola": 3.3,
           "awi": 38651.41
         },
         {
           "year": 2007,
-          "earnings": 78300,
-          "retirement": 129103.45,
-          "disability": 129103.45,
-          "survivors": 129103.45,
+          "earnings": 77900,
+          "retirement": 134661.14,
+          "disability": 128443.92,
+          "survivors": 128443.92,
           "taxMax": 97500,
           "cola": 2.3,
           "awi": 40405.48
         },
         {
           "year": 2008,
-          "earnings": 81700,
-          "retirement": 131680.3,
-          "disability": 131680.3,
-          "survivors": 131680.3,
+          "earnings": 81300,
+          "retirement": 137378.26,
+          "disability": 131035.59,
+          "survivors": 131035.59,
           "taxMax": 102000,
           "cola": 5.8,
           "awi": 41334.97
         },
         {
           "year": 2009,
-          "earnings": 82100,
-          "retirement": 134351.1,
-          "disability": 134351.1,
-          "survivors": 134351.1,
+          "earnings": 81600,
+          "retirement": 139996.43,
+          "disability": 133532.89,
+          "survivors": 133532.89,
           "taxMax": 106800,
           "cola": 0,
           "awi": 40711.61
         },
         {
           "year": 2010,
-          "earnings": 85700,
-          "retirement": 137004.16,
-          "disability": 137004.16,
-          "survivors": 137004.16,
+          "earnings": 85200,
+          "retirement": 142797.72,
+          "disability": 136204.84,
+          "survivors": 136204.84,
           "taxMax": 106800,
           "cola": 0,
           "awi": 41673.83
         },
         {
           "year": 2011,
-          "earnings": 90200,
-          "retirement": 139817.14,
-          "disability": 139817.14,
-          "survivors": 139817.14,
+          "earnings": 89700,
+          "retirement": 145772.32,
+          "disability": 139042.11,
+          "survivors": 139042.11,
           "taxMax": 106800,
           "cola": 3.6,
           "awi": 42979.61
         },
         {
           "year": 2012,
-          "earnings": 94800,
-          "retirement": 142497.94,
-          "disability": 142497.94,
-          "survivors": 142497.94,
+          "earnings": 94300,
+          "retirement": 148607.48,
+          "disability": 141746.37,
+          "survivors": 141746.37,
           "taxMax": 110100,
           "cola": 1.7,
           "awi": 44321.67
         },
         {
           "year": 2013,
-          "earnings": 98000,
-          "retirement": 145448.96,
-          "disability": 145448.96,
-          "survivors": 145448.96,
+          "earnings": 97400,
+          "retirement": 151555.69,
+          "disability": 144558.46,
+          "survivors": 144558.46,
           "taxMax": 113700,
           "cola": 1.5,
           "awi": 44888.16
         },
         {
           "year": 2014,
-          "earnings": 103500,
-          "retirement": 148346.19,
-          "disability": 148346.19,
-          "survivors": 148346.19,
+          "earnings": 102900,
+          "retirement": 154625.15,
+          "disability": 147486.21,
+          "survivors": 147486.21,
           "taxMax": 117000,
           "cola": 1.7,
           "awi": 46481.52
         },
         {
           "year": 2015,
-          "earnings": 109200,
-          "retirement": 151253.8,
-          "disability": 151253.8,
-          "survivors": 151253.8,
+          "earnings": 108600,
+          "retirement": 157703.82,
+          "disability": 150422.74,
+          "survivors": 150422.74,
           "taxMax": 118500,
           "cola": 0,
           "awi": 48098.63
         },
         {
           "year": 2016,
-          "earnings": 112700,
-          "retirement": 154357.42,
-          "disability": 154357.42,
-          "survivors": 154357.42,
+          "earnings": 112100,
+          "retirement": 160967.4,
+          "disability": 153535.64,
+          "survivors": 153535.64,
           "taxMax": 118500,
           "cola": 0.3,
           "awi": 48642.15
         },
         {
           "year": 2017,
-          "earnings": 118900,
-          "retirement": 157413.25,
-          "disability": 157413.25,
-          "survivors": 157413.25,
+          "earnings": 118200,
+          "retirement": 164061.1,
+          "disability": 156486.51,
+          "survivors": 156486.51,
           "taxMax": 127200,
           "cola": 2,
           "awi": 50321.89
         },
         {
           "year": 2018,
-          "earnings": 125700,
-          "retirement": 160595.11,
-          "disability": 160595.11,
-          "survivors": 160595.11,
+          "earnings": 125000,
+          "retirement": 167430.96,
+          "disability": 159700.78,
+          "survivors": 159700.78,
           "taxMax": 128400,
           "cola": 2.8,
           "awi": 52145.8
         },
         {
           "year": 2019,
-          "earnings": 132900,
-          "retirement": 163660.61,
-          "disability": 163660.61,
-          "survivors": 163660.61,
+          "earnings": 132300,
+          "retirement": 170807.82,
+          "disability": 162921.73,
+          "survivors": 162921.73,
           "taxMax": 132900,
           "cola": 1.6,
           "awi": 54099.99
@@ -2229,7 +2229,7 @@
         {
           "year": 2020,
           "earnings": 137700,
-          "retirement": 164911.97,
+          "retirement": 172894.39,
           "disability": 164911.97,
           "survivors": 164911.97,
           "taxMax": 137700,
@@ -2239,7 +2239,7 @@
         {
           "year": 2021,
           "earnings": 142800,
-          "retirement": 157054.59,
+          "retirement": 164656.68,
           "disability": 157054.59,
           "survivors": 157054.59,
           "taxMax": 142800,
@@ -2249,7 +2249,7 @@
         {
           "year": 2022,
           "earnings": 147000,
-          "retirement": 153513.36,
+          "retirement": 160944.04,
           "disability": 153513.36,
           "survivors": 153513.36,
           "taxMax": 147000,
@@ -2259,7 +2259,7 @@
         {
           "year": 2023,
           "earnings": 160200,
-          "retirement": 160200,
+          "retirement": 167954.34,
           "disability": 160200,
           "survivors": 160200,
           "taxMax": 160200,
@@ -2274,17 +2274,17 @@
           "survivors": 168600,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
           "earnings": 176100,
           "retirement": 176100,
           "disability": 0,
-          "survivors": 116666.67,
+          "survivors": 176100,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         },
         {
           "year": 2026,
@@ -2294,7 +2294,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.5,
-          "awi": 75264.81
+          "awi": 75670.13
         },
         {
           "year": 2027,
@@ -2304,7 +2304,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 78304.32
+          "awi": 78726.01
         },
         {
           "year": 2028,
@@ -2314,7 +2314,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 81522.64
+          "awi": 81961.66
         },
         {
           "year": 2029,
@@ -2324,7 +2324,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 84736.18
+          "awi": 85192.51
         },
         {
           "year": 2030,
@@ -2334,7 +2334,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 88030.45
+          "awi": 88504.52
         },
         {
           "year": 2031,
@@ -2344,7 +2344,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 91479.46
+          "awi": 91972.1
         },
         {
           "year": 2032,
@@ -2354,7 +2354,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 95090.94
+          "awi": 95603.03
         },
         {
           "year": 2033,
@@ -2364,7 +2364,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 98856.61
+          "awi": 99388.98
         },
         {
           "year": 2034,
@@ -2374,7 +2374,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 102670.1
+          "awi": 103223.01
         },
         {
           "year": 2035,
@@ -2384,7 +2384,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 106494.41
+          "awi": 107067.91
         },
         {
           "year": 2036,
@@ -2394,7 +2394,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 110382.54
+          "awi": 110976.98
         },
         {
           "year": 2037,
@@ -2404,7 +2404,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 114421.9
+          "awi": 115038.1
         },
         {
           "year": 2038,
@@ -2414,7 +2414,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 118616.2
+          "awi": 119254.98
         },
         {
           "year": 2039,
@@ -2424,7 +2424,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 122981.73
+          "awi": 123644.02
         },
         {
           "year": 2040,
@@ -2434,7 +2434,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 127479.7
+          "awi": 128166.22
         },
         {
           "year": 2041,
@@ -2444,7 +2444,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 132110.84
+          "awi": 132822.3
         },
         {
           "year": 2042,
@@ -2454,7 +2454,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 136899
+          "awi": 137636.24
         },
         {
           "year": 2043,
@@ -2464,7 +2464,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 141834.11
+          "awi": 142597.93
         },
         {
           "year": 2044,
@@ -2474,7 +2474,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.4,
-          "awi": 146908.25
+          "awi": 147699.4
         }
       ]
     }
@@ -2489,13 +2489,13 @@
       "currentlyRetired": true
     },
     "testResults": {
-      "totalResult": "3,130.00",
+      "totalResult": "3,281.00",
       "survivorBenefits": {
-        "disability": "$3,602.00",
-        "survivingChild": "$2,702.00",
-        "careGivingSpouse": "$2,702.00",
-        "normalRetirementSpouse": "$3,602.00",
-        "familyMaximum": "$6,305.20"
+        "disability": "$3,698.00",
+        "survivingChild": "$2,773.00",
+        "careGivingSpouse": "$2,773.00",
+        "normalRetirementSpouse": "$3,698.00",
+        "familyMaximum": "$6,471.70"
       },
       "earningsHistory": [
         {
@@ -2659,7 +2659,7 @@
         {
           "year": 1982,
           "earnings": 2300,
-          "retirement": 10544.8,
+          "retirement": 11055.22,
           "disability": 10544.8,
           "survivors": 10544.8,
           "taxMax": 32400,
@@ -2669,7 +2669,7 @@
         {
           "year": 1983,
           "earnings": 2500,
-          "retirement": 10929.32,
+          "retirement": 11458.34,
           "disability": 10929.32,
           "survivors": 10929.32,
           "taxMax": 35700,
@@ -2679,7 +2679,7 @@
         {
           "year": 1984,
           "earnings": 2700,
-          "retirement": 11148.32,
+          "retirement": 11687.94,
           "disability": 11148.32,
           "survivors": 11148.32,
           "taxMax": 37800,
@@ -2689,7 +2689,7 @@
         {
           "year": 1985,
           "earnings": 2800,
-          "retirement": 11088.78,
+          "retirement": 11625.52,
           "disability": 11088.78,
           "survivors": 11088.78,
           "taxMax": 39600,
@@ -2699,7 +2699,7 @@
         {
           "year": 1986,
           "earnings": 23800,
-          "retirement": 91537.66,
+          "retirement": 95968.46,
           "disability": 91537.66,
           "survivors": 91537.66,
           "taxMax": 42000,
@@ -2709,7 +2709,7 @@
         {
           "year": 1987,
           "earnings": 25800,
-          "retirement": 93280.95,
+          "retirement": 97796.14,
           "disability": 93280.95,
           "survivors": 93280.95,
           "taxMax": 43800,
@@ -2719,7 +2719,7 @@
         {
           "year": 1988,
           "earnings": 27700,
-          "retirement": 95449.47,
+          "retirement": 100069.62,
           "disability": 95449.47,
           "survivors": 95449.47,
           "taxMax": 45000,
@@ -2729,7 +2729,7 @@
         {
           "year": 1989,
           "earnings": 29300,
-          "retirement": 97117.53,
+          "retirement": 101818.42,
           "disability": 97117.53,
           "survivors": 97117.53,
           "taxMax": 48000,
@@ -2739,7 +2739,7 @@
         {
           "year": 1990,
           "earnings": 31300,
-          "retirement": 99166.08,
+          "retirement": 103966.13,
           "disability": 99166.08,
           "survivors": 99166.08,
           "taxMax": 51300,
@@ -2749,7 +2749,7 @@
         {
           "year": 1991,
           "earnings": 33100,
-          "retirement": 101101.32,
+          "retirement": 105995.04,
           "disability": 101101.32,
           "survivors": 101101.32,
           "taxMax": 53400,
@@ -2759,7 +2759,7 @@
         {
           "year": 1992,
           "earnings": 35500,
-          "retirement": 103118.84,
+          "retirement": 108110.22,
           "disability": 103118.84,
           "survivors": 103118.84,
           "taxMax": 55500,
@@ -2769,7 +2769,7 @@
         {
           "year": 1993,
           "earnings": 36500,
-          "retirement": 105119.54,
+          "retirement": 110207.76,
           "disability": 105119.54,
           "survivors": 105119.54,
           "taxMax": 57600,
@@ -2779,7 +2779,7 @@
         {
           "year": 1994,
           "earnings": 38300,
-          "retirement": 107420.45,
+          "retirement": 112620.05,
           "disability": 107420.45,
           "survivors": 107420.45,
           "taxMax": 60600,
@@ -2789,7 +2789,7 @@
         {
           "year": 1995,
           "earnings": 40600,
-          "retirement": 109482.81,
+          "retirement": 114782.23,
           "disability": 109482.81,
           "survivors": 109482.81,
           "taxMax": 61200,
@@ -2799,7 +2799,7 @@
         {
           "year": 1996,
           "earnings": 43400,
-          "retirement": 111576.65,
+          "retirement": 116977.42,
           "disability": 111576.65,
           "survivors": 111576.65,
           "taxMax": 62700,
@@ -2809,7 +2809,7 @@
         {
           "year": 1997,
           "earnings": 46900,
-          "retirement": 113927.02,
+          "retirement": 119441.56,
           "disability": 113927.02,
           "survivors": 113927.02,
           "taxMax": 65400,
@@ -2819,7 +2819,7 @@
         {
           "year": 1998,
           "earnings": 50300,
-          "retirement": 116109.12,
+          "retirement": 121729.29,
           "disability": 116109.12,
           "survivors": 116109.12,
           "taxMax": 68400,
@@ -2829,7 +2829,7 @@
         {
           "year": 1999,
           "earnings": 54200,
-          "retirement": 118507.4,
+          "retirement": 124243.65,
           "disability": 118507.4,
           "survivors": 118507.4,
           "taxMax": 72600,
@@ -2839,7 +2839,7 @@
         {
           "year": 2000,
           "earnings": 58300,
-          "retirement": 120792.18,
+          "retirement": 126639.02,
           "disability": 120792.18,
           "survivors": 120792.18,
           "taxMax": 76200,
@@ -2849,7 +2849,7 @@
         {
           "year": 2001,
           "earnings": 60900,
-          "retirement": 123239.09,
+          "retirement": 129204.38,
           "disability": 123239.09,
           "survivors": 123239.09,
           "taxMax": 80400,
@@ -2859,7 +2859,7 @@
         {
           "year": 2002,
           "earnings": 62800,
-          "retirement": 125822.14,
+          "retirement": 131912.45,
           "disability": 125822.14,
           "survivors": 125822.14,
           "taxMax": 84900,
@@ -2869,7 +2869,7 @@
         {
           "year": 2003,
           "earnings": 65600,
-          "retirement": 128295.8,
+          "retirement": 134505.85,
           "disability": 128295.8,
           "survivors": 128295.8,
           "taxMax": 87000,
@@ -2879,7 +2879,7 @@
         {
           "year": 2004,
           "earnings": 70000,
-          "retirement": 130819.51,
+          "retirement": 137151.72,
           "disability": 130819.51,
           "survivors": 130819.51,
           "taxMax": 87900,
@@ -2889,7 +2889,7 @@
         {
           "year": 2005,
           "earnings": 74000,
-          "retirement": 133413.29,
+          "retirement": 139871.04,
           "disability": 133413.29,
           "survivors": 133413.29,
           "taxMax": 90000,
@@ -2899,7 +2899,7 @@
         {
           "year": 2006,
           "earnings": 79000,
-          "retirement": 136168.96,
+          "retirement": 142760.1,
           "disability": 136168.96,
           "survivors": 136168.96,
           "taxMax": 94200,
@@ -2909,7 +2909,7 @@
         {
           "year": 2007,
           "earnings": 84200,
-          "retirement": 138831.55,
+          "retirement": 145551.57,
           "disability": 138831.55,
           "survivors": 138831.55,
           "taxMax": 97500,
@@ -2919,7 +2919,7 @@
         {
           "year": 2008,
           "earnings": 87900,
-          "retirement": 141673.17,
+          "retirement": 148530.74,
           "disability": 141673.17,
           "survivors": 141673.17,
           "taxMax": 102000,
@@ -2929,7 +2929,7 @@
         {
           "year": 2009,
           "earnings": 88300,
-          "retirement": 144496.99,
+          "retirement": 151491.24,
           "disability": 144496.99,
           "survivors": 144496.99,
           "taxMax": 106800,
@@ -2939,7 +2939,7 @@
         {
           "year": 2010,
           "earnings": 92200,
-          "retirement": 147395.38,
+          "retirement": 154529.92,
           "disability": 147395.38,
           "survivors": 147395.38,
           "taxMax": 106800,
@@ -2949,7 +2949,7 @@
         {
           "year": 2011,
           "earnings": 97000,
-          "retirement": 150357.68,
+          "retirement": 157635.62,
           "disability": 150357.68,
           "survivors": 150357.68,
           "taxMax": 106800,
@@ -2959,7 +2959,7 @@
         {
           "year": 2012,
           "earnings": 102000,
-          "retirement": 153320.57,
+          "retirement": 160741.92,
           "disability": 153320.57,
           "survivors": 153320.57,
           "taxMax": 110100,
@@ -2969,7 +2969,7 @@
         {
           "year": 2013,
           "earnings": 105400,
-          "retirement": 156431.85,
+          "retirement": 164003.79,
           "disability": 156431.85,
           "survivors": 156431.85,
           "taxMax": 113700,
@@ -2979,7 +2979,7 @@
         {
           "year": 2014,
           "earnings": 111300,
-          "retirement": 159525.9,
+          "retirement": 167247.61,
           "disability": 159525.9,
           "survivors": 159525.9,
           "taxMax": 117000,
@@ -2989,7 +2989,7 @@
         {
           "year": 2015,
           "earnings": 117500,
-          "retirement": 162750.2,
+          "retirement": 170627.98,
           "disability": 162750.2,
           "survivors": 162750.2,
           "taxMax": 118500,
@@ -2999,7 +2999,7 @@
         {
           "year": 2016,
           "earnings": 118500,
-          "retirement": 162301.28,
+          "retirement": 170157.33,
           "disability": 162301.28,
           "survivors": 162301.28,
           "taxMax": 118500,
@@ -3009,7 +3009,7 @@
         {
           "year": 2017,
           "earnings": 127200,
-          "retirement": 168401.72,
+          "retirement": 176553.06,
           "disability": 168401.72,
           "survivors": 168401.72,
           "taxMax": 127200,
@@ -3019,7 +3019,7 @@
         {
           "year": 2018,
           "earnings": 128400,
-          "retirement": 164044.64,
+          "retirement": 171985.08,
           "disability": 164044.64,
           "survivors": 164044.64,
           "taxMax": 128400,
@@ -3029,7 +3029,7 @@
         {
           "year": 2019,
           "earnings": 132900,
-          "retirement": 163660.61,
+          "retirement": 171582.46,
           "disability": 163660.61,
           "survivors": 163660.61,
           "taxMax": 132900,
@@ -3039,7 +3039,7 @@
         {
           "year": 2020,
           "earnings": 137700,
-          "retirement": 164911.97,
+          "retirement": 172894.39,
           "disability": 164911.97,
           "survivors": 164911.97,
           "taxMax": 137700,
@@ -3084,7 +3084,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -3093,8 +3093,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }
@@ -3966,7 +3966,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -3975,8 +3975,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }
@@ -4862,7 +4862,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -4871,8 +4871,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }
@@ -5772,7 +5772,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -5781,8 +5781,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }
@@ -6696,7 +6696,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -6705,8 +6705,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }
@@ -7634,7 +7634,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -7643,8 +7643,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }
@@ -8586,7 +8586,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -8595,8 +8595,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }
@@ -9552,7 +9552,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -9561,8 +9561,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }
@@ -10532,7 +10532,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -10541,8 +10541,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }
@@ -11526,7 +11526,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -11535,8 +11535,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }
@@ -11551,13 +11551,13 @@
       "currentlyRetired": false
     },
     "testResults": {
-      "totalResult": "1,784.00",
+      "totalResult": "1,779.00",
       "survivorBenefits": {
-        "disability": "$1,720.00",
-        "survivingChild": "$1,298.00",
-        "careGivingSpouse": "$1,298.00",
-        "normalRetirementSpouse": "$1,731.00",
-        "familyMaximum": "$2,873.70"
+        "disability": "$1,715.00",
+        "survivingChild": "$1,307.00",
+        "careGivingSpouse": "$1,307.00",
+        "normalRetirementSpouse": "$1,743.00",
+        "familyMaximum": "$2,907.60"
       },
       "earningsHistory": [
         {
@@ -11578,7 +11578,7 @@
         },
         {
           "year": 1982,
-          "earnings": 5200
+          "earnings": 5100
         },
         {
           "year": 1983,
@@ -11606,7 +11606,7 @@
         },
         {
           "year": 1989,
-          "earnings": 8200
+          "earnings": 8100
         },
         {
           "year": 1990,
@@ -11622,11 +11622,11 @@
         },
         {
           "year": 1993,
-          "earnings": 10200
+          "earnings": 10100
         },
         {
           "year": 1994,
-          "earnings": 10700
+          "earnings": 10600
         },
         {
           "year": 1995,
@@ -11638,7 +11638,7 @@
         },
         {
           "year": 1997,
-          "earnings": 13100
+          "earnings": 13000
         },
         {
           "year": 1998,
@@ -11646,103 +11646,103 @@
         },
         {
           "year": 1999,
-          "earnings": 15100
+          "earnings": 15000
         },
         {
           "year": 2000,
-          "earnings": 16300
+          "earnings": 16200
         },
         {
           "year": 2001,
-          "earnings": 17000
+          "earnings": 16900
         },
         {
           "year": 2002,
-          "earnings": 17500
+          "earnings": 17400
         },
         {
           "year": 2003,
-          "earnings": 18300
+          "earnings": 18200
         },
         {
           "year": 2004,
-          "earnings": 19500
+          "earnings": 19400
         },
         {
           "year": 2005,
-          "earnings": 20700
+          "earnings": 20500
         },
         {
           "year": 2006,
-          "earnings": 22000
+          "earnings": 21900
         },
         {
           "year": 2007,
-          "earnings": 23500
+          "earnings": 23400
         },
         {
           "year": 2008,
-          "earnings": 24500
+          "earnings": 24400
         },
         {
           "year": 2009,
-          "earnings": 24600
+          "earnings": 24500
         },
         {
           "year": 2010,
-          "earnings": 25700
+          "earnings": 25600
         },
         {
           "year": 2011,
-          "earnings": 27000
+          "earnings": 26900
         },
         {
           "year": 2012,
-          "earnings": 28500
+          "earnings": 28300
         },
         {
           "year": 2013,
-          "earnings": 29400
+          "earnings": 29200
         },
         {
           "year": 2014,
-          "earnings": 31000
+          "earnings": 30900
         },
         {
           "year": 2015,
-          "earnings": 32800
+          "earnings": 32600
         },
         {
           "year": 2016,
-          "earnings": 33800
+          "earnings": 33600
         },
         {
           "year": 2017,
-          "earnings": 35700
+          "earnings": 35500
         },
         {
           "year": 2018,
-          "earnings": 37700
+          "earnings": 37500
         },
         {
           "year": 2019,
-          "earnings": 39900
+          "earnings": 39700
         },
         {
           "year": 2020,
-          "earnings": 41800
+          "earnings": 41600
         },
         {
           "year": 2021,
-          "earnings": 46500
+          "earnings": 46200
         },
         {
           "year": 2022,
-          "earnings": 49900
+          "earnings": 49700
         },
         {
           "year": 2023,
-          "earnings": 53200
+          "earnings": 52900
         },
         {
           "year": 2024,
@@ -11796,10 +11796,10 @@
         },
         {
           "year": 1982,
-          "earnings": 5200,
-          "retirement": 19906.54,
-          "disability": 19906.54,
-          "survivors": 19906.54,
+          "earnings": 5100,
+          "retirement": 19523.72,
+          "disability": 19523.72,
+          "survivors": 19523.72,
           "taxMax": 32400,
           "cola": 7.4,
           "awi": 14531.34
@@ -11866,10 +11866,10 @@
         },
         {
           "year": 1989,
-          "earnings": 8200,
-          "retirement": 22694.76,
-          "disability": 22694.76,
-          "survivors": 22694.76,
+          "earnings": 8100,
+          "retirement": 22418,
+          "disability": 22418,
+          "survivors": 22418,
           "taxMax": 48000,
           "cola": 4.7,
           "awi": 20099.55
@@ -11906,20 +11906,20 @@
         },
         {
           "year": 1993,
-          "earnings": 10200,
-          "retirement": 24528.59,
-          "disability": 24528.59,
-          "survivors": 24528.59,
+          "earnings": 10100,
+          "retirement": 24288.11,
+          "disability": 24288.11,
+          "survivors": 24288.11,
           "taxMax": 57600,
           "cola": 2.6,
           "awi": 23132.67
         },
         {
           "year": 1994,
-          "earnings": 10700,
-          "retirement": 25058.42,
-          "disability": 25058.42,
-          "survivors": 25058.42,
+          "earnings": 10600,
+          "retirement": 24824.23,
+          "disability": 24824.23,
+          "survivors": 24824.23,
           "taxMax": 60600,
           "cola": 2.8,
           "awi": 23753.53
@@ -11946,10 +11946,10 @@
         },
         {
           "year": 1997,
-          "earnings": 13100,
-          "retirement": 26570.94,
-          "disability": 26570.94,
-          "survivors": 26570.94,
+          "earnings": 13000,
+          "retirement": 26368.11,
+          "disability": 26368.11,
+          "survivors": 26368.11,
           "taxMax": 65400,
           "cola": 2.1,
           "awi": 27426
@@ -11966,250 +11966,250 @@
         },
         {
           "year": 1999,
-          "earnings": 15100,
-          "retirement": 27567.98,
-          "disability": 27567.98,
-          "survivors": 27567.98,
+          "earnings": 15000,
+          "retirement": 27385.41,
+          "disability": 27385.41,
+          "survivors": 27385.41,
           "taxMax": 72600,
           "cola": 2.5,
           "awi": 30469.84
         },
         {
           "year": 2000,
-          "earnings": 16300,
-          "retirement": 28199.39,
-          "disability": 28199.39,
-          "survivors": 28199.39,
+          "earnings": 16200,
+          "retirement": 28026.38,
+          "disability": 28026.38,
+          "survivors": 28026.38,
           "taxMax": 76200,
           "cola": 3.5,
           "awi": 32154.82
         },
         {
           "year": 2001,
-          "earnings": 17000,
-          "retirement": 28725.12,
-          "disability": 28725.12,
-          "survivors": 28725.12,
+          "earnings": 16900,
+          "retirement": 28556.15,
+          "disability": 28556.15,
+          "survivors": 28556.15,
           "taxMax": 80400,
           "cola": 2.6,
           "awi": 32921.92
         },
         {
           "year": 2002,
-          "earnings": 17500,
-          "retirement": 29276.37,
-          "disability": 29276.37,
-          "survivors": 29276.37,
+          "earnings": 17400,
+          "retirement": 29109.08,
+          "disability": 29109.08,
+          "survivors": 29109.08,
           "taxMax": 84900,
           "cola": 1.4,
           "awi": 33252.09
         },
         {
           "year": 2003,
-          "earnings": 18300,
-          "retirement": 29884.19,
-          "disability": 29884.19,
-          "survivors": 29884.19,
+          "earnings": 18200,
+          "retirement": 29720.89,
+          "disability": 29720.89,
+          "survivors": 29720.89,
           "taxMax": 87000,
           "cola": 2.1,
           "awi": 34064.95
         },
         {
           "year": 2004,
-          "earnings": 19500,
-          "retirement": 30429.22,
-          "disability": 30429.22,
-          "survivors": 30429.22,
+          "earnings": 19400,
+          "retirement": 30273.18,
+          "disability": 30273.18,
+          "survivors": 30273.18,
           "taxMax": 87900,
           "cola": 2.7,
           "awi": 35648.55
         },
         {
           "year": 2005,
-          "earnings": 20700,
-          "retirement": 31161.58,
-          "disability": 31161.58,
-          "survivors": 31161.58,
+          "earnings": 20500,
+          "retirement": 30860.5,
+          "disability": 30860.5,
+          "survivors": 30860.5,
           "taxMax": 90000,
           "cola": 4.1,
           "awi": 36952.94
         },
         {
           "year": 2006,
-          "earnings": 22000,
-          "retirement": 31663.25,
-          "disability": 31663.25,
-          "survivors": 31663.25,
+          "earnings": 21900,
+          "retirement": 31519.32,
+          "disability": 31519.32,
+          "survivors": 31519.32,
           "taxMax": 94200,
           "cola": 3.3,
           "awi": 38651.41
         },
         {
           "year": 2007,
-          "earnings": 23500,
-          "retirement": 32353.83,
-          "disability": 32353.83,
-          "survivors": 32353.83,
+          "earnings": 23400,
+          "retirement": 32216.16,
+          "disability": 32216.16,
+          "survivors": 32216.16,
           "taxMax": 97500,
           "cola": 2.3,
           "awi": 40405.48
         },
         {
           "year": 2008,
-          "earnings": 24500,
-          "retirement": 32972.1,
-          "disability": 32972.1,
-          "survivors": 32972.1,
+          "earnings": 24400,
+          "retirement": 32837.52,
+          "disability": 32837.52,
+          "survivors": 32837.52,
           "taxMax": 102000,
           "cola": 5.8,
           "awi": 41334.97
         },
         {
           "year": 2009,
-          "earnings": 24600,
-          "retirement": 33613.59,
-          "disability": 33613.59,
-          "survivors": 33613.59,
+          "earnings": 24500,
+          "retirement": 33476.95,
+          "disability": 33476.95,
+          "survivors": 33476.95,
           "taxMax": 106800,
           "cola": 0,
           "awi": 40711.61
         },
         {
           "year": 2010,
-          "earnings": 25700,
-          "retirement": 34305.82,
-          "disability": 34305.82,
-          "survivors": 34305.82,
+          "earnings": 25600,
+          "retirement": 34172.34,
+          "disability": 34172.34,
+          "survivors": 34172.34,
           "taxMax": 106800,
           "cola": 0,
           "awi": 41673.83
         },
         {
           "year": 2011,
-          "earnings": 27000,
-          "retirement": 34946.16,
-          "disability": 34946.16,
-          "survivors": 34946.16,
+          "earnings": 26900,
+          "retirement": 34816.73,
+          "disability": 34816.73,
+          "survivors": 34816.73,
           "taxMax": 106800,
           "cola": 3.6,
           "awi": 42979.61
         },
         {
           "year": 2012,
-          "earnings": 28500,
-          "retirement": 35770.65,
-          "disability": 35770.65,
-          "survivors": 35770.65,
+          "earnings": 28300,
+          "retirement": 35519.63,
+          "disability": 35519.63,
+          "survivors": 35519.63,
           "taxMax": 110100,
           "cola": 1.7,
           "awi": 44321.67
         },
         {
           "year": 2013,
-          "earnings": 29400,
-          "retirement": 36434.57,
-          "disability": 36434.57,
-          "survivors": 36434.57,
+          "earnings": 29200,
+          "retirement": 36186.72,
+          "disability": 36186.72,
+          "survivors": 36186.72,
           "taxMax": 113700,
           "cola": 1.5,
           "awi": 44888.16
         },
         {
           "year": 2014,
-          "earnings": 31000,
-          "retirement": 37100.48,
-          "disability": 37100.48,
-          "survivors": 37100.48,
+          "earnings": 30900,
+          "retirement": 36980.8,
+          "disability": 36980.8,
+          "survivors": 36980.8,
           "taxMax": 117000,
           "cola": 1.7,
           "awi": 46481.52
         },
         {
           "year": 2015,
-          "earnings": 32800,
-          "retirement": 37934.93,
-          "disability": 37934.93,
-          "survivors": 37934.93,
+          "earnings": 32600,
+          "retirement": 37703.62,
+          "disability": 37703.62,
+          "survivors": 37703.62,
           "taxMax": 118500,
           "cola": 0,
           "awi": 48098.63
         },
         {
           "year": 2016,
-          "earnings": 33800,
-          "retirement": 38654.68,
-          "disability": 38654.68,
-          "survivors": 38654.68,
+          "earnings": 33600,
+          "retirement": 38425.95,
+          "disability": 38425.95,
+          "survivors": 38425.95,
           "taxMax": 118500,
           "cola": 0.3,
           "awi": 48642.15
         },
         {
           "year": 2017,
-          "earnings": 35700,
-          "retirement": 39464.75,
-          "disability": 39464.75,
-          "survivors": 39464.75,
+          "earnings": 35500,
+          "retirement": 39243.66,
+          "disability": 39243.66,
+          "survivors": 39243.66,
           "taxMax": 127200,
           "cola": 2,
           "awi": 50321.89
         },
         {
           "year": 2018,
-          "earnings": 37700,
-          "retirement": 40217.97,
-          "disability": 40217.97,
-          "survivors": 40217.97,
+          "earnings": 37500,
+          "retirement": 40004.61,
+          "disability": 40004.61,
+          "survivors": 40004.61,
           "taxMax": 128400,
           "cola": 2.8,
           "awi": 52145.8
         },
         {
           "year": 2019,
-          "earnings": 39900,
-          "retirement": 41027.39,
-          "disability": 41027.39,
-          "survivors": 41027.39,
+          "earnings": 39700,
+          "retirement": 40821.73,
+          "disability": 40821.73,
+          "survivors": 40821.73,
           "taxMax": 132900,
           "cola": 1.6,
           "awi": 54099.99
         },
         {
           "year": 2020,
-          "earnings": 41800,
-          "retirement": 41800,
-          "disability": 41800,
-          "survivors": 41800,
+          "earnings": 41600,
+          "retirement": 41600,
+          "disability": 41600,
+          "survivors": 41600,
           "taxMax": 137700,
           "cola": 1.3,
           "awi": 55628.6
         },
         {
           "year": 2021,
-          "earnings": 46500,
-          "retirement": 46500,
-          "disability": 46500,
-          "survivors": 46500,
+          "earnings": 46200,
+          "retirement": 46200,
+          "disability": 46200,
+          "survivors": 46200,
           "taxMax": 142800,
           "cola": 5.9,
           "awi": 60575.07
         },
         {
           "year": 2022,
-          "earnings": 49900,
-          "retirement": 49900,
-          "disability": 49900,
-          "survivors": 49900,
+          "earnings": 49700,
+          "retirement": 49700,
+          "disability": 49700,
+          "survivors": 49700,
           "taxMax": 147000,
           "cola": 8.7,
           "awi": 63795.13
         },
         {
           "year": 2023,
-          "earnings": 53200,
-          "retirement": 53200,
-          "disability": 53200,
-          "survivors": 53200,
+          "earnings": 52900,
+          "retirement": 52900,
+          "disability": 52900,
+          "survivors": 52900,
           "taxMax": 160200,
           "cola": 3.2,
           "awi": 66621.8
@@ -12222,17 +12222,17 @@
           "survivors": 56600,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
           "earnings": 60000,
           "retirement": 60000,
           "disability": 0,
-          "survivors": 35000,
+          "survivors": 55000,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         },
         {
           "year": 2026,
@@ -12242,7 +12242,7 @@
           "survivors": 0,
           "taxMax": 176100,
           "cola": 2.5,
-          "awi": 75264.81
+          "awi": 75670.13
         }
       ]
     }
@@ -12978,7 +12978,7 @@
           "survivors": 0,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
@@ -12987,8 +12987,8 @@
           "disability": 0,
           "survivors": 0,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
         }
       ]
     }

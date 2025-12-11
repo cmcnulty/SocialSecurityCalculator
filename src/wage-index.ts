@@ -444,23 +444,28 @@ export const wageIndex: WageIndex[] = [
           "year": 2024,
           "taxMax": 168600,
           "cola": 2.5,
-          "awi": 69472.44
+          "awi": 69846.57
         },
         {
           "year": 2025,
           "taxMax": 176100,
-          "cola": 2.7,
-          "awi": 72255.52
+          "cola": 2.8,
+          "awi": 72644.64
+        },
+        {
+          "year": 2026,
+          "taxMax": 176100,
+          "cola": 2.5,
+          "awi": 75670.13
         }
       ];
-
+// 2026  60000.00     60000.00        0.00        0.00    176100   2.5  75670.13
 export const wageIndexFuture: Partial<WageIndex>[] = [
-  { year: 2024, awi: 69472.44 },
-  { year: 2025, awi: 72255.52 },
-  { year: 2026, awi: 75264.81 },
-  { year: 2027, awi: 78304.32 },
-  { year: 2028, awi: 81522.64 },
-  { year: 2029, awi: 84736.18 },
+  { year: 2025, awi: 72644.64 },
+  { year: 2026, awi: 75670.13 },
+  { year: 2027, awi: 78726.01 },
+  { year: 2028, awi: 81961.66 },
+  { year: 2029, awi: 85192.51 },
   { year: 2030, awi: 88030.45 },
   { year: 2031, awi: 91479.46 },
   { year: 2032, awi: 95090.94 },

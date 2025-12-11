@@ -1,5 +1,5 @@
 
-import { calc, calculateAIME, calculatePIA, calculateRetirementDates } from '../src/index';
+import { calc } from '../src/index';
 import { default as testData } from './data/inputData.results.json';
 import { getEstimatedEarnings } from '../src/estimatedEarnings/index';
 import minimist from 'minimist';
@@ -52,26 +52,18 @@ describe('Test calc', function () {
         });
 
         it(`Test Disability: ${testInput.testName}`, async () => {
-            const disabilityDate = new Date(birthDate); // birthdate for this test is 6/15/1960
-            disabilityDate.setFullYear(2025); // new disability date is 6/15/2024
+            const disabilityDate = new Date(2025, 11, 10) // birthdate for this test is 6/15/1960
+            // disabilityDate.setFullYear(2025); // new disability date is 6/15/2024
             const disabilityEarnings = earnings.filter((row) => row.year < 2025);
             const disabilityCalc = calc(birthDate, disabilityDate, disabilityEarnings);
             expect(disabilityCalc.DisabilityEarnings).toEqual(parseInt((testResults.survivorBenefits.disability || '0').toString().replace(/[^0-9.-]/g, ''), 10));
         });
 
         it(`Test survivor earnings for ${testInput.testName}`, async () => {
-
-            const survivorDate = new Date(2025, 6, 15);
-            const survivorEarnings = earnings.flatMap((earn) => {
-                if (earn.year < 2025) {
-                    return [earn];
-                } else if (earn.year === survivorDate.getFullYear()) {
-                    const prorate = (survivorDate.getMonth()+1) / 12;
-                    return [{ year: earn.year, earnings: earn.earnings * prorate }];
-                } else {
-                    return [];
-                }
-            });
+            // SSA calculates survivor benefits using only complete years of earnings
+            // Same as disability calculation - exclude current year
+            const survivorDate = new Date(2025, 11, 10);
+            const survivorEarnings = earnings.filter((row) => row.year < 2025);
 
             const survivorCalc = calc(birthDate, survivorDate, survivorEarnings);
             expect(survivorCalc.SurvivorBenefits.survivingChild).toEqual(parseInt((testResults.survivorBenefits.survivingChild || '0').toString().replace(/[^0-9.-]/g, ''), 10));

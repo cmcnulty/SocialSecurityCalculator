@@ -1,7 +1,7 @@
 
 // Constants
 export const EARLY_RETIREMENT_AGE = 62;
-export const WAGE_INDEX_CUTOFF = 2023;
+export const WAGE_INDEX_CUTOFF = 2024;
 export const MAX_RETIREMENT_AGE = 70;
 // LOOKBACK_YEARS This represents the working years between 22 and 62,
 // but it does not filter out the wages of years before and after that range.

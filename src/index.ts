@@ -131,7 +131,7 @@ function validateInputs(birthday: Date, retirementDate: Date, earnings: Earnings
 }
 
 // Retirement date calculations
-export function calculateRetirementDates(birthday: Date, retirementDate: Date): RetirementDates {
+function calculateRetirementDates(birthday: Date, retirementDate: Date): RetirementDates {
   const eclBirthDate = getEnglishCommonLawDate(birthday);
   const fraMonths = getFullRetirementMonths(eclBirthDate);
 
@@ -166,7 +166,7 @@ export function calculateRetirementDates(birthday: Date, retirementDate: Date): 
 }
 
 // Benefit amount calculations
-export function retirementDateAdjustedPayment(dates: RetirementDates, colaAdjustedPIA: number): number {
+function retirementDateAdjustedPayment(dates: RetirementDates, colaAdjustedPIA: number): number {
   const earlyRetireMonths = monthsDifference(dates.adjusted, dates.fullRetirement);
   let adjustedBenefits = colaAdjustedPIA;
 
@@ -256,13 +256,13 @@ export function calculateAIME(earnings: Earnings, lookbackYears: number, baseYea
 }
 
 // Lookback year calculations
-export function getLookbackYears(elapsedYears: number): number {
+function getLookbackYears(elapsedYears: number): number {
   const minComputationYears = 2;
   const adjustedLookbackYears = Math.floor(elapsedYears) - 5;
   return Math.max(minComputationYears, adjustedLookbackYears);
 }
 
-export function getLookbackYearsDisability(elapsedYears: number): number {
+function getLookbackYearsDisability(elapsedYears: number): number {
   const minComputationYears = 2;
   const dropOutYears = Math.min(Math.floor(elapsedYears / DROP_OUT_YEARS_DIVISOR), MAX_DROP_OUT_YEARS);
   const adjustedLookbackYears = elapsedYears - dropOutYears;
@@ -312,7 +312,7 @@ function getDelayedRetirementRate(birthYear: number): number {
 }
 
 // Full retirement age calculation
-export function getFullRetirementMonths(commonLawBirthDate: Date): number {
+function getFullRetirementMonths(commonLawBirthDate: Date): number {
   const year = commonLawBirthDate.getFullYear();
 
   if (year <= 1937) {
@@ -331,13 +331,13 @@ export function getFullRetirementMonths(commonLawBirthDate: Date): number {
 }
 
 /** Compute Family-Max bend points for an eligibility year given AWI_{year-2}. */
-export function getFamilyMaxBendPoints(baseYear: number): [number, number, number] {
+function getFamilyMaxBendPoints(baseYear: number): [number, number, number] {
   const [f1, f2, f3] = FAM_MAX_BASES.map(b => Math.round((b * baseYear / BEND_POINT_DIVISOR)));
   return [f1, f2, f3];
 }
 
 /** Apply the family-maximum formula to a PIA using already-computed bend points. */
-export function calculateFamilyMaximum(pia: number, [bp1, bp2, bp3]: [number, number, number]): number {
+function calculateFamilyMaximum(pia: number, [bp1, bp2, bp3]: [number, number, number]): number {
   let max = 0;
   max += 1.50 * Math.min(pia, bp1);
   if (pia > bp1) max += 2.72 * (Math.min(pia, bp2) - bp1);
