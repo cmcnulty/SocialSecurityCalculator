@@ -19,7 +19,7 @@ describe('Test calc', function () {
 
     // filter based on test name if provided as cli argument
     const {name} = getTestParams();
-    for (const {testInput, testResults} of testData) {
+    for (const {testInput, testResults, scrapedDate} of testData) {
 
         // skip tests if it's a partial match of the testName
         if (name && name.find((n) => testInput.testName.includes(n)) === undefined) {
@@ -37,6 +37,10 @@ describe('Test calc', function () {
             retirementDate.setFullYear(2026, 0, 1);
         }
 
+        // Use scrapedDate for disability/survivor calculations
+        const testDate = new Date(scrapedDate);
+        const testYear = testDate.getFullYear();
+
         it(`Test retirement: ${testInput.testName}`, async () => {
             const result = await calc(
                 birthDate,
@@ -52,9 +56,8 @@ describe('Test calc', function () {
         });
 
         it(`Test Disability: ${testInput.testName}`, async () => {
-            const disabilityDate = new Date(2025, 11, 10) // birthdate for this test is 6/15/1960
-            // disabilityDate.setFullYear(2025); // new disability date is 6/15/2024
-            const disabilityEarnings = earnings.filter((row) => row.year < 2025);
+            const disabilityDate = testDate;
+            const disabilityEarnings = earnings.filter((row) => row.year < testYear);
             const disabilityCalc = calc(birthDate, disabilityDate, disabilityEarnings);
             expect(disabilityCalc.DisabilityEarnings).toEqual(parseInt((testResults.survivorBenefits.disability || '0').toString().replace(/[^0-9.-]/g, ''), 10));
         });
@@ -62,8 +65,8 @@ describe('Test calc', function () {
         it(`Test survivor earnings for ${testInput.testName}`, async () => {
             // SSA calculates survivor benefits using only complete years of earnings
             // Same as disability calculation - exclude current year
-            const survivorDate = new Date(2025, 11, 10);
-            const survivorEarnings = earnings.filter((row) => row.year < 2025);
+            const survivorDate = testDate;
+            const survivorEarnings = earnings.filter((row) => row.year < testYear);
 
             const survivorCalc = calc(birthDate, survivorDate, survivorEarnings);
             expect(survivorCalc.SurvivorBenefits.survivingChild).toEqual(parseInt((testResults.survivorBenefits.survivingChild || '0').toString().replace(/[^0-9.-]/g, ''), 10));
@@ -77,7 +80,7 @@ describe('Test calc', function () {
 
 describe('Test estimated previous earnings', function () {
     const {name} = getTestParams();
-    for (const {testInput, testResults} of testData) {
+    for (const {testInput, testResults, scrapedDate} of testData) {
 
         if (name && !name.includes(testInput.testName)) {
             continue; // skip this test if name filter is applied and does not match
@@ -85,11 +88,12 @@ describe('Test estimated previous earnings', function () {
 
         it(`Test ${testInput.testName}`, async () => {
             const birthDate = new Date(testInput.birthDate);
+            const testYear = new Date(scrapedDate).getFullYear();
             const expected = getEstimatedEarnings(birthDate, testInput.earnings, testInput.lastYear || undefined, .02);
             const actual = testResults.commentData.map((row) => ({
                 year: row.year,
                 earnings: row.earnings
-            })).filter((row) => row.year <= (testInput.lastYear || 2025)); // filter to only include years up to 2025
+            })).filter((row) => row.year <= (testInput.lastYear || testYear));
 
             const sortedActual = actual.sort((a, b) => b.year - a.year);
 

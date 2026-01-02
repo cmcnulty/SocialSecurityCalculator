@@ -14,7 +14,8 @@ import {
   ELAPSED_YEARS_START_AGE,
   LOOKBACK_YEARS,
   CHILD_SURVIVOR_BENEFIT_PERCENTAGE,
-  FAM_MAX_BASES
+  FAM_MAX_BASES,
+  DISABILITY_LAST_EARNINGS_YEARS_THRESHOLD
 } from './constants';
 
 // Core calculation context that holds common data
@@ -53,7 +54,12 @@ export function calcRetirement(birthday: Date, retirementDate: Date, earnings: E
   const disabilityBenefit = calculateBenefitPipeline(earnings, context.yearAge60, getLookbackYearsDisability(context.totalYears));
 
   const monthlyBenefit = retirementDateAdjustedPayment(context.dates, regularBenefit.colaAdjustedPIA);
-  const disabilityPIAFloored = context.retirementDate > context.dates.fullRetirement ? 0 : Math.floor(disabilityBenefit.colaAdjustedPIA);
+
+  // Apply disability 5-year rule: if disability date is more than 5 years after last earnings year, benefit is zero
+  let disabilityPIAFloored = 0;
+  if (context.retirementDate <= context.dates.fullRetirement && !isDisabilityDateBeyondFiveYearRule(retirementDate, earnings)) {
+    disabilityPIAFloored = Math.floor(disabilityBenefit.colaAdjustedPIA);
+  }
 
   return {
     AIME: regularBenefit.aime,
@@ -345,6 +351,31 @@ function calculateFamilyMaximum(pia: number, [bp1, bp2, bp3]: [number, number, n
   if (pia > bp3) max += 1.75 * (pia - bp3);
   // SSA: round total down to next lower $0.10
   return Math.floor(max * 10) / 10;
+}
+
+// Check if disability date violates the 5-year rule
+function isDisabilityDateBeyondFiveYearRule(disabilityDate: Date, earnings: Earnings): boolean {
+  if (!earnings || earnings.length === 0) {
+    return true; // No earnings means no disability benefit
+  }
+
+  // Find the last year with non-zero earnings
+  const earningsWithValue = earnings.filter(e => e.earnings > 0);
+  if (earningsWithValue.length === 0) {
+    return true; // No non-zero earnings means no disability benefit
+  }
+
+  const lastEarningsYear = Math.max(...earningsWithValue.map(e => e.year));
+
+  // Last day of the last earnings year
+  const lastDayOfLastEarningsYear = new Date(lastEarningsYear, 11, 31); // December 31st
+
+  // Add exactly 5 years to the last day of last earnings year
+  const fiveYearsLater = new Date(lastDayOfLastEarningsYear);
+  fiveYearsLater.setFullYear(fiveYearsLater.getFullYear() + DISABILITY_LAST_EARNINGS_YEARS_THRESHOLD);
+
+  // Disability date must be after the 5-year threshold
+  return disabilityDate > fiveYearsLater;
 }
 
 // Utility functions

@@ -71,6 +71,10 @@ async function processBatchSSACalculations(csvFilePath, outputPath) {
     const csvData = await csvtojson().fromFile(csvFilePath);
     console.log(`Found ${csvData.length} test cases to process`);
 
+    // Record the scrape execution date (used as disability/survivor date in tests)
+    const scrapedDate = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+    console.log(`Scrape execution date: ${scrapedDate}`);
+
     const results = [];
 
     // Process each row
@@ -95,7 +99,8 @@ async function processBatchSSACalculations(csvFilePath, outputPath) {
             lastYear: parseInt(row.lastYear),
             currentlyRetired: row.currentlyRetired === 'true'
           },
-          testResults: ssaResults
+          testResults: ssaResults,
+          scrapedDate: scrapedDate
         });
 
         console.log(`✓ Completed: ${row.testName}`);
@@ -118,7 +123,8 @@ async function processBatchSSACalculations(csvFilePath, outputPath) {
           },
           testResults: {
             error: error.message
-          }
+          },
+          scrapedDate: scrapedDate
         });
       }
     }

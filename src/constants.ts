@@ -19,6 +19,9 @@ export const FAM_MAX_BASES = [230, 332, 433];
 
 export const CHILD_SURVIVOR_BENEFIT_PERCENTAGE = 0.75; // 75% of PIA for child survivor benefits
 
+// Disability 5-year rule: if disability date is more than 5 years after last earnings year, disability benefit is zero
+export const DISABILITY_LAST_EARNINGS_YEARS_THRESHOLD = 5;
+
 export const PIA_PERCENTAGES = {
   FIRST_BRACKET: 0.9,
   SECOND_BRACKET: 0.32,
