@@ -454,7 +454,7 @@ export const wageIndex: WageIndex[] = [
         },
         {
           "year": 2026,
-          "taxMax": 176100,
+          "taxMax": 184500,
           "cola": 2.5,
           "awi": 75670.13
         }
