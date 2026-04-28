@@ -30,6 +30,8 @@ interface CalculationContext {
   totalYears: number;
 }
 
+export type { BenefitCalculationResult, RetirementDates, WageIndex, Earnings };
+
 // Main entry point
 export function calc(birthday: Date, retirementDate: Date, earnings: Earnings): BenefitCalculationResult {
   const retirementCalc = calcRetirement(birthday, retirementDate, earnings);
