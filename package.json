@@ -48,7 +48,7 @@
     "minimist": "^1.2.8",
     "playwright": "^1.54.1",
     "ts-jest": "^29.1.1",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "dependencies": {
     "xml2js": "^0.6.2"
